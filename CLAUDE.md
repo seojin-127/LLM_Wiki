@@ -13,7 +13,7 @@ markdown, creating a searchable, interconnected knowledge base.
 **Structure stats (update periodically)**
 - Source summaries: 0
 - Wiki pages: 0
-- Categories: 25
+- Categories: 25 (+ single-cell-methylation = 26 total)
 - Interactive visualizations: 0
 
 ---
@@ -48,6 +48,7 @@ llm-wiki/
 │   ├── genomic-dl/
 │   ├── single-cell-dl/
 │   ├── single-cell-foundation/
+│   ├── single-cell-methylation/
 │   ├── protein-ai/
 │   ├── gwas/
 │   ├── neuroscience/
@@ -81,6 +82,7 @@ llm-wiki/
 | `genomic-dl` | DNA language models, variant effect prediction, regulatory genomics |
 | `single-cell-dl` | scRNA-seq deep learning, cell type annotation |
 | `single-cell-foundation` | Geneformer, scGPT, large-scale single-cell foundation models |
+| `single-cell-methylation` | Single-cell DNA methylation analysis |
 | `protein-ai` | Protein language models, structure prediction |
 | `gwas` | GWAS, EWAS, rare variant testing, population genetics |
 | `neuroscience` | ASD, schizophrenia, psychiatric genetics |

@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 0 papers | 0 wiki pages | 25 categories
+**Stats**: 0 papers | 0 wiki pages | 26 categories
 
 ---
 
@@ -23,6 +23,13 @@
 
 ## single-cell-foundation
 *Geneformer, scGPT, large-scale single-cell foundation models*
+
+*(no papers yet)*
+
+---
+
+## single-cell-methylation
+*Single-cell DNA methylation analysis*
 
 *(no papers yet)*
 
