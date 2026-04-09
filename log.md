@@ -19,6 +19,31 @@
 
 ---
 
+### 2026-04-10 — Ingest batch (papers 3-20 of 100)
+
+- gordon-2021 → brain-development | herring-2022 → brain-development | corrigan-2025 → brain-atlas
+- kaplan-2025 → brain-development | wang-2024 → single-cell-dl | steyn-2024 → brain-atlas
+- aivazidis-2025 → single-cell-dl | sonthalia-2026 → brain-development | morelli-2022 → neuroscience
+- schafer-2019 → neuroscience | trevino-2020 → brain-development | eichmuller-2022 → other
+- liu-2025 → brain-development | martinscosta-2024 → neuroscience | adlakha-2023 → other
+- cakir-2019 → brain-development | zhang-2023 → brain-atlas | kanton-2019 → brain-development
+
+---
+
+### 2026-04-09 — Ingest batch (papers 1-2 of 100)
+
+- **Paper**: Evolution of neuronal cell classes and types in the vertebrate retina (2023)
+  - **Authors**: Hahn, Monavarfeshani et al.
+  - **Category**: brain-atlas
+  - **Files**: sources/hahn-2023-evolution-of-neuronal-cell.md, wiki/brain-atlas/hahn-2023-evolution-of-neuronal-cell.md
+
+- **Paper**: In vivo Perturb-Seq reveals neuronal and glial abnormalities associated with autism risk genes (2020)
+  - **Authors**: Jin, Simmons et al.
+  - **Category**: neuroscience
+  - **Files**: sources/jin-2020-in-vivo-perturb-seq.md, wiki/neuroscience/jin-2020-in-vivo-perturb-seq.md
+
+---
+
 ### 2026-04-09 — Setup & Configuration
 
 - **Type**: Infrastructure setup
