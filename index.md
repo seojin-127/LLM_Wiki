@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 81 papers | 81 wiki pages | 26 categories
+**Stats**: 85 papers | 85 wiki pages | 26 categories
 
 ---
 
@@ -12,6 +12,7 @@
 
 - [[genomic-dl/zemke-2023-conserved-and-divergent-gene]] — Cross-species single-cell multiomics (4 species, 200K+ cells); ~80% of human-specific CREs are TE-derived; ML sequence predictors show preserved regulatory syntax rodent→primate (Nature 2023)
 - [[genomic-dl/zinati-2024-groundgan-grn-guided]] — GRouNdGAN: GRN-guided causal GAN for realistic scRNA-seq simulation; in silico TF KO; GRN inference benchmarking (Nat. Commun. 2024)
+- [[genomic-dl/deng-2024-massively-parallel-regulatory]] — lentiMPRA + DL of >100K regulatory elements; 46,802 active enhancers in developing cortex; 164 psychiatric disorder variants with allele-specific enhancer activity (Science 2024)
 
 ---
 
@@ -98,6 +99,14 @@
 - [[brain-development/zhang-2025-spatial-dynamics-brain-development]] — Spatial tri-omic (ATAC+RNA+protein + CUT&Tag+RNA+protein) atlas P0-P21 mouse brain; layer TF chromatin persistence; myelin gene priming in corpus callosum; shared dev/neuroinflammation programs (Nature 2025)
 - [[brain-development/birey-2017-assembly-functionally-integrated]] — First forebrain assembloid (hCS+hSS); models human interneuron saltatory migration; Timothy syndrome migration defect rescued by roscovitine (Nature 2017)
 - [[brain-development/zhang-2025-pfc-single-cell-spatiotemporal]] — Human-macaque postnatal PFC atlas (snRNA+ATAC+spatial); human-specific prolonged maturation via glial progenitor proliferation; NDD risk cell types (Nat. Neurosci. 2025)
+- [[brain-development/bhaduri-2020-cell-stress-cortical-organoids]] — scRNA-seq comparison primary cortex vs. organoids; organoids lack molecular subtypes + areal specification due to cellular stress; transplantation into mouse cortex partially rescues (Nature 2020)
+- [[brain-development/revah-2022-maturation-circuit-integration]] — hCO transplanted into newborn rat somatosensory cortex; mature cell types, thalamocortical + corticocortical integration; optogenetic activation drives reward-seeking; Timothy syndrome defects revealed (Nature 2022)
+- [[brain-development/uzquiano-2022-proper-acquisition-cell-class]] — scRNA + ATAC + spatial atlas of hCS organoids; cell class identity matches endogenous cortex; callosal neuron diversity emerges early; human-specific fate specification programs (Cell 2022)
+- [[brain-development/wang-2025-molecular-cellular-dynamics]] — Paired snATAC+snRNA atlas of 38 human neocortical samples (first trimester to adolescence); Tri-IPCs discovered (tripotential GABAergic+OPC+astrocyte); ASD GWAS risk in second-trimester intratelencephalic neurons (Nature 2025)
+- [[brain-development/keefe-2025-lineage-resolved-atlas-developing]] — Prospective lineage tracing of 6,402 human cortical progenitors; glutamatergic→GABAergic switch at midgestation; truncated RG maintain glutamatergic potential; late-born tRG neurons show deep-layer features (Nature 2025)
+- [[brain-development/fleck-2023-inferring-perturbing-cell-fate]] — Pando GRN framework from multiome time course in organoids; pooled CRISPR screen identifies GLI3 required for cortical fate; two GLI3 regulomes (dorsoventral patterning + ganglionic eminence) (Nature 2023)
+- [[brain-development/amiri-2018-transcriptome-epigenome-landscape]] — PsychENCODE cortical organoid epigenome atlas; 96,375 gene-linked enhancers; A-reg/R-reg enhancer categories; ASD de novo variants in homeodomain/Hes1/Sox3 binding sites (Science 2018)
+- [[brain-development/glass-2026-human-cortical-organoids-recapitulate]] — iPSC cortical organoids from infants with longitudinal MRI; early fate decisions (cell-type proportions, cell cycle genes) correlate with individual cortical surface area in vivo (Cell Stem Cell 2026)
 
 ---
 
@@ -120,6 +129,8 @@
 - [[brain-atlas/chen-2024-brain-cell-atlas-integrating]] — Brain Cell Atlas: 26.3M cells from 70 human + 103 mouse studies; ML consensus annotation; PCDH9-high microglia; hippocampus vs. PFC GRN differences (Nat. Med. 2024)
 - [[brain-atlas/chen-2025-whole-cortex-in-situ]] — BARseq: 10.3M cells, 4.2M cortical neurons; transcriptomic type composition predicts area identity; sensory input sharpens area identity (enucleation) (Nature 2025)
 - [[brain-atlas/domcke-2020-human-cell-atlas-fetal]] — sci-ATAC-seq3: ~800K fetal chromatin accessibility profiles, 15 organs; TF activator/repressor classification; organ-specific endothelial chromatin (Science 2020)
+- [[brain-atlas/shi-2023-spatial-atlas-mouse-cns]] — STARmap PLUS in situ sequencing (194 nm voxels); 1.09M cells, 1,022 genes, adult mouse brain + spinal cord; 230 cell types + 106 molecular regions; AAV tropism mapped (Nature 2023)
+- [[brain-atlas/kronman-2024-developmental-mouse-brain]] — DevCCF: 3D developmental mouse brain atlas (E11.5–P56); MRI + light-sheet templates; 3D anatomical segmentations; maps Allen CCFv3; open-access web visualizer (Nat. Commun. 2024)
 
 ---
 
@@ -169,7 +180,7 @@
 ## statistics
 *Statistical methods (FDR, Bayesian, batch effects)*
 
-*(no papers yet)*
+- [[statistics/sumanaweera-2025-gene-level-alignment-single-cell]] — Genes2Genes: Bayesian information-theoretic DP for gene-level single-cell trajectory alignment; captures insertions/deletions per gene; in vitro vs. in vivo T cell comparison (Nat. Methods 2025)
 
 ---
 
@@ -238,3 +249,7 @@
 - [[other/birtele-2025-modelling-human-brain]] — Roadmap review: brain organoid features, bioengineering improvements, CRISPR screens, ethics (Nat. Rev. MCB 2025)
 - [[other/pagliaro-2025-emerging-approaches-enhance]] — Review: emerging approaches to enhance brain organoid physiology; assembloids, ECM, morphogens, xenotransplantation (Trends Cell Biol. 2025)
 - [[other/lancaster-2013-cerebral-organoids-model-human]] — Landmark: first hPSC cerebral organoid system; discrete brain regions; oRG-like cells; primary microcephaly model (Nature 2013)
+- [[other/ekvall-2024-spatial-landmark-detection-tissue]] — ELD: unsupervised DL landmark detection + tissue registration using neural network + thin-plate splines; works with <10 samples; handles nonlinear deformations + multimodal spatial omics (Nat. Methods 2024)
+- [[other/brancati-2020-resolving-neurodevelopmental-vision-disorders]] — Perspective: single-cell multi-omics for brain + retina organoid characterization; fidelity assessment vs. in vivo; applications to congenital CNS malformations and vision disorders (Neuron 2020)
+- [[other/maoz-2018-linked-organ-on-chip-model]] — Linked NVU organ-on-chip (2 BBB chips + brain chip); dissects cell-type contributions; reveals endothelial-neuronal metabolic coupling; models methamphetamine pharmacokinetics (Nat. Biotechnol. 2018)
+- [[other/ullah-2025-generating-characterizing-human-telencephalic]] — Protocol: human telencephalic organoids from single isolated neural rosettes; reproducible cellular composition; functional neural networks; SHANK3 deletion ASD model (Nat. Protocols 2026)

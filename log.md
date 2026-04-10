@@ -19,6 +19,17 @@
 
 ---
 
+### 2026-04-10 — Ingest batch (papers 82-95 of 100)
+
+- uzquiano-2022 → brain-development | bhaduri-2020 → brain-development | wang-2025-molecular-cellular-dynamics → brain-development
+- revah-2022 → brain-development | shi-2023 → brain-atlas | kronman-2024 → brain-atlas
+- keefe-2025 → brain-development | deng-2024 → genomic-dl | fleck-2023 → brain-development
+- glass-2026 → brain-development | amiri-2018 → brain-development | ekvall-2024 → other
+- sumanaweera-2025 → statistics | brancati-2020 → other | maoz-2018 → other | ullah-2025 → other
+- Skipped (pure wet biology / duplicates): kiecker-2001, mansour-2018 (dup), braun-2023 (dup), rallu-2002, jayaraman-2018
+
+---
+
 ### 2026-04-10 — Ingest batch (papers 72-81 of 100)
 
 - chen-2024-brain-cell-atlas → brain-atlas | foord-2025 → lrRNA | mato-blanco-2025 → neuroscience
