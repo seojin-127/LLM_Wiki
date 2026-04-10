@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 50 papers | 50 wiki pages | 26 categories
+**Stats**: 56 papers | 56 wiki pages | 26 categories
 
 ---
 
@@ -11,6 +11,7 @@
 *DNA language models, variant effect prediction, regulatory genomics*
 
 - [[genomic-dl/zemke-2023-conserved-and-divergent-gene]] — Cross-species single-cell multiomics (4 species, 200K+ cells); ~80% of human-specific CREs are TE-derived; ML sequence predictors show preserved regulatory syntax rodent→primate (Nature 2023)
+- [[genomic-dl/zinati-2024-groundgan-grn-guided]] — GRouNdGAN: GRN-guided causal GAN for realistic scRNA-seq simulation; in silico TF KO; GRN inference benchmarking (Nat. Commun. 2024)
 
 ---
 
@@ -21,6 +22,7 @@
 - [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna]] — Cell2fate: Bayesian ODE linearization for RNA velocity modules; improved cell fate prediction, applied to developing human brain (Nature Methods 2025)
 - [[single-cell-dl/li-2025-uda-seq-universal-droplet]] — UDA-seq: universal post-indexing for droplet multimodal single-cell; 100K+ cells from 36 clinical biopsies in one experiment (Nature Methods 2025)
 - [[single-cell-dl/schuster-2024-multidgd-versatile-deep]] — multiDGD: deep generative model for RNA+ATAC joint representation; best reconstruction without feature selection; post-hoc batch integration (Nature Commun. 2024)
+- [[single-cell-dl/ergen-2024-consensus-prediction-cell]] — popV: ensemble + ontology-voting for cell type label transfer with calibrated uncertainty; reduces manual review to ambiguous cells only (Nat. Genet. 2024)
 
 ---
 
@@ -79,6 +81,7 @@
 - [[brain-development/giandomenico-2019-cerebral-organoids-at]] — ALI-COs: air-liquid interface organoids with improved survival; mm-scale nerve tract formation; functional MEA recordings (Nat. Neurosci. 2019)
 - [[brain-development/pasca-2015-functional-cortical-neurons]] — Original hCS protocol: matrix-free 3D cortical organoid; deep+superficial layer neurons; electrophysiologically mature; transcriptional match to fetal cortex (Nat. Methods 2015)
 - [[brain-development/jain-2025-morphodynamics-human-early]] — Long-term live light-sheet morphodynamics of brain organoids; matrix→WNT/YAP1→telencephalon; WLS marks earliest non-telencephalic emergence (Nature 2025)
+- [[brain-development/gabriel-2021-human-brain-organoids]] — OVB-organoids: self-organized bilateral optic vesicles in brain organoids; retinal cell types + light sensitivity; no extrinsic patterning needed (Cell Stem Cell 2021)
 - [[brain-development/gordon-2021-long-term-maturation-of]] — Long-term hCS culture (>20 months) matches early postnatal brain development; intrinsic maturation programs (Nat. Neurosci. 2021)
 - [[brain-development/trevino-2020-chromatin-accessibility-forebrain]] — 20-month ATAC-seq + RNA-seq of forebrain organoids; chromatin dynamics match in vivo; disease risk variant mapping (Science 2020)
 - [[brain-development/herring-2022-human-prefrontal-cortex-gene]] — snRNA-seq + snATAC-seq of human PFC from gestation to adulthood; protracted cell-type-specific maturation; organoid deficit at postnatal stages (Cell 2022)
@@ -113,7 +116,7 @@
 ## lrRNA
 *Long-read RNA-seq: Iso-seq, MAS-seq, ONT*
 
-*(no papers yet)*
+- [[lrRNA/joglekar-2024-single-cell-long-read]] — Single-cell long-read brain isoform atlas: 72% of genes isoform-variable; cell-type-specific splicing dominant; P21→P28 adolescent transition peaks; mouse→human conservation (Nat. Neurosci. 2024)
 
 ---
 
