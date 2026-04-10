@@ -19,6 +19,24 @@
 
 ---
 
+### 2026-04-10 — Ingest batch (papers 57-60 of 100)
+
+- zeng-2023 → brain-development | ding-2026 → brain-development | zenk-2024 → brain-development
+- van-velthoven-2025 → brain-atlas
+
+---
+
+### 2026-04-10 — Ingest batch (papers 37-56 of 100)
+
+- pasca-2015 → brain-development | jain-2025 → brain-development | ergen-2024 → single-cell-dl
+- gabriel-2021 → brain-development | zinati-2024 → genomic-dl | joglekar-2024 → lrRNA
+- cao-2020 → brain-atlas | mannens-2025 → brain-development | giandomenico-2019 → brain-development
+- lawrence-2024 → other | birtele-2025 → other | paulsen-2022 → neuroscience
+- jourdon-2023 → neuroscience | villa-2022 → neuroscience
+- Skipped/duplicates: 1004829149 (He-2025 publisher correction), 1799977537 (research highlight), 1881964893 (Mansour dup), 2311317948/3764047813 (He-2024 dups), 3974428323 (Kanton dup), 4102187095 (Mannens dup), 2621489392 (Fitzgerald correction), 1379048265 (Whalley research highlight)
+
+---
+
 ### 2026-04-10 — Ingest batch (papers 22-36 of 100)
 
 - he-2024 → brain-atlas | mansour-2018 → brain-development | gao-2025 → brain-atlas

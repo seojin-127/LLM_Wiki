@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 56 papers | 56 wiki pages | 26 categories
+**Stats**: 60 papers | 60 wiki pages | 26 categories
 
 ---
 
@@ -89,6 +89,9 @@
 - [[brain-development/sonthalia-2026-nemo-analytics-compendium]] — NeMO Analytics: ~200-study compendium; joint decomposition finds primate-specific oRG program; organoids lack layer-specific maturation programs (Nat. Neurosci. 2026)
 - [[brain-development/liu-2025-human-specific-enhancer-fine]] — HARE5 (HAR enhancer of Frizzled8/WNT) drives human cortical expansion via radial glia self-renewal; 4 human-specific variants increase proliferation (Nature 2025)
 - [[brain-development/kaplan-2025-sensory-input-sex-and]] — Hypothalamic preoptic area development: sex shapes trajectories perinatally; vomeronasal sensing required for normal maturation timing (Nature 2025)
+- [[brain-development/zeng-2023-single-cell-spatial-transcriptional]] — Single-cell + spatial transcriptomics of human gastrulation (CS7–CS13); NE→RG transformation; spatially resolved RG subtypes; human-specific transcriptional signatures (Cell Stem Cell 2023)
+- [[brain-development/ding-2026-dissecting-gene-regulatory-networks]] — CRISPRi screen of 44 TFs in human primary RG; ZNF219 represses premature differentiation; NR2E1/ARX opposing roles; effector genes enriched for NDD risk variants (Nature 2026)
+- [[brain-development/zenk-2024-single-cell-epigenomic-reconstruction]] — Single-cell CUT&Tag (H3K27ac/me3, H3K4me3) from pluripotency→neural organoid; H3K27me3 at neuroectoderm stage required for fate restriction; epigenomic changes precede transcriptional identity (Nat. Neurosci. 2024)
 
 ---
 
@@ -97,6 +100,7 @@
 
 - [[brain-atlas/hahn-2023-evolution-of-neuronal-cell]] — Cross-species retinal cell atlas (17 vertebrates); conservation of 6 cell classes; mouse midget RGC orthologues identified (Nature 2023)
 - [[brain-atlas/corrigan-2025-conservation-and-alteration]] — TAC3 striatal interneurons conserved across 10 mammalian species; mouse Th interneurons are homologues; evolution via redistribution/fate refinement (Nature 2025)
+- [[brain-atlas/van-velthoven-2025-transcriptomic-spatial-organization]] — Mouse telencephalic GABAergic atlas: 7 classes, 52 subclasses, 1,051 clusters, 611K adult + 614K developmental cells; postnatal cortical/striatal diversification; long-distance migration common (Nature 2025)
 - [[brain-atlas/steyn-2024-temporal-cortex-cell-atlas]] — Pediatric-adult temporal cortex atlas (75 subtypes, African ancestry); LTK/FREM excitatory neurons with elevated cognition genes in pediatric tissue (Nat. Genet. 2024)
 - [[brain-atlas/zhang-2023-molecularly-defined-spatially]] — Whole mouse brain MERFISH atlas: 5,000+ clusters, 300+ cell types, ~10M cells; spatial modules and ligand-receptor interactions (Nature 2023)
 - [[brain-atlas/he-2024-integrated-transcriptomic-cell-atlas]] — HNOCA: 1.77M cells from 36 datasets/26 protocols; quantifies organoid fidelity vs. primary brain; cell stress universal in vitro artifact (Nature 2024)
