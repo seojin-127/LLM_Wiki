@@ -19,6 +19,17 @@
 
 ---
 
+### 2026-04-10 — Ingest batch (papers 86-94, new uploads)
+
+- hao-2024 (scFoundation) → single-cell-foundation | cui-2024 (scGPT) → single-cell-foundation
+- chen-2025 (EpiAgent) → single-cell-foundation | avsec-2021 (Enformer) → genomic-dl
+- yu-2026 (ChromBERT) → genomic-dl | dubuc-2026 (rare variants + autism + FM) → neuroscience
+- nowakowski-2025 (brain dev Perspective) → other | klingler-2022 (cortical malformations review) → other
+- ding-2026 (scGPT retinal protocol) → other
+- Skipped (duplicates/errata/corrections): fleck dup, he-2024 dup ×2, kanton dup, mannens dup, erratum ×3, NRN news
+
+---
+
 ### 2026-04-10 — Ingest batch (papers 82-95 of 100)
 
 - uzquiano-2022 → brain-development | bhaduri-2020 → brain-development | wang-2025-molecular-cellular-dynamics → brain-development

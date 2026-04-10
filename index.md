@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 85 papers | 85 wiki pages | 26 categories
+**Stats**: 94 papers | 94 wiki pages | 26 categories
 
 ---
 
@@ -13,6 +13,8 @@
 - [[genomic-dl/zemke-2023-conserved-and-divergent-gene]] — Cross-species single-cell multiomics (4 species, 200K+ cells); ~80% of human-specific CREs are TE-derived; ML sequence predictors show preserved regulatory syntax rodent→primate (Nature 2023)
 - [[genomic-dl/zinati-2024-groundgan-grn-guided]] — GRouNdGAN: GRN-guided causal GAN for realistic scRNA-seq simulation; in silico TF KO; GRN inference benchmarking (Nat. Commun. 2024)
 - [[genomic-dl/deng-2024-massively-parallel-regulatory]] — lentiMPRA + DL of >100K regulatory elements; 46,802 active enhancers in developing cortex; 164 psychiatric disorder variants with allele-specific enhancer activity (Science 2024)
+- [[genomic-dl/avsec-2021-effective-gene-expression-prediction]] — Enformer: self-attention transformer predicting gene expression + chromatin states from 196kb DNA; integrates distal enhancers; outperforms CNN baselines on eQTL + CRISPRi benchmarks (Nat. Methods 2021)
+- [[genomic-dl/yu-2026-chrombert-foundation-model]] — ChromBERT: BERT-based FM pretrained on ~1,000 TFs from ChIP-seq; learns TF interaction syntax; imputes unseen cistromes; context-specific TRN inference without additional ChIP-seq (Cell Genomics 2026)
 
 ---
 
@@ -32,6 +34,9 @@
 *Geneformer, scGPT, large-scale single-cell foundation models*
 
 - [[single-cell-foundation/heimberg-2025-cell-atlas-foundation-model]] — SCimilarity: metric-learning foundation model; rapid search of 23.4M cells from 412 studies; ILD macrophage queries validated cross-tissue (Nature 2025)
+- [[single-cell-foundation/cui-2024-scgpt-toward-building-foundation]] — scGPT: generative pretrained transformer on 33M+ cells; state-of-the-art on cell type annotation, multi-batch integration, perturbation prediction, and gene network inference (Nat. Methods 2024)
+- [[single-cell-foundation/hao-2024-large-scale-foundation-model]] — scFoundation: 100M parameter asymmetric transformer pretrained on 50M+ human scRNA-seq profiles; state-of-the-art on gene expression enhancement, drug response, perturbation prediction (Nat. Methods 2024)
+- [[single-cell-foundation/chen-2025-epiagent-foundation-model-single-cell]] — EpiAgent: first foundation model for scATAC-seq; "cell sentence" encoding; zero-shot annotation; in silico CRE knockout; state-of-the-art on epigenomic tasks (Nat. Methods 2025)
 
 ---
 
@@ -71,6 +76,7 @@
 - [[neuroscience/martinscosta-2024-arid1b-controls-transcriptional]] — ARID1B haploinsufficiency impairs corpus callosum transcriptional programs and axon projection in callosal organoid model (Cell Stem Cell 2024)
 - [[neuroscience/de-jong-2021-cortical-overgrowth-preclinical]] — CNTNAP2 homozygous truncating mutation forebrain organoids show cortical overgrowth via progenitor over-proliferation; CRISPR correction rescues (Nat. Commun. 2021)
 - [[neuroscience/mato-blanco-2025-early-developmental-origins]] — Human NSC risk gene dynamics across corticogenesis; brain organizer hubs; TF depletion simulation; ASD patient NSC TF alterations (Nat. Commun. 2025)
+- [[neuroscience/dubuc-2026-linking-rare-variants-cell-type]] — Framework linking rare variants in profound autism to cell-type function via brain transcriptomics + foundation models; specificity × sensitivity trade-off; AI inference + postmortem validation (Cell Genomics 2026)
 
 ---
 
@@ -253,3 +259,6 @@
 - [[other/brancati-2020-resolving-neurodevelopmental-vision-disorders]] — Perspective: single-cell multi-omics for brain + retina organoid characterization; fidelity assessment vs. in vivo; applications to congenital CNS malformations and vision disorders (Neuron 2020)
 - [[other/maoz-2018-linked-organ-on-chip-model]] — Linked NVU organ-on-chip (2 BBB chips + brain chip); dissects cell-type contributions; reveals endothelial-neuronal metabolic coupling; models methamphetamine pharmacokinetics (Nat. Biotechnol. 2018)
 - [[other/ullah-2025-generating-characterizing-human-telencephalic]] — Protocol: human telencephalic organoids from single isolated neural rosettes; reproducible cellular composition; functional neural networks; SHANK3 deletion ASD model (Nat. Protocols 2026)
+- [[other/nowakowski-2025-new-frontier-understanding-human]] — Perspective: advances in human + mammalian brain development atlases; novel cell populations; cross-species conservation/divergence; links to NDD mechanisms (Nature 2025)
+- [[other/klingler-2022-mapping-molecular-cellular-complexity]] — Review: molecular + cellular mechanisms of cortical malformations (microcephaly, lissencephaly, polymicrogyria, dysplasia, heterotopia); centrosome/mTOR/actin pathways (Science 2022)
+- [[other/ding-2026-scgpt-end-to-end-protocol]] — Protocol: scGPT fine-tuning for retinal cell type annotation; 99.5% F1-score; command-line + Jupyter workflow; accessible deployment guide (Nat. Protocols 2026)
