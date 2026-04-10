@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 36 papers | 36 wiki pages | 26 categories
+**Stats**: 43 papers | 43 wiki pages | 26 categories
 
 ---
 
@@ -72,6 +72,8 @@
 - [[brain-development/mansour-2018-in-vivo-model-of]] — In vivo vascularized organoid model: hPSC organoids transplanted into mouse brain; functional vasculature, axonal outgrowth, graft-host synaptic connectivity (Nat. Biotechnol. 2018)
 - [[brain-development/taverna-2014-cell-biology-of-neurogenesis]] — Review: cell biology of cortical neurogenesis; NE→RG→oRG/IP classification; oRG as key evolutionary innovation for neocortex expansion (Annu. Rev. Cell Dev. Biol. 2014)
 - [[brain-development/nano-2025-integrated-analysis-molecular]] — Meta-analysis of 23 human cortical datasets; 500+ gene co-expression meta-modules; FEZF2+TSHZ3 drive deep layer specification (validated in chimeroids) (Nat. Neurosci. 2025)
+- [[brain-development/mannens-2025-chromatin-accessibility-during]] — First whole-brain first-trimester chromatin atlas (135 clusters, 6–13 weeks); CNN identifies TF binding sites; MDD → midbrain GABAergic neurons most vulnerable (Nature 2025)
+- [[brain-development/giandomenico-2019-cerebral-organoids-at]] — ALI-COs: air-liquid interface organoids with improved survival; mm-scale nerve tract formation; functional MEA recordings (Nat. Neurosci. 2019)
 - [[brain-development/gordon-2021-long-term-maturation-of]] — Long-term hCS culture (>20 months) matches early postnatal brain development; intrinsic maturation programs (Nat. Neurosci. 2021)
 - [[brain-development/trevino-2020-chromatin-accessibility-forebrain]] — 20-month ATAC-seq + RNA-seq of forebrain organoids; chromatin dynamics match in vivo; disease risk variant mapping (Science 2020)
 - [[brain-development/herring-2022-human-prefrontal-cortex-gene]] — snRNA-seq + snATAC-seq of human PFC from gestation to adulthood; protracted cell-type-specific maturation; organoid deficit at postnatal stages (Cell 2022)
@@ -90,6 +92,7 @@
 - [[brain-atlas/steyn-2024-temporal-cortex-cell-atlas]] — Pediatric-adult temporal cortex atlas (75 subtypes, African ancestry); LTK/FREM excitatory neurons with elevated cognition genes in pediatric tissue (Nat. Genet. 2024)
 - [[brain-atlas/zhang-2023-molecularly-defined-spatially]] — Whole mouse brain MERFISH atlas: 5,000+ clusters, 300+ cell types, ~10M cells; spatial modules and ligand-receptor interactions (Nature 2023)
 - [[brain-atlas/he-2024-integrated-transcriptomic-cell-atlas]] — HNOCA: 1.77M cells from 36 datasets/26 protocols; quantifies organoid fidelity vs. primary brain; cell stress universal in vitro artifact (Nature 2024)
+- [[brain-atlas/cao-2020-human-cell-atlas-fetal]] — 4M-cell multi-organ human fetal atlas (121 samples, 15 organs, 657 subtypes); sci-RNA-seq3; circulating trophoblast-like cells discovered (Science 2020)
 - [[brain-atlas/gao-2025-continuous-cell-type-diversification]] — Mouse visual cortex development atlas (768K+ cells, E11.5–P56); continuous cell-type diversification; many subtypes emerge at eye-opening/critical period (Nature 2025)
 - [[brain-atlas/langlieb-2023-molecular-cytoarchitecture-of]] — Whole adult mouse brain atlas: 92 dissectates snRNA-seq + Slide-seq spatial; highest diversity in midbrain/hypothalamus; psychiatric GWAS heritability enrichment (Nature 2023)
 
@@ -205,3 +208,5 @@
 
 - [[other/eichmuller-2022-human-cerebral-organoids]] — Review: cerebral organoids for neurological disease modeling; vascularization, microfluidics, applications (2022)
 - [[other/adlakha-2023-human-3d-brain-organoids]] — Review: 3D brain organoid advances; vascularization, biomaterials, microfluidics, disease applications (Cell Death Discov. 2023)
+- [[other/lawrence-2024-hox-gene-expression]] — HOX gene atlas of developing human spine (scRNA-seq + spatial); neural crest dual HOX code (origin + destination); motor pool mapping (Nat. Commun. 2024)
+- [[other/birtele-2025-modelling-human-brain]] — Roadmap review: brain organoid features, bioengineering improvements, CRISPR screens, ethics (Nat. Rev. MCB 2025)
