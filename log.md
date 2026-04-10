@@ -19,6 +19,17 @@
 
 ---
 
+### 2026-04-10 — Ingest batch (papers 62-71 of 100)
+
+- de-jong-2021 → neuroscience | zhang-2025-spatial → brain-development | birey-2017 → brain-development
+- braun-2023 → brain-atlas | winter-2023 → brain-atlas | lancaster-2013 → other
+- jin-2025 → aging | zhou-2023 → brain-atlas | fischer-2024-sctab → single-cell-dl
+- yao-2023 → brain-atlas
+- Fixed: pagliaro-2025 (wiki page + index entry added; source existed but was missing wiki/index)
+- Skipped: 0912826566 (Kiecker-2001, Xenopus Wnt, pure wet), 2827885190 (Mansour dup), 3570684337 (Braun dup), 4008095624 (Rallu-2002, pure wet)
+
+---
+
 ### 2026-04-10 — Ingest batch (papers 57-60 of 100)
 
 - zeng-2023 → brain-development | ding-2026 → brain-development | zenk-2024 → brain-development

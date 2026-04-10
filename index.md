@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 60 papers | 60 wiki pages | 26 categories
+**Stats**: 71 papers | 71 wiki pages | 26 categories
 
 ---
 
@@ -23,6 +23,7 @@
 - [[single-cell-dl/li-2025-uda-seq-universal-droplet]] — UDA-seq: universal post-indexing for droplet multimodal single-cell; 100K+ cells from 36 clinical biopsies in one experiment (Nature Methods 2025)
 - [[single-cell-dl/schuster-2024-multidgd-versatile-deep]] — multiDGD: deep generative model for RNA+ATAC joint representation; best reconstruction without feature selection; post-hoc batch integration (Nature Commun. 2024)
 - [[single-cell-dl/ergen-2024-consensus-prediction-cell]] — popV: ensemble + ontology-voting for cell type label transfer with calibrated uncertainty; reduces manual review to ambiguous cells only (Nat. Genet. 2024)
+- [[single-cell-dl/fischer-2024-sctab-scaling-cross-tissue]] — scTab: tabular DL for cross-tissue cell type annotation; trained on 22.2M cells; scaling laws confirmed; data augmentation improves generalization (Nat. Commun. 2024)
 
 ---
 
@@ -67,6 +68,7 @@
 - [[neuroscience/schafer-2019-pathological-priming-causes]] — Pathological priming: premature activation of late developmental gene networks in idiopathic ASD iPSC-derived NSCs; heterochronicity across ASD individuals (Nat. Neurosci. 2019)
 - [[neuroscience/morelli-2022-mecp2-related-pathways-cortical]] — DM1 cortical organoids: CUG foci → CELF2 dysfunction → MECP2 pathway dysregulation in glutamatergic neurons; convergent with Rett syndrome (Sci. Transl. Med. 2022)
 - [[neuroscience/martinscosta-2024-arid1b-controls-transcriptional]] — ARID1B haploinsufficiency impairs corpus callosum transcriptional programs and axon projection in callosal organoid model (Cell Stem Cell 2024)
+- [[neuroscience/de-jong-2021-cortical-overgrowth-preclinical]] — CNTNAP2 homozygous truncating mutation forebrain organoids show cortical overgrowth via progenitor over-proliferation; CRISPR correction rescues (Nat. Commun. 2021)
 
 ---
 
@@ -92,6 +94,8 @@
 - [[brain-development/zeng-2023-single-cell-spatial-transcriptional]] — Single-cell + spatial transcriptomics of human gastrulation (CS7–CS13); NE→RG transformation; spatially resolved RG subtypes; human-specific transcriptional signatures (Cell Stem Cell 2023)
 - [[brain-development/ding-2026-dissecting-gene-regulatory-networks]] — CRISPRi screen of 44 TFs in human primary RG; ZNF219 represses premature differentiation; NR2E1/ARX opposing roles; effector genes enriched for NDD risk variants (Nature 2026)
 - [[brain-development/zenk-2024-single-cell-epigenomic-reconstruction]] — Single-cell CUT&Tag (H3K27ac/me3, H3K4me3) from pluripotency→neural organoid; H3K27me3 at neuroectoderm stage required for fate restriction; epigenomic changes precede transcriptional identity (Nat. Neurosci. 2024)
+- [[brain-development/zhang-2025-spatial-dynamics-brain-development]] — Spatial tri-omic (ATAC+RNA+protein + CUT&Tag+RNA+protein) atlas P0-P21 mouse brain; layer TF chromatin persistence; myelin gene priming in corpus callosum; shared dev/neuroinflammation programs (Nature 2025)
+- [[brain-development/birey-2017-assembly-functionally-integrated]] — First forebrain assembloid (hCS+hSS); models human interneuron saltatory migration; Timothy syndrome migration defect rescued by roscovitine (Nature 2017)
 
 ---
 
@@ -107,6 +111,10 @@
 - [[brain-atlas/cao-2020-human-cell-atlas-fetal]] — 4M-cell multi-organ human fetal atlas (121 samples, 15 organs, 657 subtypes); sci-RNA-seq3; circulating trophoblast-like cells discovered (Science 2020)
 - [[brain-atlas/gao-2025-continuous-cell-type-diversification]] — Mouse visual cortex development atlas (768K+ cells, E11.5–P56); continuous cell-type diversification; many subtypes emerge at eye-opening/critical period (Nature 2025)
 - [[brain-atlas/langlieb-2023-molecular-cytoarchitecture-of]] — Whole adult mouse brain atlas: 92 dissectates snRNA-seq + Slide-seq spatial; highest diversity in midbrain/hypothalamus; psychiatric GWAS heritability enrichment (Nature 2023)
+- [[brain-atlas/braun-2023-comprehensive-cell-atlas-first]] — BICCN first-trimester human brain atlas: 1.67M cells (5–14 pcw), 616 clusters; MGE→thalamus migration; regional glioblast diversity; early OPC regionalization (Science 2023)
+- [[brain-atlas/winter-2023-transcriptomic-taxonomy-mouse]] — Brain-wide SPN taxonomy: 65,002 neurons, 76 types, 3-component organization; LIM homeobox TF code for reticulospinal neurons (Nature 2023)
+- [[brain-atlas/zhou-2023-brain-wide-correspondence-neuronal]] — epi-retro-seq: 33,034 neurons linking epigenomes to projections; 32 source regions × 24 targets; integrated into BICCN atlas (Nature 2023)
+- [[brain-atlas/yao-2023-high-resolution-transcriptomic-spatial]] — Allen Brain Cell Atlas: ~4M scRNA-seq + 4.3M MERFISH cells, 5,322 clusters; dorsal-ventral dichotomy; combinatorial TF code; whole adult mouse brain (Nature 2023)
 
 ---
 
@@ -190,7 +198,7 @@
 ## aging
 *Longevity genetics, lifespan QTL*
 
-*(no papers yet)*
+- [[aging/jin-2025-brain-wide-cell-type-specific]] — Brain-wide aging atlas: ~1.2M cells from young+aged mice; 847 clusters, 14 age-biased; hypothalamic third-ventricle as aging hub; 2,449 age-DE genes (Nature 2025)
 
 ---
 
@@ -222,3 +230,5 @@
 - [[other/adlakha-2023-human-3d-brain-organoids]] — Review: 3D brain organoid advances; vascularization, biomaterials, microfluidics, disease applications (Cell Death Discov. 2023)
 - [[other/lawrence-2024-hox-gene-expression]] — HOX gene atlas of developing human spine (scRNA-seq + spatial); neural crest dual HOX code (origin + destination); motor pool mapping (Nat. Commun. 2024)
 - [[other/birtele-2025-modelling-human-brain]] — Roadmap review: brain organoid features, bioengineering improvements, CRISPR screens, ethics (Nat. Rev. MCB 2025)
+- [[other/pagliaro-2025-emerging-approaches-enhance]] — Review: emerging approaches to enhance brain organoid physiology; assembloids, ECM, morphogens, xenotransplantation (Trends Cell Biol. 2025)
+- [[other/lancaster-2013-cerebral-organoids-model-human]] — Landmark: first hPSC cerebral organoid system; discrete brain regions; oRG-like cells; primary microcephaly model (Nature 2013)
