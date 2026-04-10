@@ -11,7 +11,7 @@ source_collection: endnote-library
 
 ## One-line Summary
 
-임신 초기~만기까지 인간 모체-태아 경계면(MFI)의 대규모 single-nucleus 멀티오믹스 + 서브마이크로미터 공간 전사체 atlas로, 세포 분화 프로그램·공간 구조·임신 합병증 취약 세포 상태를 포괄적으로 해명한 Nature 논문.
+Comprehensive single-nucleus multiomics + submicrometre spatial transcriptomics atlas of the human maternal–fetal interface (GW5–39), resolving cell differentiation programs, spatial niches, and cell states vulnerable to pregnancy complications.
 
 ## 1. Document Info
 - Journal/Conference: Nature
@@ -21,73 +21,73 @@ source_collection: endnote-library
 - Published: 2026 (online first)
 
 ## 2. Key Contributions
-- 인간 MFI 전 임신 기간(GW5~39) 커버하는 snRNA-seq + snATAC-seq 191,735 핵 멀티오믹스 atlas 생성
-- STOmics Stereo-seq (0.5 µm 해상도) 공간 전사체 16 샘플로 ~1.1백만 세포 공간 매핑, CODEX 멀티플렉스 단백질 이미징과 통합
-- Cytotrophoblast 분화의 "toggle switch" 모델 규명: EVT vs. SCT 운명 결정의 전사 인자 네트워크
-- Spiral artery remodelling 중 arterial endothelial state transition(R0→R1→R2) 신규 발견
-- ML 모델로 전사체 signature에서 cytotrophoblast 침습성 예측
-- Decidual stromal cell 서브타입이 엔도카나비노이드 시그널링을 통해 cytotrophoblast 침습 억제
-- GWAS 데이터 통합으로 pre-eclampsia·조산·유산에 취약한 세포 타입 특정
+- Large-scale snRNA-seq + snATAC-seq atlas of the human MFI across full gestation (GW5–39): 191,735 paired nuclei, 19 cell types
+- Submicrometre spatial whole-transcriptome mapping (STOmics Stereo-seq, 0.5 µm) of 16 second-trimester basal plate sections (~1.1 million cells), integrated with CODEX multiplex protein imaging
+- Toggle switch model for cytotrophoblast fate: mutually exclusive EVT vs. SCT lineage commitment enforced by reciprocal transcription factor networks
+- Discovery of a novel arterial endothelial state transition (R0 → R1 → R2) during EVT-mediated spiral artery remodelling
+- Machine learning model predicting cytotrophoblast invasiveness from transcriptomic signatures
+- Identification of a decidual stromal cell subtype that suppresses cytotrophoblast invasion via endocannabinoid signalling
+- GWAS integration pinpointing cell types most vulnerable to pre-eclampsia, preterm birth, and miscarriage
 
 ## 3. Methods & Architecture
 
-**데이터 생성:**
-- snRNA-seq + snATAC-seq (10x Genomics): 191,735 핵 (paired 191,735), 평균 8,336 핵/샘플
-- 공간 전사체: STOmics Stereo-seq (0.5 µm 해상도, 1 cm × 1 cm 칩), 16 second-trimester 바살플레이트 절편, ~1.1백만 세포
-- CODEX 멀티플렉스 단백질 이미징 (pan-CK, CD31 등)
-- 샘플: GW5~GW39, 정상 임신, decidua basalis + basal plate
+**Data generation:**
+- snRNA-seq + snATAC-seq (10x Genomics): 191,735 paired nuclei, average 8,336 nuclei/sample
+- Spatial transcriptomics: STOmics Stereo-seq (0.5 µm resolution, 1 cm × 1 cm chips), 16 second-trimester basal plate sections, ~1.1 million cells
+- CODEX multiplex protein imaging (pan-CK, CD31, etc.)
+- Samples: GW5–GW39, normal pregnancies, decidua basalis + basal plate
 
-**분석 파이프라인:**
-- Souporcell: maternal/fetal 기원 구분 (>95% 세포)
+**Analysis pipeline:**
+- Souporcell: maternal/fetal origin assignment (>95% of cells)
 - chromVar: ATAC-seq transcription factor motif enrichment
-- CellOracle: snATAC + snRNA 통합 GRN 재구성
-- Spatial co-occurrence analysis: decidual niche 구조 규명
-- GWAS 통합: 세포 타입별 임신 합병증 취약성 분석
+- CellOracle: GRN reconstruction integrating snATAC-seq + snRNA-seq
+- Spatial co-occurrence analysis: decidual niche architecture
+- GWAS integration: cell-type-level vulnerability to pregnancy complications
 
-**세포 유형 (19종):**
+**Cell types (19):**
 VCT, EVT, SCT, DSC, eS, FB, PV, mVEC, fVEC, LEC, eEpi, Cili, dNK, M, HB, DC, B, T, Ery
 
 ## 4. Key Results & Benchmarks
 
-**Toggle switch 모델 (EVT vs. SCT 운명):**
-- EVT에서 71개, SCT에서 30개 전사 인자 특이적 상향조절 (FDR ≤ 0.01)
-- EVT 전사 인자(ASCL2, FOS, KLF6, STAT1)가 EVT 유전자 활성화 + SCT 유전자 억제
-- SCT 전사 인자는 역방향: SCT 프로그램 활성화 + EVT 유전자 억제
-- 공유 인자(GCM1)도 cell type별 다른 target gene set 관여
+**Toggle switch model (EVT vs. SCT fate):**
+- 71 TFs specifically upregulated in EVTs, 30 in SCTs (FDR ≤ 0.01)
+- EVT TFs (ASCL2, FOS, KLF6, STAT1) activate EVT genes while repressing SCT genes; reciprocal pattern in SCTs
+- Shared TF GCM1 engages distinct target gene sets in each lineage
+- FOS positively regulates HLA-G, KRT8, FN1 in EVTs; negatively associates with SCT markers (CGA, TFPI2, PLAC4)
 
 **Spiral artery remodelling:**
-- R0(정상 arterial EC) → R1(전환기) → R2(EVT 침습 후)의 3단계 endothelial state 전환 신규 발견
-- R2: 세포 증식 억제·세포사 촉진 GO term 강화 (FDR < 10⁻³)
+- Novel R0 (normal arterial EC) → R1 (transitional) → R2 (post-EVT invasion) endothelial state transition
+- R2 state enriched for GO terms: negative regulation of cell proliferation, positive regulation of apoptosis (FDR 10⁻³–10⁻⁵)
 
-**공간 구조:**
-- Decidual niche: DSC-면역세포(dNK) 공간적 co-localization 확인
-- EVT 침습 패턴: spiral artery 주변 분포 공간 정량화
+**Spatial architecture:**
+- DSC–dNK spatial co-localization confirmed as a recurring decidual niche
+- EVT invasion patterns spatially quantified around spiral arteries
 
-**임신 합병증:**
-- GWAS 통합으로 pre-eclampsia, 조산, 유산 각각에 취약한 특이적 세포 타입 매핑
+**Pregnancy complications:**
+- GWAS integration maps specific cell types most vulnerable to pre-eclampsia, preterm birth, and miscarriage
 
 ## 5. Limitations & Future Work
-- 정상 임신 중심 (병리 샘플 제한적)
-- Second trimester 공간 프로파일링에 집중 (first/third trimester 공간 데이터 부족)
-- Perturbation 실험(functional validation) 없이 관찰적 atlas
-- Endocannabinoid 신호 억제 기전의 in vivo 검증 필요
+- Focus on normal pregnancies; limited pathological samples for direct comparison
+- Spatial profiling concentrated in second trimester; first/third trimester spatial data lacking
+- Observational atlas; no perturbation/functional validation experiments
+- Endocannabinoid-mediated invasion suppression requires in vivo validation
 
 ## 6. Related Work
-- Vento-Tormo et al. (prior placental atlas; label transfer에 사용)
-- CellOracle (GRN 재구성 도구)
-- STOmics Stereo-seq (공간 전사체 플랫폼)
-- chromVar (ATAC-seq TF motif 분석)
+- Vento-Tormo et al. (prior placental atlas; used for label transfer validation)
+- CellOracle (GRN reconstruction tool)
+- STOmics Stereo-seq (spatial transcriptomics platform)
+- chromVar (ATAC-seq TF motif analysis)
 - Souporcell (genotype-based cell demultiplexing)
 
 ## 7. Glossary
-- **MFI (Maternal-Fetal Interface)**: 태반과 자궁내막이 만나는 반-동종이형 조직 경계
-- **EVT (Extravillous Trophoblast)**: 침습성 영양막 세포; spiral artery remodelling 수행
-- **SCT (Syncytiotrophoblast)**: 다핵 융합 영양막; 영양소 교환·호르몬 분비
-- **VCT (Villous Cytotrophoblast)**: EVT/SCT 분화의 전구세포
-- **DSC (Decidual Stromal Cell)**: 자궁내막 기질 세포; 태반 착상 지지
-- **GRN (Gene Regulatory Network)**: 전사 인자-표적 유전자 조절 네트워크
-- **snATAC-seq**: 단일핵 개방 크로마틴 시퀀싱
-- **Stereo-seq**: STOmics 개발 서브마이크로미터 공간 전사체 플랫폼
-- **CODEX**: 멀티플렉스 단백질 이미징 기술
-- **Toggle switch model**: 두 세포 운명 중 하나를 강화하고 다른 하나를 억제하는 bistable 조절 시스템
-- **Spiral artery remodelling**: EVT가 자궁 나선동맥을 저저항 혈관으로 개조하는 과정
+- **MFI (Maternal-Fetal Interface)**: Hemi-allogeneic tissue junction between placenta and decidua
+- **EVT (Extravillous Trophoblast)**: Invasive trophoblast cells; remodel spiral arteries
+- **SCT (Syncytiotrophoblast)**: Multinucleated fused trophoblast; mediates nutrient exchange and hormone secretion
+- **VCT (Villous Cytotrophoblast)**: Progenitor cells giving rise to both EVT and SCT lineages
+- **DSC (Decidual Stromal Cell)**: Uterine stromal cells supporting placental attachment
+- **GRN (Gene Regulatory Network)**: Transcription factor–target gene regulatory network
+- **snATAC-seq**: Single-nucleus open chromatin sequencing
+- **Stereo-seq**: STOmics submicrometre spatial transcriptomics platform
+- **CODEX**: Multiplexed protein imaging technology
+- **Toggle switch model**: Bistable regulatory system that reinforces one cell fate while actively suppressing the alternative
+- **Spiral artery remodelling**: EVT-driven conversion of uterine spiral arteries into low-resistance vessels

@@ -200,7 +200,7 @@
 ## reproductive-biology
 *Germ cell development, PGC, genomic imprinting*
 
-- [[reproductive-biology/wang-2026-single-cell-spatiotemporal-dissection]] — 인간 MFI 전 임신 기간(GW5~39) snRNA+ATAC 멀티오믹스(191K 핵) + Stereo-seq 공간 전사체(1.1M 세포) atlas; EVT/SCT toggle switch 모델; spiral artery R0→R1→R2 endothelial state 발견; GWAS 통합 (Nature 2026)
+- [[reproductive-biology/wang-2026-single-cell-spatiotemporal-dissection]] — Full-gestation MFI atlas: snRNA+ATAC multiomics (191K nuclei) + Stereo-seq spatial transcriptomics (1.1M cells); EVT/SCT toggle switch model; novel R0→R1→R2 arterial endothelial states; GWAS integration for pregnancy complications (Nature 2026)
 
 ---
 
