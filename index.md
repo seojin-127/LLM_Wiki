@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 43 papers | 43 wiki pages | 26 categories
+**Stats**: 50 papers | 50 wiki pages | 26 categories
 
 ---
 
@@ -59,6 +59,9 @@
 - [[neuroscience/tanabe-2025-role-of-immature-choroid]] — Immature choroid plexus in ASD: CAMDI-KO mice + ASD iPSC organoids; delayed social critical period; metformin rescues ChP maturation and behavior (Cell Reports 2025)
 - [[neuroscience/dony-2025-glucocorticoid-amplifies-inhibitory]] — Chronic GC exposure amplifies inhibitory neuron fate via PBX3 in organoids; lasting ASD risk gene dysregulation; genetic + environmental risk convergence (Sci. Adv. 2025)
 - [[neuroscience/li-2023-single-cell-brain-organoid]] — CHOOSE system: pooled CRISPR screen of 36 ASD risk genes in mosaic cerebral organoids; dorsal IPs + ventral progenitors most vulnerable; ARID1B disrupts OPC/interneuron fate (Nature 2023)
+- [[neuroscience/paulsen-2022-autism-genes-converge]] — 3 ASD genes (KMT5B, ARID1B, CHD8) converge on asynchronous GABAergic/excitatory development in 745K-cell organoid study; genomic context modulates expressivity (Nature 2022)
+- [[neuroscience/jourdon-2023-modeling-idiopathic-autism]] — Idiopathic ASD father-son pairs (n=13): macrocephalic vs. normocephalic show opposite E/I neuron imbalances; TF divergence; convergence with rare-variant ASD genes (Nat. Neurosci. 2023)
+- [[neuroscience/villa-2022-chd8-haploinsufficiency]] — CHD8 haploinsufficiency: macrocephaly-like organoids; accelerated inhibitory + delayed excitatory neurons; mRNA splicing dysregulation in neurons (Cell Reports 2022)
 - [[neuroscience/schafer-2019-pathological-priming-causes]] — Pathological priming: premature activation of late developmental gene networks in idiopathic ASD iPSC-derived NSCs; heterochronicity across ASD individuals (Nat. Neurosci. 2019)
 - [[neuroscience/morelli-2022-mecp2-related-pathways-cortical]] — DM1 cortical organoids: CUG foci → CELF2 dysfunction → MECP2 pathway dysregulation in glutamatergic neurons; convergent with Rett syndrome (Sci. Transl. Med. 2022)
 - [[neuroscience/martinscosta-2024-arid1b-controls-transcriptional]] — ARID1B haploinsufficiency impairs corpus callosum transcriptional programs and axon projection in callosal organoid model (Cell Stem Cell 2024)
@@ -74,6 +77,8 @@
 - [[brain-development/nano-2025-integrated-analysis-molecular]] — Meta-analysis of 23 human cortical datasets; 500+ gene co-expression meta-modules; FEZF2+TSHZ3 drive deep layer specification (validated in chimeroids) (Nat. Neurosci. 2025)
 - [[brain-development/mannens-2025-chromatin-accessibility-during]] — First whole-brain first-trimester chromatin atlas (135 clusters, 6–13 weeks); CNN identifies TF binding sites; MDD → midbrain GABAergic neurons most vulnerable (Nature 2025)
 - [[brain-development/giandomenico-2019-cerebral-organoids-at]] — ALI-COs: air-liquid interface organoids with improved survival; mm-scale nerve tract formation; functional MEA recordings (Nat. Neurosci. 2019)
+- [[brain-development/pasca-2015-functional-cortical-neurons]] — Original hCS protocol: matrix-free 3D cortical organoid; deep+superficial layer neurons; electrophysiologically mature; transcriptional match to fetal cortex (Nat. Methods 2015)
+- [[brain-development/jain-2025-morphodynamics-human-early]] — Long-term live light-sheet morphodynamics of brain organoids; matrix→WNT/YAP1→telencephalon; WLS marks earliest non-telencephalic emergence (Nature 2025)
 - [[brain-development/gordon-2021-long-term-maturation-of]] — Long-term hCS culture (>20 months) matches early postnatal brain development; intrinsic maturation programs (Nat. Neurosci. 2021)
 - [[brain-development/trevino-2020-chromatin-accessibility-forebrain]] — 20-month ATAC-seq + RNA-seq of forebrain organoids; chromatin dynamics match in vivo; disease risk variant mapping (Science 2020)
 - [[brain-development/herring-2022-human-prefrontal-cortex-gene]] — snRNA-seq + snATAC-seq of human PFC from gestation to adulthood; protracted cell-type-specific maturation; organoid deficit at postnatal stages (Cell 2022)
