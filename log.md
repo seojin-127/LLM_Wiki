@@ -19,6 +19,19 @@
 
 ---
 
+### 2026-04-11 — Ingest (paper 95)
+
+- **Paper**: Single-cell spatiotemporal dissection of the human maternal–fetal interface (2026)
+- **Authors**: Cheng Wang, Yan Zhou, Yuejun Wang, ... Susan J. Fisher, Jingjing Li
+- **Category**: reproductive-biology
+- **Files created**:
+  - papers/wang-2026-single-cell-spatiotemporal-dissection.pdf
+  - sources/wang-2026-single-cell-spatiotemporal-dissection.md
+  - wiki/reproductive-biology/wang-2026-single-cell-spatiotemporal-dissection.md
+- **Notes**: Nature 2026, DOI 10.1038/s41586-026-10316-x. snRNA+ATAC 멀티오믹스(191K 핵) + Stereo-seq 공간 전사체(1.1M 세포). Toggle switch 모델, R0→R1→R2 endothelial state, GWAS 통합. Reproductive-biology 카테고리 첫 논문.
+
+---
+
 ### 2026-04-10 — Ingest batch (papers 86-94, new uploads)
 
 - hao-2024 (scFoundation) → single-cell-foundation | cui-2024 (scGPT) → single-cell-foundation

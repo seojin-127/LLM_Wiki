@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 94 papers | 94 wiki pages | 26 categories
+**Stats**: 95 papers | 95 wiki pages | 26 categories
 
 ---
 
@@ -200,7 +200,7 @@
 ## reproductive-biology
 *Germ cell development, PGC, genomic imprinting*
 
-*(no papers yet)*
+- [[reproductive-biology/wang-2026-single-cell-spatiotemporal-dissection]] — 인간 MFI 전 임신 기간(GW5~39) snRNA+ATAC 멀티오믹스(191K 핵) + Stereo-seq 공간 전사체(1.1M 세포) atlas; EVT/SCT toggle switch 모델; spiral artery R0→R1→R2 endothelial state 발견; GWAS 통합 (Nature 2026)
 
 ---
 
