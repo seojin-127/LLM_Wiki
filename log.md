@@ -19,6 +19,15 @@
 
 ---
 
+### 2026-04-10 — Ingest batch (papers 22-36 of 100)
+
+- he-2024 → brain-atlas | mansour-2018 → brain-development | gao-2025 → brain-atlas
+- taverna-2014 → brain-development | tanabe-2025 → neuroscience | langlieb-2023 → brain-atlas
+- zemke-2023 → genomic-dl | dony-2025 → neuroscience | li-2025-uda-seq → single-cell-dl
+- li-2023-choose → neuroscience | schuster-2024-multidgd → single-cell-dl | nano-2025 → brain-development
+- liu-2023-methylome → single-cell-methylation
+- Skipped/duplicates: Kiecker-2001 (pure wet biology, Xenopus), Whalley-2021 (NRN research highlight), Mansour-2018-erratum (0957714383), He-2025 (publisher correction), Kanton-2019-dup (3974428323)
+
 ### 2026-04-10 — Ingest batch (papers 3-20 of 100)
 
 - gordon-2021 → brain-development | herring-2022 → brain-development | corrigan-2025 → brain-atlas

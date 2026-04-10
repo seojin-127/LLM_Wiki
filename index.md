@@ -3,14 +3,14 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 20 papers | 20 wiki pages | 26 categories
+**Stats**: 36 papers | 36 wiki pages | 26 categories
 
 ---
 
 ## genomic-dl
 *DNA language models, variant effect prediction, regulatory genomics*
 
-*(no papers yet)*
+- [[genomic-dl/zemke-2023-conserved-and-divergent-gene]] — Cross-species single-cell multiomics (4 species, 200K+ cells); ~80% of human-specific CREs are TE-derived; ML sequence predictors show preserved regulatory syntax rodent→primate (Nature 2023)
 
 ---
 
@@ -19,6 +19,8 @@
 
 - [[single-cell-dl/wang-2024-scsemiprofiler-advancing-large]] — scSemiProfiler: deep generative model + active learning for cost-effective large-cohort single-cell profiling (Nature Commun. 2024)
 - [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna]] — Cell2fate: Bayesian ODE linearization for RNA velocity modules; improved cell fate prediction, applied to developing human brain (Nature Methods 2025)
+- [[single-cell-dl/li-2025-uda-seq-universal-droplet]] — UDA-seq: universal post-indexing for droplet multimodal single-cell; 100K+ cells from 36 clinical biopsies in one experiment (Nature Methods 2025)
+- [[single-cell-dl/schuster-2024-multidgd-versatile-deep]] — multiDGD: deep generative model for RNA+ATAC joint representation; best reconstruction without feature selection; post-hoc batch integration (Nature Commun. 2024)
 
 ---
 
@@ -32,7 +34,7 @@
 ## single-cell-methylation
 *Single-cell DNA methylation analysis*
 
-*(no papers yet)*
+- [[single-cell-methylation/liu-2023-single-cell-dna-methylome]] — Brain-wide single-cell DNA methylome + 3D multi-omic atlas of adult mouse brain: 301K methylomes + 176K snm3C-seq profiles; 4,673 cell groups; 2.6M DMRs; TF→CRE→target regulatory networks (Nature 2023)
 
 ---
 
@@ -54,6 +56,9 @@
 *ASD, schizophrenia, psychiatric genetics*
 
 - [[neuroscience/jin-2020-in-vivo-perturb-seq]] — In vivo Perturb-Seq of 35 ASD/ND risk genes in mouse cortex; 14 gene modules across neuronal and glial cells; conserved in human ASD brain (Science 2020)
+- [[neuroscience/tanabe-2025-role-of-immature-choroid]] — Immature choroid plexus in ASD: CAMDI-KO mice + ASD iPSC organoids; delayed social critical period; metformin rescues ChP maturation and behavior (Cell Reports 2025)
+- [[neuroscience/dony-2025-glucocorticoid-amplifies-inhibitory]] — Chronic GC exposure amplifies inhibitory neuron fate via PBX3 in organoids; lasting ASD risk gene dysregulation; genetic + environmental risk convergence (Sci. Adv. 2025)
+- [[neuroscience/li-2023-single-cell-brain-organoid]] — CHOOSE system: pooled CRISPR screen of 36 ASD risk genes in mosaic cerebral organoids; dorsal IPs + ventral progenitors most vulnerable; ARID1B disrupts OPC/interneuron fate (Nature 2023)
 - [[neuroscience/schafer-2019-pathological-priming-causes]] — Pathological priming: premature activation of late developmental gene networks in idiopathic ASD iPSC-derived NSCs; heterochronicity across ASD individuals (Nat. Neurosci. 2019)
 - [[neuroscience/morelli-2022-mecp2-related-pathways-cortical]] — DM1 cortical organoids: CUG foci → CELF2 dysfunction → MECP2 pathway dysregulation in glutamatergic neurons; convergent with Rett syndrome (Sci. Transl. Med. 2022)
 - [[neuroscience/martinscosta-2024-arid1b-controls-transcriptional]] — ARID1B haploinsufficiency impairs corpus callosum transcriptional programs and axon projection in callosal organoid model (Cell Stem Cell 2024)
@@ -64,6 +69,9 @@
 *Normal brain development, cortical biology, neurogenesis*
 
 - [[brain-development/kanton-2019-organoid-single-cell-genomic]] — Cross-species organoid atlas (human/chimp/macaque); human neuronal neoteny; human-specific gene expression and chromatin divergence (Nature 2019)
+- [[brain-development/mansour-2018-in-vivo-model-of]] — In vivo vascularized organoid model: hPSC organoids transplanted into mouse brain; functional vasculature, axonal outgrowth, graft-host synaptic connectivity (Nat. Biotechnol. 2018)
+- [[brain-development/taverna-2014-cell-biology-of-neurogenesis]] — Review: cell biology of cortical neurogenesis; NE→RG→oRG/IP classification; oRG as key evolutionary innovation for neocortex expansion (Annu. Rev. Cell Dev. Biol. 2014)
+- [[brain-development/nano-2025-integrated-analysis-molecular]] — Meta-analysis of 23 human cortical datasets; 500+ gene co-expression meta-modules; FEZF2+TSHZ3 drive deep layer specification (validated in chimeroids) (Nat. Neurosci. 2025)
 - [[brain-development/gordon-2021-long-term-maturation-of]] — Long-term hCS culture (>20 months) matches early postnatal brain development; intrinsic maturation programs (Nat. Neurosci. 2021)
 - [[brain-development/trevino-2020-chromatin-accessibility-forebrain]] — 20-month ATAC-seq + RNA-seq of forebrain organoids; chromatin dynamics match in vivo; disease risk variant mapping (Science 2020)
 - [[brain-development/herring-2022-human-prefrontal-cortex-gene]] — snRNA-seq + snATAC-seq of human PFC from gestation to adulthood; protracted cell-type-specific maturation; organoid deficit at postnatal stages (Cell 2022)
@@ -81,6 +89,9 @@
 - [[brain-atlas/corrigan-2025-conservation-and-alteration]] — TAC3 striatal interneurons conserved across 10 mammalian species; mouse Th interneurons are homologues; evolution via redistribution/fate refinement (Nature 2025)
 - [[brain-atlas/steyn-2024-temporal-cortex-cell-atlas]] — Pediatric-adult temporal cortex atlas (75 subtypes, African ancestry); LTK/FREM excitatory neurons with elevated cognition genes in pediatric tissue (Nat. Genet. 2024)
 - [[brain-atlas/zhang-2023-molecularly-defined-spatially]] — Whole mouse brain MERFISH atlas: 5,000+ clusters, 300+ cell types, ~10M cells; spatial modules and ligand-receptor interactions (Nature 2023)
+- [[brain-atlas/he-2024-integrated-transcriptomic-cell-atlas]] — HNOCA: 1.77M cells from 36 datasets/26 protocols; quantifies organoid fidelity vs. primary brain; cell stress universal in vitro artifact (Nature 2024)
+- [[brain-atlas/gao-2025-continuous-cell-type-diversification]] — Mouse visual cortex development atlas (768K+ cells, E11.5–P56); continuous cell-type diversification; many subtypes emerge at eye-opening/critical period (Nature 2025)
+- [[brain-atlas/langlieb-2023-molecular-cytoarchitecture-of]] — Whole adult mouse brain atlas: 92 dissectates snRNA-seq + Slide-seq spatial; highest diversity in midbrain/hypothalamus; psychiatric GWAS heritability enrichment (Nature 2023)
 
 ---
 
