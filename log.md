@@ -19,6 +19,14 @@
 
 ---
 
+### 2026-04-10 — Ingest batch (papers 72-81 of 100)
+
+- chen-2024-brain-cell-atlas → brain-atlas | foord-2025 → lrRNA | mato-blanco-2025 → neuroscience
+- zhang-2025-pfc → brain-development | chen-2025-whole-cortex → brain-atlas | heimberg-2025 → single-cell-foundation
+- domcke-2020 → brain-atlas
+
+---
+
 ### 2026-04-10 — Ingest batch (papers 62-71 of 100)
 
 - de-jong-2021 → neuroscience | zhang-2025-spatial → brain-development | birey-2017 → brain-development

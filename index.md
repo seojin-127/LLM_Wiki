@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 71 papers | 71 wiki pages | 26 categories
+**Stats**: 81 papers | 81 wiki pages | 26 categories
 
 ---
 
@@ -30,7 +30,7 @@
 ## single-cell-foundation
 *Geneformer, scGPT, large-scale single-cell foundation models*
 
-*(no papers yet)*
+- [[single-cell-foundation/heimberg-2025-cell-atlas-foundation-model]] — SCimilarity: metric-learning foundation model; rapid search of 23.4M cells from 412 studies; ILD macrophage queries validated cross-tissue (Nature 2025)
 
 ---
 
@@ -69,6 +69,7 @@
 - [[neuroscience/morelli-2022-mecp2-related-pathways-cortical]] — DM1 cortical organoids: CUG foci → CELF2 dysfunction → MECP2 pathway dysregulation in glutamatergic neurons; convergent with Rett syndrome (Sci. Transl. Med. 2022)
 - [[neuroscience/martinscosta-2024-arid1b-controls-transcriptional]] — ARID1B haploinsufficiency impairs corpus callosum transcriptional programs and axon projection in callosal organoid model (Cell Stem Cell 2024)
 - [[neuroscience/de-jong-2021-cortical-overgrowth-preclinical]] — CNTNAP2 homozygous truncating mutation forebrain organoids show cortical overgrowth via progenitor over-proliferation; CRISPR correction rescues (Nat. Commun. 2021)
+- [[neuroscience/mato-blanco-2025-early-developmental-origins]] — Human NSC risk gene dynamics across corticogenesis; brain organizer hubs; TF depletion simulation; ASD patient NSC TF alterations (Nat. Commun. 2025)
 
 ---
 
@@ -96,6 +97,7 @@
 - [[brain-development/zenk-2024-single-cell-epigenomic-reconstruction]] — Single-cell CUT&Tag (H3K27ac/me3, H3K4me3) from pluripotency→neural organoid; H3K27me3 at neuroectoderm stage required for fate restriction; epigenomic changes precede transcriptional identity (Nat. Neurosci. 2024)
 - [[brain-development/zhang-2025-spatial-dynamics-brain-development]] — Spatial tri-omic (ATAC+RNA+protein + CUT&Tag+RNA+protein) atlas P0-P21 mouse brain; layer TF chromatin persistence; myelin gene priming in corpus callosum; shared dev/neuroinflammation programs (Nature 2025)
 - [[brain-development/birey-2017-assembly-functionally-integrated]] — First forebrain assembloid (hCS+hSS); models human interneuron saltatory migration; Timothy syndrome migration defect rescued by roscovitine (Nature 2017)
+- [[brain-development/zhang-2025-pfc-single-cell-spatiotemporal]] — Human-macaque postnatal PFC atlas (snRNA+ATAC+spatial); human-specific prolonged maturation via glial progenitor proliferation; NDD risk cell types (Nat. Neurosci. 2025)
 
 ---
 
@@ -115,6 +117,9 @@
 - [[brain-atlas/winter-2023-transcriptomic-taxonomy-mouse]] — Brain-wide SPN taxonomy: 65,002 neurons, 76 types, 3-component organization; LIM homeobox TF code for reticulospinal neurons (Nature 2023)
 - [[brain-atlas/zhou-2023-brain-wide-correspondence-neuronal]] — epi-retro-seq: 33,034 neurons linking epigenomes to projections; 32 source regions × 24 targets; integrated into BICCN atlas (Nature 2023)
 - [[brain-atlas/yao-2023-high-resolution-transcriptomic-spatial]] — Allen Brain Cell Atlas: ~4M scRNA-seq + 4.3M MERFISH cells, 5,322 clusters; dorsal-ventral dichotomy; combinatorial TF code; whole adult mouse brain (Nature 2023)
+- [[brain-atlas/chen-2024-brain-cell-atlas-integrating]] — Brain Cell Atlas: 26.3M cells from 70 human + 103 mouse studies; ML consensus annotation; PCDH9-high microglia; hippocampus vs. PFC GRN differences (Nat. Med. 2024)
+- [[brain-atlas/chen-2025-whole-cortex-in-situ]] — BARseq: 10.3M cells, 4.2M cortical neurons; transcriptomic type composition predicts area identity; sensory input sharpens area identity (enucleation) (Nature 2025)
+- [[brain-atlas/domcke-2020-human-cell-atlas-fetal]] — sci-ATAC-seq3: ~800K fetal chromatin accessibility profiles, 15 organs; TF activator/repressor classification; organ-specific endothelial chromatin (Science 2020)
 
 ---
 
@@ -129,6 +134,7 @@
 *Long-read RNA-seq: Iso-seq, MAS-seq, ONT*
 
 - [[lrRNA/joglekar-2024-single-cell-long-read]] — Single-cell long-read brain isoform atlas: 72% of genes isoform-variable; cell-type-specific splicing dominant; P21→P28 adolescent transition peaks; mouse→human conservation (Nat. Neurosci. 2024)
+- [[lrRNA/foord-2025-spatial-long-read-approach]] — Spl-ISO-Seq: spatial long-read isoform mapping at near-single-cell resolution; layer 4 excitatory neurons have most pubertal splicing changes; post-synaptic function linked (Nat. Commun. 2025)
 
 ---
 
