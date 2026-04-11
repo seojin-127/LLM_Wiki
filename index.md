@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 95 papers | 95 wiki pages | 26 categories
+**Stats**: 123 papers | 123 wiki pages | 26 categories
 
 ---
 
@@ -27,6 +27,27 @@
 - [[single-cell-dl/schuster-2024-multidgd-versatile-deep]] — multiDGD: deep generative model for RNA+ATAC joint representation; best reconstruction without feature selection; post-hoc batch integration (Nature Commun. 2024)
 - [[single-cell-dl/ergen-2024-consensus-prediction-cell]] — popV: ensemble + ontology-voting for cell type label transfer with calibrated uncertainty; reduces manual review to ambiguous cells only (Nat. Genet. 2024)
 - [[single-cell-dl/fischer-2024-sctab-scaling-cross-tissue]] — scTab: tabular DL for cross-tissue cell type annotation; trained on 22.2M cells; scaling laws confirmed; data augmentation improves generalization (Nat. Commun. 2024)
+- [[single-cell-dl/caskey-2026-single-cell-genomics-decontamination]] — CellSweep: multinomial mixture model (EM) for ambient RNA decontamination; 98.84% cross-species removal; 25 sec on 16 threads; works on 10x, Smart-seq2, scATAC, Visium HD (bioRxiv 2026)
+- [[single-cell-dl/ge-2026-prototype-based-continual-learning-for]] — scEvolver: prototype-based continual learning on scGPT backbone (LoRA+MoE); memory-augmented prototypes + hard-sample replay + MAPPL loss; +24.5% macro-F1 in 5-shot; discovers SF-like metaplastic cells in IBD gut (bioRxiv 2026)
+- [[single-cell-dl/lopez-2018-deep-generative-modeling-for]] — scVI: foundational VAE+ZINB generative model for scRNA-seq; batch correction, normalization, clustering, DE in one framework; scales to 1M+ cells (Nat. Methods 2018)
+- [[single-cell-dl/korsunsky-2019-fast-sensitive-and-accurate]] — Harmony: iterative soft-clustering linear batch correction on PCA embeddings; ~1M cells on laptop; LISI metric introduced; best scATAC-seq integrator (Nat. Methods 2019)
+- [[single-cell-dl/aran-2019-reference-based-analysis-of]] — SingleR: iterative Spearman correlation reference-based annotation; discovers profibrotic transitional macrophages (CX3CR1+SiglecF+) in lung fibrosis (Nat. Immunol. 2019)
+- [[single-cell-dl/xu-2021-probabilistic-harmonization-and]] — scANVI: semi-supervised extension of scVI for joint harmonization + annotation; best labeled integration in scIB benchmark (Mol. Syst. Biol. 2021)
+- [[single-cell-dl/hao-2021-integrated-analysis-of-multimodal]] — Seurat v4 WNN: per-cell modality-weighted multimodal integration; 211K PBMC CITE-seq atlas; resolves T cell subtypes invisible to RNA alone (Cell 2021)
+- [[single-cell-dl/lotfollahi-2022-mapping-single-cell-data]] — scArches: transfer learning "architecture surgery" for privacy-preserving reference atlas mapping; 4 orders of magnitude fewer updated parameters (Nat. Biotechnol. 2022)
+- [[single-cell-dl/luecken-2022-benchmarking-atlas-level-data]] — scIB: definitive integration benchmark (68 methods × 13 atlas tasks); scANVI tops labeled; Scanorama/scVI tops unsupervised; Harmony best scATAC (Nat. Methods 2022)
+- [[single-cell-dl/dominguez-conde-2022-cross-tissue-immune-cell]] — CellTypist + cross-tissue immune atlas (360K cells, 16 tissues, 101 immune types); logistic regression SGD annotation scales to millions; erythrophagocytic macrophage convergence (Science 2022)
+- [[single-cell-dl/dedonno-2023-population-level-integration-of]] — scPoli: prototype-loss + sample embeddings for population-level integration; +5% over scANVI; open-world novel cell types; scales to 7.8M cells (Nat. Methods 2023)
+- [[single-cell-dl/liu-2024-discovery-of-optimal-cell]] — NS-Forest v4.0: random forest + decision tree minimal marker gene selection; On-Target Fraction metric; outperforms DE-based markers on brain/kidney/lung atlases (BMC Methods 2024)
+- [[single-cell-dl/boyeau-2025-deep-generative-modeling-of]] — MrVI: hierarchical Bayesian VAE with per-cell sample distance matrices for annotation-free cohort stratification; COVID-19 T cell severity grouping; IBD pericyte discovery (Nat. Methods 2025)
+- [[single-cell-dl/setty-2019-characterization-of-cell-fate]] — Palantir: probabilistic fate mapping on diffusion-map manifold; per-cell branch probabilities + differentiation potential (entropy); human CD34+ hematopoiesis continuous fate model (Nat. Biotechnol. 2019)
+- [[single-cell-dl/lange-2022-cellrank-for-directed-single]] — CellRank: directed Markov chain on phenotypic manifold combining RNA velocity + similarity; auto-detects initial/terminal states via GPCCA; works on regeneration/reprogramming (Nat. Methods 2022)
+- [[single-cell-dl/kamimoto-2023-dissecting-cell-identity-via]] — CellOracle: cluster-specific directional GRNs from scRNA+scATAC; signal propagation simulates TF KO as 2D cell-state transition vectors; validates novel noto prechordal phenotype (Nature 2023)
+- [[single-cell-dl/klein-2025-mapping-cells-through-time]] — moscot: scalable multimodal optimal-transport framework (W/GW/FGW); 1.7M-cell mouse embryogenesis on a laptop; unifies temporal, spatial, spatiotemporal mapping (Nature 2025)
+- [[single-cell-dl/vinyard-2025-learning-cell-dynamics-with]] — scDiffEq: neural SDE with cell-state-dependent drift and diffusion networks; 54.8% LARRY fate prediction (+6% over PRESCIENT); optimal drift/diffusion ratio ~2.5 (Nat. Mach. Intell. 2025)
+- [[single-cell-dl/nadig-2025-transcriptome-wide-analysis-of]] — TRADE: ash-based effect-size distribution for Perturb-seq; transcriptome-wide impact metric; typical perturbation hits ~45 genes (essentials >500); only 13-36% of TI in FDR-sig genes (Nat. Genet. 2025)
+- [[single-cell-dl/gorin-2025-monod-model-based-discovery]] — Monod: fits biophysical stochastic transcription models (bursty default) to joint nascent/mature counts; distinguishes noise vs. mean modulation; cross-platform integration without distortive normalization (Nat. Methods 2025)
+- [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] — Squidiff: conditional denoising diffusion model for scRNA-seq; predicts differentiation, gene perturbation, drug response via semantic latent manipulation; captures transient states VAE/GNN methods miss (Nat. Methods 2026)
 
 ---
 
@@ -37,6 +58,7 @@
 - [[single-cell-foundation/cui-2024-scgpt-toward-building-foundation]] — scGPT: generative pretrained transformer on 33M+ cells; state-of-the-art on cell type annotation, multi-batch integration, perturbation prediction, and gene network inference (Nat. Methods 2024)
 - [[single-cell-foundation/hao-2024-large-scale-foundation-model]] — scFoundation: 100M parameter asymmetric transformer pretrained on 50M+ human scRNA-seq profiles; state-of-the-art on gene expression enhancement, drug response, perturbation prediction (Nat. Methods 2024)
 - [[single-cell-foundation/chen-2025-epiagent-foundation-model-single-cell]] — EpiAgent: first foundation model for scATAC-seq; "cell sentence" encoding; zero-shot annotation; in silico CRE knockout; state-of-the-art on epigenomic tasks (Nat. Methods 2025)
+- [[single-cell-foundation/szalata-2026-perturbert-learning-gene-co]] — PerturBERT: BERT encoder (57.6M params) pretrained on ~1M perturbation signatures (L1000+Perturb-seq); masked-gene modeling; SOTA gene dependency R²=0.8805; beats scGPT on 10/15 tasks with 30× less data (ICLR 2026)
 
 ---
 
@@ -77,6 +99,7 @@
 - [[neuroscience/de-jong-2021-cortical-overgrowth-preclinical]] — CNTNAP2 homozygous truncating mutation forebrain organoids show cortical overgrowth via progenitor over-proliferation; CRISPR correction rescues (Nat. Commun. 2021)
 - [[neuroscience/mato-blanco-2025-early-developmental-origins]] — Human NSC risk gene dynamics across corticogenesis; brain organizer hubs; TF depletion simulation; ASD patient NSC TF alterations (Nat. Commun. 2025)
 - [[neuroscience/dubuc-2026-linking-rare-variants-cell-type]] — Framework linking rare variants in profound autism to cell-type function via brain transcriptomics + foundation models; specificity × sensitivity trade-off; AI inference + postmortem validation (Cell Genomics 2026)
+- [[neuroscience/amelan-2026-crispr-knockout-screens-reveal]] — Genome-wide CRISPR KO screen in mESC → neural lineage; 331 neural-differentiation-essential genes (NEGs); 8 mouse KO hits with neuroanatomy defects; PEDS1 recessive microcephaly validated in family (Nat. Neurosci. 2026)
 
 ---
 
@@ -88,6 +111,7 @@
 - [[brain-development/taverna-2014-cell-biology-of-neurogenesis]] — Review: cell biology of cortical neurogenesis; NE→RG→oRG/IP classification; oRG as key evolutionary innovation for neocortex expansion (Annu. Rev. Cell Dev. Biol. 2014)
 - [[brain-development/nano-2025-integrated-analysis-molecular]] — Meta-analysis of 23 human cortical datasets; 500+ gene co-expression meta-modules; FEZF2+TSHZ3 drive deep layer specification (validated in chimeroids) (Nat. Neurosci. 2025)
 - [[brain-development/mannens-2025-chromatin-accessibility-during]] — First whole-brain first-trimester chromatin atlas (135 clusters, 6–13 weeks); CNN identifies TF binding sites; MDD → midbrain GABAergic neurons most vulnerable (Nature 2025)
+- [[brain-development/dibella-2021-molecular-logic-of-cellular]] — Mouse somatosensory cortex E10.5–P4 atlas (98K scRNA + scATAC + Slide-seq); PNs diversify post-mitotically (APs ordered by age, not subtype); glial/neuronal split at E13.5 (Nature 2021)
 - [[brain-development/giandomenico-2019-cerebral-organoids-at]] — ALI-COs: air-liquid interface organoids with improved survival; mm-scale nerve tract formation; functional MEA recordings (Nat. Neurosci. 2019)
 - [[brain-development/pasca-2015-functional-cortical-neurons]] — Original hCS protocol: matrix-free 3D cortical organoid; deep+superficial layer neurons; electrophysiologically mature; transcriptional match to fetal cortex (Nat. Methods 2015)
 - [[brain-development/jain-2025-morphodynamics-human-early]] — Long-term live light-sheet morphodynamics of brain organoids; matrix→WNT/YAP1→telencephalon; WLS marks earliest non-telencephalic emergence (Nature 2025)
@@ -158,7 +182,9 @@
 ## drug-resistance
 *Cancer proteomics, drug resistance mechanisms*
 
-*(no papers yet)*
+- [[drug-resistance/antonopoulos-2026-zero-shot-prediction-of-drug]] — LEMBAS RNN (phosphoproteomics + signaling network) zero-shot predicts cancer drug response via TF activity; Pearson r up to 0.79; discovers non-canonical FOXO3:S7 via SHP099 (PLoS Comput. Biol. 2026)
+- [[drug-resistance/chen-2022-deep-transfer-learning-of]] — scDEAL: bulk→single-cell transfer learning (DaNN + MMD) for drug response; cell-cluster regularization preserves heterogeneity; F1 0.89 across 6 scRNA-seq benchmarks (Nat. Commun. 2022)
+- [[drug-resistance/alsulami-2026-predicting-and-interpreting-cell]] — PrePR-CT: graph attention network with cell-type-specific co-expression graphs as inductive bias; unseen-cell-type generalization beats scGen/CPA/chemCPA; SMILES-conditioned drug embedding (Nat. Mach. Intell. 2026)
 
 ---
 
@@ -242,7 +268,8 @@
 ## overviews
 *Synthetic pages spanning multiple papers*
 
-*(no overviews yet)*
+- [[overviews/single-cell-integration-methods]] — 4가지 패러다임(Harmony/scVI계열/WNN/FM) 비교; scIB 벤치마크 결과 요약; 상황별 결정 프레임워크; scVI→scANVI→scArches→scPoli→MrVI 계보 정리
+- [[overviews/brain-organoid-fidelity]] — 오가노이드 fidelity 6개 층위별 평가; 스트레스 아티팩트의 이중성(보편적이지만 분리 가능); 공학적 해결책(이식·혈관화·어셈블로이드) 비교; 연구 질문별 적합성 결정 트리
 
 ---
 
@@ -262,3 +289,4 @@
 - [[other/nowakowski-2025-new-frontier-understanding-human]] — Perspective: advances in human + mammalian brain development atlases; novel cell populations; cross-species conservation/divergence; links to NDD mechanisms (Nature 2025)
 - [[other/klingler-2022-mapping-molecular-cellular-complexity]] — Review: molecular + cellular mechanisms of cortical malformations (microcephaly, lissencephaly, polymicrogyria, dysplasia, heterotopia); centrosome/mTOR/actin pathways (Science 2022)
 - [[other/ding-2026-scgpt-end-to-end-protocol]] — Protocol: scGPT fine-tuning for retinal cell type annotation; 99.5% F1-score; command-line + Jupyter workflow; accessible deployment guide (Nat. Protocols 2026)
+- [[other/melsted-2026-rna-seq-analysis-in-seconds]] — GPU-accelerated kallisto: prefix-scan EC intersection + EM on NVIDIA GPU; 48× speedup (295M reads: 40 min→50 sec); 3.6M paired-end reads/sec on RTX 5090; bgzip input required (bioRxiv 2026)

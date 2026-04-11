@@ -4,6 +4,26 @@
 
 ---
 
+### 2026-04-11 — Ingest batch (perturbation/causal methods, papers 112-123)
+
+- **Papers ingested** (12 편, Q1/Q2 overview 준비용):
+  1. Kamimoto et al. (2023) — CellOracle: GRN + in silico TF perturbation → `single-cell-dl`
+  2. Nadig, Replogle et al. (2025) — TRADE: transcriptome-wide impact for Perturb-seq → `single-cell-dl`
+  3. Lange, Theis et al. (2022) — CellRank: directed Markov chain fate mapping → `single-cell-dl`
+  4. Setty, Pe'er et al. (2019) — Palantir: probabilistic fate on diffusion map → `single-cell-dl`
+  5. He, Azizi et al. (2026) — Squidiff: diffusion model for perturbation prediction → `single-cell-dl`
+  6. Amelan, Shifman et al. (2026) — Genome-wide CRISPR KO for neural differentiation, PEDS1 → `neuroscience`
+  7. Klein, Theis et al. (2025) — moscot: scalable multimodal optimal transport → `single-cell-dl`
+  8. Vinyard, Pinello et al. (2025) — scDiffEq: neural SDE with state-dependent diffusion → `single-cell-dl`
+  9. Alsulami, Tegner et al. (2026) — PrePR-CT: graph-prior GAT for cell-type drug response → `drug-resistance`
+  10. Gorin, Pachter et al. (2025) — Monod: biophysical stochastic transcription models → `single-cell-dl`
+  11. Di Bella, Arlotta et al. (2021) — Mouse cortex molecular logic atlas → `brain-development`
+  12. Chen, Ma et al. (2022) — scDEAL: bulk→single-cell transfer learning for drug response → `drug-resistance`
+- **Files created**: 12 PDFs in papers/ + 12 sources/ + 12 wiki/
+- **Notes**: All from Downloads/. Total: 123 papers. Balance option (HIGH 7 + MEDIUM 5) from triage of 24 PDFs. Purpose: prepare for question-driven overview on "gene-level perturbation vs. variant interpretation" and "pattern-learning vs. causal structure" (co-expression, latent, GRN, perturbation). Skipped duplicates: s41586-022-05279-8 (=fleck-2023), s41586-025-09997-7 (=ding-2026), s44330-024-00015-2 (=liu-2024 NS-Forest).
+
+---
+
 ## Format
 
 ```
@@ -16,6 +36,61 @@
   - wiki/category/filename.md
 - **Notes**: any relevant notes
 ```
+
+---
+
+### 2026-04-11 — Overview page created (brain organoid fidelity)
+
+- **Title**: Brain Organoid Fidelity: What Organoids Get Right and What They Don't
+- **File**: wiki/overviews/brain-organoid-fidelity.md
+- **Papers synthesized**: 12편 (bhaduri-2020, he-2024 HNOCA, uzquiano-2022, sonthalia-2026, gordon-2021, herring-2022, kanton-2019, mansour-2018, revah-2022, cakir-2019, glass-2026, birtele-2025)
+- **Content**: 6개 fidelity 층위 표, 스트레스 아티팩트 통합 분석, 공학적 해결책 비교, 연구 질문별 결정 트리
+
+---
+
+### 2026-04-11 — Overview page created
+
+- **Title**: Single-Cell Integration Methods: A Comparative Overview
+- **File**: wiki/overviews/single-cell-integration-methods.md
+- **Papers synthesized**: 11편 (scVI, Harmony, scANVI, Seurat WNN, scArches, scIB, CellTypist, scPoli, multiDGD, MrVI, SCimilarity)
+- **Content**: 4 paradigms, scIB benchmark table, decision framework, scVI lineage diagram, practical pipeline recommendation
+
+---
+
+### 2026-04-11 — Ingest batch (papers 101-111, single-cell tools)
+
+- **Papers ingested** (all → `single-cell-dl`):
+  1. Lopez, Regier, Cole, Jordan, Yosef (2018) — scVI → `single-cell-dl`
+  2. Korsunsky, Millard, Fan, Raychaudhuri (2019) — Harmony → `single-cell-dl`
+  3. Aran, Looney, Liu, Bhattacharya (2019) — SingleR → `single-cell-dl`
+  4. Xu, Lopez, Mehlman, Yosef (2021) — scANVI → `single-cell-dl`
+  5. Hao, Hao, Andersen-Nissen, Satija (2021) — Seurat v4 / WNN → `single-cell-dl`
+  6. Lotfollahi, Luecken, Theis (2022) — scArches → `single-cell-dl`
+  7. Luecken, Buttner, Theis (2022) — scIB benchmark → `single-cell-dl`
+  8. Dominguez Conde, Xu, Teichmann (2022) — CellTypist → `single-cell-dl`
+  9. De Donno, Lotfollahi, Theis (2023) — scPoli → `single-cell-dl`
+  10. Liu, Scheuermann, Zhang (2024) — NS-Forest v4.0 → `single-cell-dl`
+  11. Boyeau, Hong, Ergen, Yosef (2025) — MrVI → `single-cell-dl`
+- **Files created**: 11 PDFs in papers/ + 11 sources/ + 11 wiki/single-cell-dl/
+- **Notes**: All from Downloads/. Total: 111 papers. Core scVI-tools ecosystem (scVI→scANVI→scArches→scPoli→MrVI) now fully covered. Also added Harmony, SingleR, CellTypist, Seurat WNN, NS-Forest, and the definitive scIB benchmark paper.
+
+---
+
+### 2026-04-11 — Ingest batch (papers 96-100)
+
+- **Papers ingested**:
+  1. Antonopoulos & Collins (2026) — Zero-shot prediction of drug response via LEMBAS RNN + TF activity → `drug-resistance`
+  2. Szalata, Bica, Schaar, Lotfollahi (2026) — PerturBERT: BERT on perturbation signatures → `single-cell-foundation`
+  3. Caskey & Stoeckius (2026) — CellSweep: multinomial EM ambient RNA decontamination → `single-cell-dl`
+  4. Melsted, Booeshaghi, Pachter (2026) — GPU-accelerated kallisto RNA-seq → `other`
+  5. Ge, Guo, Wang, Ding, Zhang (2026) — scEvolver: continual learning cell annotation → `single-cell-dl`
+- **Files created**:
+  - papers/antonopoulos-2026-zero-shot-prediction-of-drug.pdf + sources/ + wiki/drug-resistance/
+  - papers/szalata-2026-perturbert-learning-gene-co.pdf + sources/ + wiki/single-cell-foundation/
+  - papers/caskey-2026-single-cell-genomics-decontamination.pdf + sources/ + wiki/single-cell-dl/
+  - papers/melsted-2026-rna-seq-analysis-in-seconds.pdf + sources/ + wiki/other/
+  - papers/ge-2026-prototype-based-continual-learning-for.pdf + sources/ + wiki/single-cell-dl/
+- **Notes**: All 5 PDFs from Desktop/Paper/. Total: 100 papers. New category populated: drug-resistance (first paper). DOIs: 10.1371/journal.pcbi.1014100, ICLR 2026 workshop (no DOI), 10.64898/2026.03.04.709349, 10.64898/2026.03.04.709526, 10.64898/2026.03.05.709973.
 
 ---
 
