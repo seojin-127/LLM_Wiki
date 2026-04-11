@@ -194,6 +194,8 @@ The wiki already contains the components to ask this:
 
 This is the loop the catalog cannot close. Once the atlas is a model rather than a table, the loop runs: **reference → project → compare → predict → perturb → update reference**. That is the shift.
 
+**What this loop leaves open — and where the next overview picks up**: the *predict → perturb* step is the hardest one to evaluate, because "predict a perturbation" means three different things (describe dynamics, generate plausible states, intervene on a causal graph) and most methods silently conflate them. For the method-by-method breakdown of what each tool actually delivers, how gene-level perturbation relates to variant interpretation, and which steps of this loop are currently unbuildable, see [[overviews/perturbation-prediction-and-causal-inference]].
+
 ---
 
 ## Summary in One Paragraph
@@ -204,11 +206,11 @@ A developmental brain atlas should be a **queryable, multimodal, trajectory-awar
 
 ## Open Problems the Wiki Does Not Yet Answer
 
-1. **No head-to-head on perturbation prediction**: scGPT, scFoundation, and PerturBERT all claim perturbation-prediction capability, but there is no wiki-level benchmark showing which is reliable for a *developmental* question.
+1. **No head-to-head on perturbation prediction**: scGPT, scFoundation, and PerturBERT all claim perturbation-prediction capability, but there is no wiki-level benchmark showing which is reliable for a *developmental* question. See [[overviews/perturbation-prediction-and-causal-inference]] for why this gap is especially dangerous — most of these methods are level-2 (pattern learning) while the claim is level-3 (causal intervention).
 2. **Trajectory alignment across species is unresolved**: the wiki has cross-species atlases and trajectory methods, but aligning heterochronic trajectories so that "equivalent developmental time" is comparable is not solved.
 3. **Disease divergence timing is under-quantified**: Jourdon et al., Paulsen et al., and Mato-Blanco et al. all localize divergence windows, but there is no shared framework converting "divergence" into a stage coordinate on the normal atlas.
 4. **Multimodal atlases are still mostly RNA-first**: truly joint RNA + ATAC + methylation developmental atlases remain rare; the leading-indicator framework above is assembled across papers rather than within one.
-5. **Closing the perturbation loop**: the full reference → predict → Perturb-seq → update-reference loop has not been demonstrated end-to-end in any single paper in this wiki.
+5. **Closing the perturbation loop**: the full reference → predict → Perturb-seq → update-reference loop has not been demonstrated end-to-end in any single paper in this wiki. [[overviews/perturbation-prediction-and-causal-inference]] maps each step of the loop to the specific methods that can (and cannot) support it, and identifies the variant-to-cell-state gap as the most consequential missing piece.
 
 ---
 
