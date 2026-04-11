@@ -59,6 +59,35 @@ Every method in this wiki's perturbation literature lives on one of these levels
 
 ## 2. What co-expression, latent representation, and GRN inference each tell you
 
+At a glance — the four primitive approaches, what they actually compute, and which claim level they can legitimately support:
+
+```
+┌────────────────┬──────────────────┬──────────────────┬─────────┬──────────────────┐
+│ Approach       │ Input signal     │ What it learns   │ Claim   │ Wiki examples    │
+├────────────────┼──────────────────┼──────────────────┼─────────┼──────────────────┤
+│ Co-expression  │ Gene × gene      │ Undirected       │ Level 1 │ PrePR-CT prior,  │
+│                │ correlation      │ gene graph       │ (+ bias │ WGCNA modules    │
+│                │                  │ (no direction)   │  for 2) │                  │
+├────────────────┼──────────────────┼──────────────────┼─────────┼──────────────────┤
+│ Latent         │ Cell × gene      │ Low-dim manifold │ Level 2 │ scVI, scGPT,     │
+│ representation │ matrix (+ batch) │ where similar    │         │ scFoundation,    │
+│ (VAE / FM /    │                  │ cells are close. │         │ Squidiff,        │
+│  diffusion)    │                  │ No causal dirs.  │         │ PerturBERT       │
+├────────────────┼──────────────────┼──────────────────┼─────────┼──────────────────┤
+│ GRN inference  │ RNA + ATAC +     │ Directional      │ Level 3 │ CellOracle,      │
+│ (motif-fixed)  │ motif scan       │ TF → target      │ (by     │ Fleck, Zenk,     │
+│                │                  │ with propagation │ design) │ Ding             │
+│                │                  │ operator         │         │                  │
+├────────────────┼──────────────────┼──────────────────┼─────────┼──────────────────┤
+│ Intervention   │ CRISPR KO/KD +   │ Measured         │ Level 3 │ Jin Perturb-seq, │
+│ (wet lab)      │ scRNA-seq        │ response per     │ (gold   │ Amelan screens,  │
+│                │                  │ perturbation     │  std)   │ Replogle (TRADE) │
+└────────────────┴──────────────────┴──────────────────┴─────────┴──────────────────┘
+                     │                    │                  │
+                     ▼                    ▼                  ▼
+               correlational        interpolation     causal / counterfactual
+```
+
 - **Co-expression** (what gene pairs move together) is purely correlational. Two genes can covary because one regulates the other, because both respond to the same upstream driver, or because they mark the same cell state. From co-expression alone you cannot tell which. Gene-gene graphs used in [[drug-resistance/alsulami-2026-predicting-and-interpreting-cell]] (PrePR-CT) are useful as an **inductive bias** that makes learning easier, not as a causal map.
 - **Latent representation** (what VAEs, foundation models, and diffusion models learn) compresses high-dimensional gene space into a lower-dimensional manifold where "similar cells are close." This is useful for interpolation between observed states but carries no guarantee about *causal directions* in the original gene space. [[single-cell-foundation/cui-2024-scgpt-toward-building-foundation]] (scGPT) and [[single-cell-foundation/hao-2024-large-scale-foundation-model]] (scFoundation) learn rich latent spaces, but their perturbation-prediction benchmarks ask "can you reproduce observed perturbation responses" — a level-2 test, not a level-3 one. [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] (Squidiff) is even more explicit: perturbation is a `Δz_sem` direction learned from paired examples, not a causal edit.
 - **GRN inference** (inferring which TF regulates which target) at least has *directional* edges, but those directions usually come from motif priors, not from interventional data. Classical co-expression-based GRN methods (SCENIC, GRNBoost2) orient edges by convention, not by evidence. [[single-cell-dl/kamimoto-2023-dissecting-cell-identity-via]] (CellOracle) makes a specific move to sidestep this: it fixes directionality using motif scans on open chromatin (scATAC), then uses the fitted linear model as a **signal-propagation operator**. That is a level-3 claim: the model is designed to be applied as an intervention.
@@ -66,10 +95,42 @@ Every method in this wiki's perturbation literature lives on one of these levels
 
 ## 3. Where the gap shows up in practice
 
-- **Level 2 masquerading as level 3**: when [[single-cell-foundation/szalata-2026-perturbert-learning-gene-co]] (PerturBERT) or [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] (Squidiff) are asked to predict a *novel* perturbation whose target gene was never in the training set, performance degrades in ways that pure-interpolation methods must. They are working on the manifold of observed perturbation signatures, not on a causal model.
-- **Level 3 claim, level 1 validation**: [[single-cell-dl/kamimoto-2023-dissecting-cell-identity-via]] (CellOracle) uses a linear-GRN operator as a causal model, but its validation is benchmarked against known haematopoiesis biology and a novel zebrafish phenotype — real interventional validation, but only in a handful of cases. Whether the operator generalizes as a causal model across thousands of TFs in arbitrary cell states is not shown.
-- **Level 1 correctly scoped**: [[single-cell-dl/setty-2019-characterization-of-cell-fate]] (Palantir), [[single-cell-dl/lange-2022-cellrank-for-directed-single]] (CellRank), and [[single-cell-dl/klein-2025-mapping-cells-through-time]] (moscot) are explicitly descriptive — they reconstruct observed trajectories. They do not claim to predict intervention, and so are not at risk of overclaiming.
-- **Statistical grading**: [[single-cell-dl/nadig-2025-transcriptome-wide-analysis-of]] (TRADE) exists because even level-3 wet-lab Perturb-seq is undersampled — most of the true effect variance is missed by per-gene FDR thresholds. TRADE says: before you compare any prediction to "ground truth Perturb-seq DEGs," understand that the ground truth itself only captures ~13-36% of the transcriptome-wide impact.
+The diagnostic question to ask any "perturbation prediction" paper: **what claim level does the model advertise, and what claim level does the validation actually support?** The two rarely match. The 3×3 diagnostic:
+
+```
+                            VALIDATION LEVEL
+                   ┌──────────────┬──────────────┬──────────────┐
+                   │  1: observed │ 2: held-out  │ 3: novel     │
+                   │  recap       │ perturbation │ intervention │
+                   ├──────────────┼──────────────┼──────────────┤
+           1       │   HONEST     │   over-      │    over-     │
+   C    describe  │ (Palantir,   │   scoped     │   scoped     │
+   L    dynamics  │  CellRank,   │              │              │
+   A              │  moscot,     │              │              │
+   I              │  Monod)      │              │              │
+   M              ├──────────────┼──────────────┼──────────────┤
+           2       │  under-      │   HONEST     │   aspira-    │
+   L   generate  │  sold        │ (scGPT,      │   tional     │
+   E   in-dist    │              │  Squidiff,   │              │
+   V              │              │  PerturBERT, │              │
+   E              │              │  PrePR-CT)   │              │
+   L              ├──────────────┼──────────────┼──────────────┤
+           3       │ silent       │ LEVEL 2      │   HONEST     │
+     intervene    │ over-        │ MASQUERADING │ (CellOracle  │
+                   │ claim        │ AS LEVEL 3 ⚠ │  zebrafish   │
+                   │              │              │  noto KO)    │
+                   └──────────────┴──────────────┴──────────────┘
+
+          Above the diagonal = under-sold; below the diagonal = over-sold.
+          The common failure mode is the ⚠ cell (bottom-middle).
+```
+
+Four characteristic patterns:
+
+- **⚠ Level 2 masquerading as level 3** (bottom-middle cell): when [[single-cell-foundation/szalata-2026-perturbert-learning-gene-co]] (PerturBERT) or [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] (Squidiff) are asked to predict a *novel* perturbation whose target gene was never in the training set, performance degrades in ways that pure-interpolation methods must. They are working on the manifold of observed perturbation signatures, not on a causal model.
+- **Level 3 claim, level 1 validation** (bottom-left): [[single-cell-dl/kamimoto-2023-dissecting-cell-identity-via]] (CellOracle) uses a linear-GRN operator as a causal model, but its validation is benchmarked against known haematopoiesis biology and a novel zebrafish phenotype — real interventional validation, but only in a handful of cases. Whether the operator generalizes as a causal model across thousands of TFs in arbitrary cell states is not shown.
+- **Level 1 correctly scoped** (top-left): [[single-cell-dl/setty-2019-characterization-of-cell-fate]] (Palantir), [[single-cell-dl/lange-2022-cellrank-for-directed-single]] (CellRank), and [[single-cell-dl/klein-2025-mapping-cells-through-time]] (moscot) are explicitly descriptive — they reconstruct observed trajectories. They do not claim to predict intervention, and so are not at risk of overclaiming.
+- **Statistical grading** (the ruler under the whole matrix): [[single-cell-dl/nadig-2025-transcriptome-wide-analysis-of]] (TRADE) exists because even level-3 wet-lab Perturb-seq is undersampled — most of the true effect variance is missed by per-gene FDR thresholds. TRADE says: before you compare any prediction to "ground truth Perturb-seq DEGs," understand that the ground truth itself only captures ~13-36% of the transcriptome-wide impact.
 
 ---
 
