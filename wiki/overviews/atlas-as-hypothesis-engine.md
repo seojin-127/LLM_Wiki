@@ -103,14 +103,9 @@ The consequence for atlases: a developmental atlas stored as `cell_id → cell_t
 
 ## 4. Canonical markers vs. gene programs and trajectories
 
-Canonical markers are a convenient human-interpretable shorthand. They are not the underlying biological unit. The wiki evidence for this is consistent:
+Canonical markers are a convenient human-interpretable shorthand; they are not the underlying biological unit. Markers fire *after* chromatin has committed ([[brain-development/trevino-2020-chromatin-accessibility-forebrain]], [[brain-development/mannens-2025-chromatin-accessibility-during]]), they differ across species even when the underlying class is conserved ([[brain-atlas/corrigan-2025-conservation-and-alteration]]), and they compress a continuous, multi-axis quantity (specification × maturation × plasticity) into a binary label. The useful representation for developmental cell state is **program activity along a trajectory**, not "marker X+ marker Y−".
 
-- **Markers are late**. By the time a canonical marker is expressed at classifier-friendly levels, the cell has already committed — chromatin opened first ([[brain-development/trevino-2020-chromatin-accessibility-forebrain]], [[brain-development/mannens-2025-chromatin-accessibility-during]]).
-- **Markers are noisy across species**. The same cell class expresses different marker genes in human vs. mouse vs. non-human primate, even when the underlying program is conserved ([[brain-atlas/corrigan-2025-conservation-and-alteration]]).
-- **Programs transfer, markers do not**. [[single-cell-foundation/cui-2024-scgpt-toward-building-foundation]] and [[single-cell-foundation/hao-2024-large-scale-foundation-model]] succeed at cross-dataset annotation precisely because they learn gene programs, not marker-based rules.
-- **NS-Forest is needed only because markers are a bad primitive**. [[single-cell-dl/liu-2024-discovery-of-optimal-cell]] systematizes the process of finding *combinations* of markers that approximate a program — an admission that no single marker carries the identity.
-
-For developmental cell state, **program activity along a trajectory** is a more faithful representation than "marker X+ marker Y−". An overview page on integration ([[overviews/single-cell-integration-methods]]) and one on annotation ([[overviews/single-cell-annotation-methods]]) both land on the same conclusion from different directions: the useful representation is the embedding and the programs, not the labels.
+This claim is large enough to deserve its own page. For the full argument — why markers fail, how gene programs actually get extracted (PCA → WGCNA → NMF → cNMF → joint NMF/NeMO → VAE → foundation-model embeddings), why specification and maturation are separable identity axes, and how cross-species and disease convergence both become visible only at the program level — see [[overviews/cell-identity-programs-and-trajectories]].
 
 ## 5. Cross-species comparison: new types or modified conserved classes?
 
