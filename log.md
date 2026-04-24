@@ -22,6 +22,9 @@
   - Source: `sources/xu-2026-mapping-convergent-regulators-of.md`
   - Wiki: `wiki/drug-resistance/xu-2026-mapping-convergent-regulators-of.md`
   - PDF: `papers/xu-2026-mapping-convergent-regulators-of.pdf`
+- Overview created: "Why Do Hundreds of Different Mutations Converge on the Same Phenotype?" → `wiki/overviews/convergent-regulation-across-systems.md`
+  - Spans 20+ papers across ASD, melanoma, brain development, perturbation prediction
+  - Key thesis: TF hubs as attractor nodes explain convergence; PerturbFate × brain organoid as next experiment
 
 ---
 
