@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 123 papers | 123 wiki pages | 26 categories
+**Stats**: 125 papers | 125 wiki pages | 26 categories
 
 ---
 
@@ -47,6 +47,8 @@
 - [[single-cell-dl/vinyard-2025-learning-cell-dynamics-with]] — scDiffEq: neural SDE with cell-state-dependent drift and diffusion networks; 54.8% LARRY fate prediction (+6% over PRESCIENT); optimal drift/diffusion ratio ~2.5 (Nat. Mach. Intell. 2025)
 - [[single-cell-dl/nadig-2025-transcriptome-wide-analysis-of]] — TRADE: ash-based effect-size distribution for Perturb-seq; transcriptome-wide impact metric; typical perturbation hits ~45 genes (essentials >500); only 13-36% of TI in FDR-sig genes (Nat. Genet. 2025)
 - [[single-cell-dl/gorin-2025-monod-model-based-discovery]] — Monod: fits biophysical stochastic transcription models (bursty default) to joint nascent/mature counts; distinguishes noise vs. mean modulation; cross-platform integration without distortive normalization (Nat. Methods 2025)
+- [[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]] — GEARS: GNN + gene coexpression/GO knowledge graphs for combinatorial perturbation prediction; predicts unseen gene combinations; 40% higher precision on genetic interaction detection (Nat. Biotechnol. 2023)
+- [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]] — PerturbNet: modular cINN framework for distributional perturbation prediction; supports chemical/genetic/missense variants; outperforms GEARS; first to predict coding-variant effects via ESM (Mol. Syst. Biol. 2025)
 - [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] — Squidiff: conditional denoising diffusion model for scRNA-seq; predicts differentiation, gene perturbation, drug response via semantic latent manipulation; captures transient states VAE/GNN methods miss (Nat. Methods 2026)
 
 ---
@@ -261,7 +263,8 @@
 ## concepts
 *General ML/DL concepts used across biology*
 
-*(no papers yet)*
+- [[concepts/variational-autoencoder]] — VAE: probabilistic encoder-decoder for smooth latent representations; backbone of scVI ecosystem, PerturbNet ChemicalVAE/GenotypeVAE/CellVAE
+- [[concepts/graph-neural-network]] — GNN: message-passing neural network on graph-structured data; used in GEARS (dual coexpression+GO graph), PrePR-CT (GAT), GRouNdGAN
 
 ---
 

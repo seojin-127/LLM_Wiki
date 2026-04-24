@@ -4,6 +4,22 @@
 
 ---
 
+### 2026-04-24 — Ingest single paper (#124)
+
+- Roohani et al. (2023) — GEARS: GNN + knowledge graph for combinatorial perturbation prediction → `single-cell-dl`
+  - Source: `sources/roohani-2023-predicting-transcriptional-outcomes-of.md`
+  - Wiki: `wiki/single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of.md`
+  - PDF: `papers/roohani-2023-predicting-transcriptional-outcomes-of.pdf`
+- Yu et al. (2025) — PerturbNet: modular cINN for distributional perturbation prediction (chemical/genetic/missense) → `single-cell-dl`
+  - Source: `sources/yu-2025-perturbnet-predicts-single-cell-responses.md`
+  - Wiki: `wiki/single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses.md`
+  - PDF: `papers/yu-2025-perturbnet-predicts-single-cell-responses.pdf`
+- Concept pages created (2):
+  1. VAE (Variational Autoencoder) → `wiki/concepts/variational-autoencoder.md`
+  2. GNN (Graph Neural Network) → `wiki/concepts/graph-neural-network.md`
+
+---
+
 ### 2026-04-11 — Ingest batch (perturbation/causal methods, papers 112-123)
 
 - **Papers ingested** (12 편, Q1/Q2 overview 준비용):
