@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 125 papers | 125 wiki pages | 26 categories
+**Stats**: 126 papers | 126 wiki pages | 26 categories
 
 ---
 
@@ -187,6 +187,7 @@
 - [[drug-resistance/antonopoulos-2026-zero-shot-prediction-of-drug]] — LEMBAS RNN (phosphoproteomics + signaling network) zero-shot predicts cancer drug response via TF activity; Pearson r up to 0.79; discovers non-canonical FOXO3:S7 via SHP099 (PLoS Comput. Biol. 2026)
 - [[drug-resistance/chen-2022-deep-transfer-learning-of]] — scDEAL: bulk→single-cell transfer learning (DaNN + MMD) for drug response; cell-cluster regularization preserves heterogeneity; F1 0.89 across 6 scRNA-seq benchmarks (Nat. Commun. 2022)
 - [[drug-resistance/alsulami-2026-predicting-and-interpreting-cell]] — PrePR-CT: graph attention network with cell-type-specific co-expression graphs as inductive bias; unseen-cell-type generalization beats scGen/CPA/chemCPA; SMILES-conditioned drug embedding (Nat. Mach. Intell. 2026)
+- [[drug-resistance/xu-2026-mapping-convergent-regulators-of]] — PerturbFate: multimodal CRISPRi platform (ATAC+nascent RNA+transcriptome+sgRNA) at 300K cell scale; >140 perturbations converge on shared dedifferentiated melanoma state; FOSL1/KLF5/RREB1/SMAD3 TF hub (Nature 2026)
 
 ---
 

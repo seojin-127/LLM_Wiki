@@ -18,6 +18,10 @@
   1. VAE (Variational Autoencoder) → `wiki/concepts/variational-autoencoder.md`
   2. GNN (Graph Neural Network) → `wiki/concepts/graph-neural-network.md`
   3. Uncertainty Quantification → `wiki/concepts/uncertainty-quantification.md`
+- Xu et al. (2026) — PerturbFate: multimodal CRISPRi screening for melanoma drug resistance → `drug-resistance`
+  - Source: `sources/xu-2026-mapping-convergent-regulators-of.md`
+  - Wiki: `wiki/drug-resistance/xu-2026-mapping-convergent-regulators-of.md`
+  - PDF: `papers/xu-2026-mapping-convergent-regulators-of.pdf`
 
 ---
 
