@@ -112,17 +112,60 @@ The convergent-regulation overview ([[overviews/convergent-regulation-across-sys
 
 ## Methodological framing — Dimitrov 2026 ontology
 
-The Stegle review [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] formalizes context-dependence as a set of **modelling problems**, each with its own method family:
+If we accept that effect = f(perturbation, context), then computational modelling has two jobs, and they are **serial, not parallel**:
 
-| Phenomenon | Modelling concept | Method examples |
-|------------|-------------------|-----------------|
-| Endogenous variation as causal signature | Representation learning + causal inference | scVI with covariates, MrVI |
-| Separating context from perturbation | Disentanglement (contrastive, multi-component) | CPA, Biolord, ContrastiveVI, scDisInFact |
-| Predicting effect in unseen context | Context transfer | scGen, ChemCPA, PrePR-CT, CellOT |
-| Population-scale natural experiments | Optimal transport / population tracing | Waddington-OT, moscot, CINEMA-OT |
-| Cell-type-specific natural effects | eQTL / population genetics + single-cell | sc-eQTL methods (Yazar 2022, etc.) |
+```
+   Raw data: perturbed cells + control cells
+             across multiple cell types, donors, time points
+                              ↓
+   ┌──────────────────────────────────────────────────────┐
+   │  STEP 1: DISENTANGLEMENT (separate)                  │
+   │  observed variation = e_perturb + e_celltype +       │
+   │                       e_donor + e_time + e_basal     │
+   │  → learn an independent latent axis per covariate    │
+   └──────────────────────┬───────────────────────────────┘
+                          ↓
+   Learned: a "perturbation X effect" vector decoupled from context
+                          ↓
+   ┌──────────────────────────────────────────────────────┐
+   │  STEP 2: EXTRAPOLATION (recompose)                   │
+   │  new context (e_celltype_new, e_donor_new, ...)      │
+   │  + e_perturb_X                                       │
+   │  → decode → counterfactual prediction                │
+   └──────────────────────────────────────────────────────┘
+                          ↓
+   "What would this perturbation do in this new context?"
+```
 
-The review's Outlook explicitly highlights **integrating natural genetic variants from population studies with interventional CRISPR atlases** as a key future direction — exactly the synthesis this overview foregrounds.
+**Step 1 is the precondition for Step 2.** If perturbation effect and context aren't cleanly separated, the contamination travels with you when you transfer to a new context — and the prediction is wrong in ways that won't be obvious. This is why Dimitrov 2026 [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] writes:
+
+> *"Disentanglement provides one approach to capture heterogeneity, thereby potentially improving not only interpretability but also accuracy for prediction tasks such as predicting cellular responses. **As such, it bridges the gap between understanding (What is?) and extrapolating (What could have been?)**."*
+
+### Methods classified by which step they cover
+
+| Method (in our wiki where ✓) | Step 1 (disentangle) | Step 2 (extrapolate) | Notes |
+|---|:---:|:---:|---|
+| ContrastiveVI | ✓ | — | Pure separation, case vs. control only |
+| scGen | — | ✓ | Latent arithmetic on top of pre-learned representation |
+| CPA (Compositional Perturbation Autoencoder) | ✓ | ✓ | Adversarial disentangle + compose new combinations |
+| Biolord | ✓ | ✓ | Known covariates + unknown residual, both disentangled |
+| GEARS ✓ ([[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]]) | (label-based) | ✓ | Predicts unseen perturbations via gene similarity priors |
+| PerturbNet ✓ ([[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]]) | (modular) | ✓ | Chemical/genetic embeddings → unseen perturbations |
+| ChemCPA | ✓ | ✓ | CPA + drug structure embedding for unseen molecules |
+| PrePR-CT ✓ ([[drug-resistance/alsulami-2026-predicting-and-interpreting-cell]]) | ✓ | ✓ | Cell-type-specific co-expression graph as inductive bias |
+| MrVI ✓ ([[single-cell-dl/boyeau-2025-deep-generative-modeling-of]]) | ✓ | (limited) | Per-cell sample distance matrices for stratification |
+| moscot ✓ ([[single-cell-dl/klein-2025-mapping-cells-through-time]]) | — | ✓ | Population-tracing alternative to disentanglement-based extrapolation |
+| Squidiff ✓ ([[single-cell-dl/he-2026-squidiff-predicting-cellular-development]]) | (semantic) | ✓ | Diffusion model with latent semantic manipulation for transfer |
+
+### Why the generalization gap matters here
+
+The Dimitrov review's most uncomfortable finding — that simple linear/additive baselines often beat state-of-the-art models on unseen perturbations — has a specific interpretation in this two-step framing:
+
+> **Step 1 is not clean enough in current models.** What models call "perturbation effect" still has confounder contamination. When transferred to new context (Step 2), that contamination travels along, breaking predictions in unobvious ways.
+
+The review's outlook addresses this by proposing **richer causal signatures** — adding temporal, spatial, and multi-omic axes — to constrain Step 1 better. Single-axis transcriptome data is underdetermined; the model has too many degrees of freedom to truly separate cause from coincidence.
+
+Concretely, the outlook highlights **integrating natural genetic variants from population studies with interventional CRISPR atlases** as a key future direction — exactly the observational × interventional synthesis this overview foregrounds.
 
 ---
 
