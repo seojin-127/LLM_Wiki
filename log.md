@@ -4,6 +4,20 @@
 
 ---
 
+### 2026-04-25 — Ingest Dimitrov 2026 review (#127)
+
+- Dimitrov, Schrod, Rohbeck, Stegle (2026) — "Interpretation, extrapolation and perturbation of single cells" → `single-cell-dl`
+  - Source: `sources/dimitrov-2026-interpretation-extrapolation-and-perturbation-of.md`
+  - Wiki: `wiki/single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of.md`
+  - PDF: `papers/dimitrov-2026-interpretation-extrapolation-and-perturbation-of.pdf`
+- Significance: this review functions as a **navigation hub** for the entire single-cell-dl section
+  - 5 modelling concepts × 3 aims × causal-signature ontology
+  - ~18 methods already in our wiki are cataloged in the review (scVI, scANVI, scArches, scPoli, MrVI, moscot, Monod, GEARS, PerturbNet, Squidiff, TRADE, CellOracle, scGPT, scFoundation, SCimilarity, EpiAgent, PerturBERT, PerturbFate)
+  - Wiki page includes a "methods we have / don't yet have" cross-reference table
+- Key takeaway flagged: generalization gap — simple baselines often beat foundation models on unseen perturbation extrapolation
+
+---
+
 ### 2026-04-25 — Concept pages from PerturbFate study session
 
 While studying [[drug-resistance/xu-2026-mapping-convergent-regulators-of]], two general concepts were extracted that apply beyond PerturbFate:

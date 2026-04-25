@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 126 papers | 126 wiki pages | 26 categories
+**Stats**: 127 papers | 127 wiki pages | 26 categories
 
 ---
 
@@ -50,6 +50,7 @@
 - [[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]] — GEARS: GNN + gene coexpression/GO knowledge graphs for combinatorial perturbation prediction; predicts unseen gene combinations; 40% higher precision on genetic interaction detection (Nat. Biotechnol. 2023)
 - [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]] — PerturbNet: modular cINN framework for distributional perturbation prediction; supports chemical/genetic/missense variants; outperforms GEARS; first to predict coding-variant effects via ESM (Mol. Syst. Biol. 2025)
 - [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] — Squidiff: conditional denoising diffusion model for scRNA-seq; predicts differentiation, gene perturbation, drug response via semantic latent manipulation; captures transient states VAE/GNN methods miss (Nat. Methods 2026)
+- [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] — **Review (Stegle lab)**: unifying ontology of ~150 ML methods for single-cell perturbation modelling; 5 modelling concepts (repr. learning, disentanglement, causal inference, mechanistic discovery, population tracing) × 3 aims (understand/extrapolate/guide); critical evaluation showing simple baselines often beat foundation models on extrapolation (Nat. Rev. Genet. 2026)
 
 ---
 
