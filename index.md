@@ -287,6 +287,8 @@
 - [[overviews/brain-organoid-fidelity]] — 오가노이드 fidelity 6개 층위별 평가; 스트레스 아티팩트의 이중성(보편적이지만 분리 가능); 공학적 해결책(이식·혈관화·어셈블로이드) 비교; 연구 질문별 적합성 결정 트리
 - [[overviews/convergent-regulation-across-systems]] — Why do hundreds of mutations converge on one phenotype? ASD (35 genes→14 modules) + melanoma (140+ genes→1 state); attractor landscape; TF hubs; PerturbFate multimodal evidence; brain×PerturbFate as next experiment
 - [[overviews/endogenous-variation-as-natural-perturbation]] — **Sister overview to convergent-regulation**: endogenous variation = natural perturbation; gene effect = f(perturb, context); divergence (same perturb→different effects) and convergence (different perturbs→same effect) as two faces of context-dependence; reframes "what does gene X do?" as "what does X do given Y?"
+- [[overviews/prior-knowledge-circular-reasoning]] — Critical-thinking page: "if we use GO/pathway priors to study perturbations whose effects we don't know, isn't that circular?"; 3 failure modes (confirmation bias, streetlight effect, error propagation); 3 reasons priors still useful; when safe vs risky table; validation hierarchy
+- [[overviews/analyst-checklist-perturbation-models]] — Practical 6-point checklist for evaluating any perturbation modelling paper: multimodal / covariates / interpretability / extrapolation benchmark / UQ / combinatorial; each point links to deeper concept page + examples in wiki
 
 ---
 

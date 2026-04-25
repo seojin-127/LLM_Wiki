@@ -4,6 +4,42 @@
 
 ---
 
+### 2026-04-25 — Two overview pages from Dimitrov reading session
+
+User asked to formalize two threads from the Dimitrov 2026 reading:
+(a) the philosophical concern that using GO/pathway priors to study unknown
+    perturbation effects is circular reasoning
+(b) the 6-point checklist that emerged organically while reading
+
+Recommended SPLIT into two overview pages (vs combining) because the modes
+differ — (a) is critical-thinking philosophical reading, (b) is practical
+worksheet/checklist tool. Different reading contexts, different uses.
+
+Created:
+1. `wiki/overviews/prior-knowledge-circular-reasoning.md`
+   - Question: "Are we just confirming what we know?"
+   - Two roles of priors (interpretation, extrapolation)
+   - Dimitrov's own admission of the bias issue (3 quotes)
+   - 3 failure modes (confirmation bias, streetlight effect, error propagation)
+   - 3 reasons to still use priors
+   - Safety table (when priors safe vs risky)
+   - Validation hierarchy (weakest → strongest evidence)
+   - Practical reading tips
+
+2. `wiki/overviews/analyst-checklist-perturbation-models.md`
+   - 6-point checklist (multimodal / covariates / interpretability /
+     extrapolation / UQ / combinatorial)
+   - For each point: question, why it matters, what good vs poor looks
+     like, concept page link, wiki examples, field gap notes
+   - Usage instructions (paper reading, method choice, study design,
+     paper writing)
+   - Cross-reference table to all concept pages
+
+The two overviews cross-reference each other and both link to the
+Dimitrov source.
+
+---
+
 ### 2026-04-25 — Concept page: post-hoc vs during training (vocabulary)
 
 User asked about "post-hoc" — kept appearing in Dimitrov 2026 across multiple
