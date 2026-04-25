@@ -218,7 +218,7 @@ Priors are sparse / wrong for under-studied biology. If the paper's conclusions 
 - [[concepts/expressivity-interpretability-tradeoff]] — knowledge-masked latents are listed as one of 5 interpretability strategies; the priors discussion adds *trust* dimension to that strategy
 - [[concepts/post-hoc-vs-during-training]] — priors can be applied either way; the trade-off discussion connects
 - [[concepts/perturbation-evaluation-design]] — proper benchmarking should include priors-free baselines
-- [[overviews/analyst-checklist-perturbation-models]] — operational checklist for evaluating any perturbation paper, complements this overview's critical-thinking approach
+- [[overviews/six-open-issues-perturbation-modelling]] — map of the six open challenges in perturbation modelling, complements this overview's critical-thinking approach
 - [[overviews/endogenous-variation-as-natural-perturbation]] — the context-dependence framing makes priors *more* problematic (context-blind priors meet context-dependent biology)
 
 ---

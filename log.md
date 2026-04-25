@@ -4,6 +4,32 @@
 
 ---
 
+### 2026-04-25 — Reframe checklist overview to "open issues map"
+
+User flagged that the previous "Analyst's 6-Point Checklist" page miscaptured
+the spirit of their original framing. The 6 points came from a more open
+question — "given that we can't always measure what we'd want directly,
+what should models focus on?" — not from "let me build a paper-grading
+rubric." Also the user explicitly didn't want a strong "I'm a measurement-
+first researcher" identity claim (humble, learning posture).
+
+Action:
+- Renamed file: `analyst-checklist-perturbation-models.md` →
+  `six-open-issues-perturbation-modelling.md`
+- New title: "Six Open Issues in Perturbation Modelling"
+- Rewrote opening to capture the more open question (instinct → wall →
+  what models must do) without manifesto
+- Reframed each point from "what good vs poor looks like" (judgment) to
+  "how methods currently approach this" (descriptive)
+- Updated cross-references in prior-knowledge-circular-reasoning.md and
+  index.md
+- Origin note rewritten to be humbler ("emerged organically", "not as
+  a grading rubric")
+
+Substance preserved; framing fixed.
+
+---
+
 ### 2026-04-25 — Two overview pages from Dimitrov reading session
 
 User asked to formalize two threads from the Dimitrov 2026 reading:
