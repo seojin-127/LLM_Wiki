@@ -4,6 +4,34 @@
 
 ---
 
+### 2026-04-25 — Concept page: cell-level counterfactual & OT
+
+After user realized that single-cell sequencing is destructive (no within-cell
+before/after observation possible), they asked about Optimal Transport — which
+keeps appearing in single-cell methods as a way to construct pseudo before/after
+pairings.
+
+Created: `wiki/concepts/cell-level-counterfactual.md`
+
+Key framing chosen: 3 levels of comparison
+- Level 1: point estimate (mean shift)
+- Level 2: distributional comparison (shape difference)
+- Level 3: cell-level counterfactual (individual mapping via OT)
+
+Resolves user's confusion ("이것도 분포의 컨셉이라고? 으으음...") by explicitly
+saying: yes, it uses distributional information, but produces individual-level
+output. Distinct from but built on `concepts/distributional-vs-point-prediction`.
+
+Catalog of OT methods (moscot, Waddington-OT, CINEMA-OT, CellOT, CondOT,
+scPRAM, CoSpar) plus extensions (flow matching, Schrödinger bridges,
+multi-marginal OT, Gromov-Wasserstein).
+
+Critical caveats included: statistical pairing ≠ biological identity;
+quality depends on distribution overlap and latent space; soft vs hard
+mappings; confounder vulnerability.
+
+---
+
 ### 2026-04-25 — Five evaluation/modelling concept pages from Dimitrov study session
 
 User asked four questions while reading Dimitrov 2026, each tracking a general

@@ -275,6 +275,7 @@
 - [[concepts/distributional-vs-point-prediction]] — predicting full P(cells | perturb, context) vs mean; why heterogeneity matters (responder vs non-responder); methods (PerturbNet, Squidiff, moscot, CFGen, MFM); evaluation challenges
 - [[concepts/expressivity-interpretability-tradeoff]] — 5 balance strategies (linear decoder, knowledge mask, attention, causal graph + NN, post-hoc); how current models "explain" A perturb→B (and why none do mechanistic causality fully); 4 in silico perturbation strategies
 - [[concepts/combinatorial-perturbation-prediction]] — 5 non-additive effects (additive/synergy/buffering/suppression/redirection); why sample complexity makes this fundamentally hard; methods (GEARS, CPA, SAMS-VAE, AttentionPert, State); generalization gap is worst here
+- [[concepts/cell-level-counterfactual]] — destructive sequencing means no within-cell before/after; 3 levels of inference (point→distributional→cell-level); OT pairs cells across distributions to create pseudo before/after; methods (moscot, Waddington-OT, CINEMA-OT, CellOT, flow matching, Schrödinger bridges); cell-pairing is BOTH distributional input AND individual output
 
 ---
 
