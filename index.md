@@ -279,6 +279,7 @@
 - [[overviews/single-cell-integration-methods]] — 4가지 패러다임(Harmony/scVI계열/WNN/FM) 비교; scIB 벤치마크 결과 요약; 상황별 결정 프레임워크; scVI→scANVI→scArches→scPoli→MrVI 계보 정리
 - [[overviews/brain-organoid-fidelity]] — 오가노이드 fidelity 6개 층위별 평가; 스트레스 아티팩트의 이중성(보편적이지만 분리 가능); 공학적 해결책(이식·혈관화·어셈블로이드) 비교; 연구 질문별 적합성 결정 트리
 - [[overviews/convergent-regulation-across-systems]] — Why do hundreds of mutations converge on one phenotype? ASD (35 genes→14 modules) + melanoma (140+ genes→1 state); attractor landscape; TF hubs; PerturbFate multimodal evidence; brain×PerturbFate as next experiment
+- [[overviews/endogenous-variation-as-natural-perturbation]] — **Sister overview to convergent-regulation**: endogenous variation = natural perturbation; gene effect = f(perturb, context); divergence (same perturb→different effects) and convergence (different perturbs→same effect) as two faces of context-dependence; reframes "what does gene X do?" as "what does X do given Y?"
 
 ---
 

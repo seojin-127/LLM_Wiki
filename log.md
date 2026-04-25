@@ -4,6 +4,22 @@
 
 ---
 
+### 2026-04-25 — New overview from Dimitrov 2026 study session
+
+While reading the Dimitrov 2026 review, the user articulated an insight worth capturing:
+**endogenous variation in observational data is itself a form of natural perturbation**,
+and gene effects are therefore not fixed properties but functions of context.
+
+- Created: `wiki/overviews/endogenous-variation-as-natural-perturbation.md`
+- Sister page to `overviews/convergent-regulation-across-systems` — convergence and
+  divergence framed as two faces of the same context-dependence phenomenon
+- Synthesizes evidence from Paulsen 2022, Jourdon 2023, Li 2023 CHOOSE, Schafer 2019,
+  PerturbFate, and Dimitrov 2026 ontology
+- Cross-links to factorial-perturbation-design and multimodal-temporal-readout concepts
+- Reframes "what does gene X do?" → "what does X do given Y?"
+
+---
+
 ### 2026-04-25 — Ingest Dimitrov 2026 review (#127)
 
 - Dimitrov, Schrod, Rohbeck, Stegle (2026) — "Interpretation, extrapolation and perturbation of single cells" → `single-cell-dl`
