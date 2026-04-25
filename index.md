@@ -270,6 +270,11 @@
 - [[concepts/uncertainty-quantification]] — Epistemic vs aleatoric uncertainty; Bayesian NN, MC Dropout, ensemble, distributional output, Fisher information; wiki-wide survey of which methods provide uncertainty
 - [[concepts/multimodal-temporal-readout]] — ATAC → nascent RNA → steady-state RNA as three different time windows (potential / present / accumulated identity); pair = RNA velocity, triplet = causal cascade
 - [[concepts/factorial-perturbation-design]] — 2×2 (perturb × context) screens reveal constitutive vs contingent drivers; same outcome can hide different conditional logic; interaction term is the key new information
+- [[concepts/interpolation-vs-extrapolation]] — convex-hull definition; why almost every prediction task in single-cell is extrapolation despite often being labelled otherwise; 5 scenarios (reconstruction / context transfer / unseen perturb / full OOD / combinatorial)
+- [[concepts/perturbation-evaluation-design]] — split design hierarchy (random→cell-type→donor→perturb→combo→cross-tissue) × metric strictness (Pearson→R²→MMD→Wasserstein); pseudo-bulk vs single-cell metric trap; benchmarks (PerturBench, scPerturb)
+- [[concepts/distributional-vs-point-prediction]] — predicting full P(cells | perturb, context) vs mean; why heterogeneity matters (responder vs non-responder); methods (PerturbNet, Squidiff, moscot, CFGen, MFM); evaluation challenges
+- [[concepts/expressivity-interpretability-tradeoff]] — 5 balance strategies (linear decoder, knowledge mask, attention, causal graph + NN, post-hoc); how current models "explain" A perturb→B (and why none do mechanistic causality fully); 4 in silico perturbation strategies
+- [[concepts/combinatorial-perturbation-prediction]] — 5 non-additive effects (additive/synergy/buffering/suppression/redirection); why sample complexity makes this fundamentally hard; methods (GEARS, CPA, SAMS-VAE, AttentionPert, State); generalization gap is worst here
 
 ---
 

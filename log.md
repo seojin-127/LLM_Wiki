@@ -4,6 +4,30 @@
 
 ---
 
+### 2026-04-25 — Five evaluation/modelling concept pages from Dimitrov study session
+
+User asked four questions while reading Dimitrov 2026, each tracking a general
+ML evaluation/modelling concept that recurs across perturbation papers. Created
+five focused concept pages (combinatorial split out from #4 due to size):
+
+1. `concepts/interpolation-vs-extrapolation.md` — convex-hull definition, why
+   almost every single-cell prediction task is extrapolation, 5 test scenarios
+2. `concepts/perturbation-evaluation-design.md` — split hierarchy × metric
+   strictness, pseudo-bulk vs single-cell metric trap, generalization gap
+3. `concepts/distributional-vs-point-prediction.md` — full P(cells|condition)
+   vs mean, why heterogeneity matters, distributional methods catalog
+4. `concepts/expressivity-interpretability-tradeoff.md` — 5 balance strategies,
+   what kind of "causal explanation" each model class actually gives, 4 in
+   silico perturbation strategies compared
+5. `concepts/combinatorial-perturbation-prediction.md` — 5 non-additive effect
+   types (synergy/buffering/suppression/redirection/additive), why sample
+   complexity makes it fundamentally harder, methods catalog
+
+All cross-link to each other and to existing concept pages
+(multimodal-temporal-readout, factorial-perturbation-design, VAE, GNN, UQ).
+
+---
+
 ### 2026-04-25 — New overview from Dimitrov 2026 study session
 
 While reading the Dimitrov 2026 review, the user articulated an insight worth capturing:
