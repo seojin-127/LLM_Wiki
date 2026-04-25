@@ -4,6 +4,29 @@
 
 ---
 
+### 2026-04-25 — Concept page: post-hoc vs during training (vocabulary)
+
+User asked about "post-hoc" — kept appearing in Dimitrov 2026 across multiple
+contexts (interpretation, knowledge integration, metric application). My
+recommendation was separate page (vs adding to existing) because the term is
+transversal — it applies across interpretability, calibration, evaluation,
+and model combination, so doesn't belong to any single existing page.
+
+Created: `wiki/concepts/post-hoc-vs-during-training.md`
+
+Covers:
+- Core distinction: "applied after training" vs "built into training"
+- 5 common uses (attribution, calibration, knowledge integration, metric,
+  model combination)
+- Trade-off table (during training stronger but expensive, post-hoc flexible
+  but less reliable)
+- Known limitations of post-hoc attribution (inconsistency across SHAP/LIME/IG,
+  faithfulness problem, adversarial vulnerability)
+- Practical reading tips and connections to expressivity-interpretability,
+  uncertainty-quantification, evaluation-design pages
+
+---
+
 ### 2026-04-25 — Concept page: cell-level counterfactual & OT
 
 After user realized that single-cell sequencing is destructive (no within-cell
