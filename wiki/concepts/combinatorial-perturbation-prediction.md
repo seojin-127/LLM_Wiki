@@ -134,6 +134,11 @@ When a paper claims "predicts combinatorial perturbations":
 - [[concepts/expressivity-interpretability-tradeoff]] — non-additive interactions require nonlinear models, sacrificing interpretability
 - [[concepts/factorial-perturbation-design]] — 2×2 design is the experimental backbone for measuring combinatorial effects
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — this concept directly addresses **Issue 6: Non-Additive Combinatorial** (the area where current methods fail most clearly per Dimitrov; sample complexity argument is core)
+- [[overviews/convergent-regulation-across-systems]] — combinatorial perturbation is what reveals convergent TF hubs (e.g., RREB1+KLF5+SMAD3 in PerturbFate); validation of convergent regulation requires combinatorial intervention
+
 ---
 
 *Used in: [[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]] (GEARS — defined the 5 non-additive categories), [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] (review's combinatorial section), [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]] (PerturbNet — combinatorial via composition), [[drug-resistance/xu-2026-mapping-convergent-regulators-of]] (PerturbFate — combinatorial validation experiment)*

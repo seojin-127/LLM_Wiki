@@ -114,6 +114,11 @@ When a paper claims "predicts perturbation effect":
 2. **Check evaluation metric.** Pearson on means → point prediction. MMD/Wasserstein → distributional.
 3. **Check number of cells per condition.** Distributional claims with <100 cells per condition are statistically weak.
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — distributional output is one form of **Issue 5: Uncertainty Quantification** (predicting P(x) rather than E[x] naturally captures within-condition heterogeneity); also relates to **Issue 4: Extrapolation Benchmark** (distributional metrics like MMD/Wasserstein are stricter)
+- [[concepts/cell-level-counterfactual]] — cell-level counterfactual goes one step further than distributional comparison: uses distributional input to produce individual-level mapping
+
 ---
 
 *Used in: [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]] (PerturbNet — explicit distributional via cINN), [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] (Squidiff — diffusion-based distributional), [[single-cell-dl/klein-2025-mapping-cells-through-time]] (moscot — OT-based distribution mapping), [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] (review's population-tracing concept covers this category)*

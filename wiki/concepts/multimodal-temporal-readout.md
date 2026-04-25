@@ -105,6 +105,10 @@ When reading any multimodal paper that profiles chromatin + nascent + steady-sta
 3. **Look for disagreement** = subtle dynamics (priming, decay, transition)
 4. **Steady-state defines "what cell"; nascent defines "where going"; ATAC defines "what enabled"**
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — this concept addresses **Issue 1: Multimodal Integration** (single-modality methods cannot reliably orient causal direction; multimodal cascade gives intermediate causal layers)
+
 ---
 
 *Used in: [[drug-resistance/xu-2026-mapping-convergent-regulators-of]] (PerturbFate — multimodal CRISPRi screen), [[single-cell-dl/gorin-2025-monod-model-based-discovery]] (Monod — biophysical modeling of nascent/mature counts)*

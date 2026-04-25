@@ -196,6 +196,10 @@ When you read "we used OT to map perturbed cells to controls":
 - [[concepts/factorial-perturbation-design]] — cell-level counterfactual lets us interpret 2×2 cells (perturb × context) at individual resolution
 - [[concepts/expressivity-interpretability-tradeoff]] — OT is interpretable as "this maps to that", but the underlying latent space (where OT happens) is often opaque
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — cell-level counterfactual cuts across multiple issues: foundational for **Issue 4: Extrapolation** (predicting individual cells, not just population means), connects to **Issue 5: UQ** (the coupling has its own uncertainty), and enables **Issue 1: Multimodal** integration via Gromov-Wasserstein cross-modality mapping. The destructive-sequencing problem this concept solves is *why* OT keeps appearing across the modelling field.
+
 ---
 
 ## Practical Reading Tip

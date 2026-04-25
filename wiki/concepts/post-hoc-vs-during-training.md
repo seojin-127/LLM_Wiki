@@ -123,6 +123,11 @@ When a paper says it uses post-hoc attribution / SHAP / Integrated Gradients / e
 - [[concepts/perturbation-evaluation-design]] — post-hoc metrics evaluate trained models on tasks they weren't trained for
 - [[concepts/distributional-vs-point-prediction]] — distributional metrics often applied post-hoc to point-prediction models
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — relevant to **Issue 3: Interpretability** (post-hoc attribution is the weakest interpretability strategy) and **Issue 4: Extrapolation Benchmark** (post-hoc metrics shape evaluation)
+- [[overviews/prior-knowledge-circular-reasoning]] — priors integrated post-hoc vs during training have different reliability properties; this distinction matters for the circular-reasoning analysis
+
 ---
 
 *Used in: [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] (review uses "post hoc" repeatedly across attribution, knowledge integration, and metric contexts), [[single-cell-foundation/cui-2024-scgpt-toward-building-foundation]] (scGPT — interpretation relies on post-processing of attention), [[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]] (GEARS — integrates prior during training, contrast)*

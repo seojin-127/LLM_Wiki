@@ -110,6 +110,10 @@ When designing or reading evaluation:
 - [[concepts/distributional-vs-point-prediction]] — why distributional metrics matter
 - [[concepts/combinatorial-perturbation-prediction]] — combinatorial holdout is the hardest split
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — this concept is the operational layer of **Issue 4: Extrapolation Benchmark** (the generalization gap finding from Dimitrov is fundamentally about evaluation design)
+
 ---
 
 *Used in: [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] (review's evaluation challenges section), [[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]] (GEARS evaluation), [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]] (PerturbNet OOD evaluation), [[single-cell-dl/nadig-2025-transcriptome-wide-analysis-of]] (TRADE — proper effect-size evaluation)*

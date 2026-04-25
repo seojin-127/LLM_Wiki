@@ -118,6 +118,11 @@ When a paper claims "perturbing X causes Y":
 - [[concepts/combinatorial-perturbation-prediction]] — combinatorial prediction is where the tradeoff bites hardest
 - [[concepts/multimodal-temporal-readout]] — multimodal data can help mechanistic interpretation by providing intermediate causal layers
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — this concept addresses **Issue 3: Interpretability** (the 5 balance strategies are how methods currently approach the tension between expressivity and interpretability)
+- [[overviews/prior-knowledge-circular-reasoning]] — knowledge-masked latents (one of the 5 strategies) are precisely where the circular-reasoning concern arises
+
 ---
 
 *Used in: [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] (review's central tension between prediction and mechanism), [[single-cell-dl/lopez-2018-deep-generative-modeling-for]] (scVI uses linear decoder for interpretability), [[single-cell-dl/kamimoto-2023-dissecting-cell-identity-via]] (CellOracle: GRN-based mechanistic), [[single-cell-foundation/cui-2024-scgpt-toward-building-foundation]] (scGPT: attention as interpretation)*

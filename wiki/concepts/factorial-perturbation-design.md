@@ -116,6 +116,12 @@ When reading a perturbation screen paper:
 3. **A perturbation showing no effect in one context is informative**, not a negative result — it tells you the mechanism is contingent on the *other* context
 4. **"Same outcome" across perturbations does not mean "same mechanism"** — only a factorial design can distinguish convergent vs identical paths
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — this concept is the experimental backbone for **Issue 2: Covariate Handling** (factorial design is what lets you separate context from perturbation effect)
+- [[overviews/endogenous-variation-as-natural-perturbation]] — donors as a covariate axis = natural perturbation; factorial designs across donor backgrounds reveal context-dependence
+- [[overviews/convergent-regulation-across-systems]] — factorial design with shared context is what reveals convergence (different perturbs → same outcome under same condition)
+
 ---
 
 *Used in: [[drug-resistance/xu-2026-mapping-convergent-regulators-of]] (PerturbFate — DMSO × Vemurafenib factorial CRISPRi screen)*

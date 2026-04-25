@@ -280,6 +280,10 @@ This is fundamentally different — it questions the **benchmark itself**, not t
 
 No perturbation prediction method in this wiki provides both types simultaneously. GEARS gives epistemic only; PerturbNet gives aleatoric only. A complete solution would decompose total uncertainty into both components — telling the user whether the uncertainty comes from model ignorance (fixable with more data) or biological variability (inherent).
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — this concept addresses **Issue 5: Uncertainty Quantification** (especially critical because epistemic uncertainty *should* spike under extrapolation but currently rarely does in foundation models)
+
 ---
 
 *Used in: [[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]], [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]], [[single-cell-dl/kamimoto-2023-dissecting-cell-identity-via]], [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna]], [[single-cell-dl/boyeau-2025-deep-generative-modeling-of]], [[single-cell-dl/ergen-2024-consensus-prediction-cell]], [[single-cell-dl/gorin-2025-monod-model-based-discovery]], [[single-cell-dl/setty-2019-characterization-of-cell-fate]], [[single-cell-dl/lange-2022-cellrank-for-directed-single]], [[single-cell-dl/lopez-2018-deep-generative-modeling-for]], [[single-cell-dl/nadig-2025-transcriptome-wide-analysis-of]]*

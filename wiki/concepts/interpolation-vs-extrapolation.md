@@ -67,6 +67,10 @@ When a paper claims "our model predicts perturbation effects":
 
 See [[concepts/perturbation-evaluation-design]] for full discussion of split designs and metrics.
 
+## Part of broader synthesis
+
+- [[overviews/six-open-issues-perturbation-modelling]] — this concept is foundational for **Issue 4: Extrapolation Benchmark** (defining what counts as extrapolation determines what evaluation can claim)
+
 ---
 
 *Used in: [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] (review's central evaluation framing), [[single-cell-dl/roohani-2023-predicting-transcriptional-outcomes-of]] (GEARS, unseen perturbation extrapolation), [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]] (PerturbNet, unseen drug/genetic perturbation), [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] (Squidiff, unseen condition prediction)*
