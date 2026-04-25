@@ -4,6 +4,26 @@
 
 ---
 
+### 2026-04-25 — Concept pages from PerturbFate study session
+
+While studying [[drug-resistance/xu-2026-mapping-convergent-regulators-of]], two general concepts were extracted that apply beyond PerturbFate:
+
+- **Multimodal Temporal Readout** → `wiki/concepts/multimodal-temporal-readout.md`
+  - ATAC → nascent RNA → steady-state RNA as three different time windows
+  - Each layer alone is insufficient; the triplet closes the causal chain
+  - Pair (nascent + steady-state) is the basis of RNA velocity
+  - Cross-references: PerturbFate, Monod (Gorin 2025)
+
+- **Factorial Perturbation Design** → `wiki/concepts/factorial-perturbation-design.md`
+  - 2×2 (perturb × context) reveals constitutive vs contingent drivers
+  - Worked example: Mediator complex (MED12 = constitutive, MED15 = contingent) — same complex, same outcome, different conditional logic
+  - Interaction term (Δ_B − Δ_A) is the key new information
+  - Generalizable beyond drug context (cell state, time, genetic background)
+
+Both added to `index.md` concepts section.
+
+---
+
 ### 2026-04-24 — Ingest single paper (#124)
 
 - Roohani et al. (2023) — GEARS: GNN + knowledge graph for combinatorial perturbation prediction → `single-cell-dl`

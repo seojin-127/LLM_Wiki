@@ -267,6 +267,8 @@
 - [[concepts/variational-autoencoder]] — VAE: probabilistic encoder-decoder for smooth latent representations; backbone of scVI ecosystem, PerturbNet ChemicalVAE/GenotypeVAE/CellVAE
 - [[concepts/graph-neural-network]] — GNN: message-passing neural network on graph-structured data; used in GEARS (dual coexpression+GO graph), PrePR-CT (GAT), GRouNdGAN
 - [[concepts/uncertainty-quantification]] — Epistemic vs aleatoric uncertainty; Bayesian NN, MC Dropout, ensemble, distributional output, Fisher information; wiki-wide survey of which methods provide uncertainty
+- [[concepts/multimodal-temporal-readout]] — ATAC → nascent RNA → steady-state RNA as three different time windows (potential / present / accumulated identity); pair = RNA velocity, triplet = causal cascade
+- [[concepts/factorial-perturbation-design]] — 2×2 (perturb × context) screens reveal constitutive vs contingent drivers; same outcome can hide different conditional logic; interaction term is the key new information
 
 ---
 

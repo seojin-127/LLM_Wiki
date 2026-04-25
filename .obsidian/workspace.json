@@ -11,13 +11,46 @@
             "id": "4b4bc667fbaee033",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "wiki/brain-development/amiri-2018-transcriptome-epigenome-landscape.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "amiri-2018-transcriptome-epigenome-landscape"
+            }
+          },
+          {
+            "id": "910e20fab2816576",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wiki/neuroscience/amelan-2026-crispr-knockout-screens-reveal.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "amelan-2026-crispr-knockout-screens-reveal"
+            }
+          },
+          {
+            "id": "0c5e86fff53ae928",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wiki/neuroscience/amelan-2026-crispr-knockout-screens-reveal.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "amelan-2026-crispr-knockout-screens-reveal"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -49,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "amelan",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -180,35 +214,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "4b4bc667fbaee033",
+  "active": "0c5e86fff53ae928",
   "lastOpenFiles": [
-    "wiki/brain-development/zenk-2024-single-cell-epigenomic-reconstruction.md",
-    "index.md.tmp.51320.1775865072177",
-    "wiki/other/ding-2026-scgpt-end-to-end-protocol.md",
-    "wiki/other/klingler-2022-mapping-molecular-cellular-complexity.md",
-    "wiki/other/nowakowski-2025-new-frontier-understanding-human.md",
     "wiki/neuroscience/dubuc-2026-linking-rare-variants-cell-type.md",
-    "wiki/genomic-dl/yu-2026-chrombert-foundation-model.md",
-    "wiki/single-cell-foundation/chen-2025-epiagent-foundation-model-single-cell.md",
-    "wiki/single-cell-foundation/cui-2024-scgpt-toward-building-foundation.md",
-    "wiki/genomic-dl/avsec-2021-effective-gene-expression-prediction.md",
-    "wiki/single-cell-foundation/hao-2024-large-scale-foundation-model.md",
-    "sources/ding-2026-scgpt-end-to-end-protocol.md",
-    "sources/klingler-2022-mapping-molecular-cellular-complexity.md",
-    "sources/nowakowski-2025-new-frontier-understanding-human.md",
-    "sources/dubuc-2026-linking-rare-variants-cell-type.md",
-    "sources/yu-2026-chrombert-foundation-model.md",
-    "sources/chen-2025-epiagent-foundation-model-single-cell.md",
-    "sources/cui-2024-scgpt-toward-building-foundation.md",
-    "sources/avsec-2021-effective-gene-expression-prediction.md",
-    "sources/hao-2024-large-scale-foundation-model.md",
-    "sources/adlakha-2023-human-3d-brain-organoids.md",
-    "wiki/other/birtele-2025-modelling-human-brain.md",
-    "brain-development/lancaster-2013-cerebral-organoids-model-human.md",
-    "brain-development",
-    "wiki/brain-development/bhaduri-2020-cell-stress-cortical-organoids.md",
-    "wiki/brain-development/glass-2026-human-cortical-organoids-recapitulate.md",
-    "wiki/brain-development/pasca-2015-functional-cortical-neurons.md",
-    "wiki/brain-development/birey-2017-assembly-functionally-integrated.md"
+    "wiki/neuroscience/amelan-2026-crispr-knockout-screens-reveal.md",
+    "wiki/overviews/atlas-as-hypothesis-engine.md",
+    "wiki/brain-development/fleck-2023-inferring-perturbing-cell-fate.md",
+    "wiki/overviews/convergent-regulation-across-systems.md",
+    "wiki/brain-development/amiri-2018-transcriptome-epigenome-landscape.md",
+    "wiki/brain-atlas/yao-2023-high-resolution-transcriptomic-spatial.md",
+    "wiki/brain-development/herring-2022-human-prefrontal-cortex-gene.md",
+    "log.md.tmp.65444.1777035142441",
+    "wiki/brain-atlas/he-2024-integrated-transcriptomic-cell-atlas.md",
+    "index.md.tmp.65444.1777035130440",
+    "wiki/overviews/perturbation-prediction-and-causal-inference.md",
+    "index.md",
+    "wiki/drug-resistance/xu-2026-mapping-convergent-regulators-of.md",
+    "wiki/single-cell-foundation/szalata-2026-perturbert-learning-gene-co.md",
+    "wiki/single-cell-dl/kamimoto-2023-dissecting-cell-identity-via.md",
+    "sources/xu-2026-mapping-convergent-regulators-of.md",
+    "wiki/overviews/cell-identity-programs-and-trajectories.md",
+    "wiki/overviews/brain-organoid-fidelity.md",
+    "wiki/overviews/perturbation-prediction-and-causal-inference.md.tmp.25512.1775877756862",
+    "index.md.tmp.25512.1775877344930",
+    "wiki/drug-resistance/chen-2022-deep-transfer-learning-of.md",
+    "sources/chen-2022-deep-transfer-learning-of.md",
+    "wiki/brain-development/dibella-2021-molecular-logic-of-cellular.md",
+    "sources/dibella-2021-molecular-logic-of-cellular.md",
+    "wiki/single-cell-dl/gorin-2025-monod-model-based-discovery.md",
+    "sources/gorin-2025-monod-model-based-discovery.md",
+    "wiki/drug-resistance/alsulami-2026-predicting-and-interpreting-cell.md",
+    "sources/alsulami-2026-predicting-and-interpreting-cell.md",
+    "wiki/single-cell-dl/vinyard-2025-learning-cell-dynamics-with.md",
+    "papers/chen-2022-deep-transfer-learning-of.pdf",
+    "papers/dibella-2021-molecular-logic-of-cellular.pdf",
+    "papers/gorin-2025-monod-model-based-discovery.pdf",
+    "papers/alsulami-2026-predicting-and-interpreting-cell.pdf",
+    "papers/vinyard-2025-learning-cell-dynamics-with.pdf",
+    "papers/klein-2025-mapping-cells-through-time.pdf"
   ]
 }
