@@ -3,7 +3,7 @@ title: "Why Do Hundreds of Different Mutations Converge on the Same Phenotype?"
 type: overview
 created: 2026-04-24
 updated: 2026-05-01
-tags: [convergence, attractor-state, ASD, drug-resistance, GRN, cell-state, Perturb-seq, CRISPR-screen, chromatin-remodeler, TF-hub, Waddington-landscape, perturbation, gene-level, network-level, BicMix, METAL]
+tags: [convergence, attractor-state, ASD, drug-resistance, GRN, cell-state, Perturb-seq, CRISPR-screen, chromatin-remodeler, TF-hub, Waddington-landscape, perturbation]
 papers:
   - drug-resistance/xu-2026-mapping-convergent-regulators-of
   - neuroscience/jin-2020-in-vivo-perturb-seq
@@ -29,26 +29,20 @@ papers:
   - single-cell-foundation/szalata-2026-perturbert-learning-gene-co
 ---
 
-## 오늘 가지게 된 질문 (2026-05-01 study session)
+## 핵심 질문 세 가지
 
-NDD risk gene perturbation paper ([[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence]]) 를 깊이 읽으면서 **convergence를 측정하고 해석하는 framework** 가 뼈대가 잡혔다. 그 위에서 다음 세 가지 question이 정련되었다:
+이 overview는 다음 세 가지 질문을 축으로 정리한다.
 
 **Q1. 발달 trajectory × cell type × convergence dynamics**
-> Continuous developmental trajectory 위에서, cell type 수준에서, NDD 관련 유전자들의 convergence는 어떻게 변하는가?
-> 4-snapshot이 아니라 continuous flow 안에서, 같은 KO가 시간에 따라 어떤 program으로 funnel되어 가는지.
+Continuous developmental trajectory 위에서 cell type 수준의 NDD risk gene convergence가 어떻게 변하는가. Snapshot 비교가 아니라 continuous flow 안에서, 같은 KO가 시간에 따라 어떤 program으로 funnel되는지.
 
 **Q2. Variant 종류별 convergence 차이**
-> Variant 종류 (LoF vs missense vs CNV vs partial loss) 에 따라 convergence 양상이 다르게 나타나는가?
-> 완전 KO와 partial perturbation이 같은 attractor로 가는가, 아니면 다른 sub-attractor로 갈라지는가.
+Variant 종류 (LoF, missense, CNV, partial loss-of-function) 에 따라 convergence 양상이 다른가. 완전 KO와 partial perturbation이 같은 attractor로 수렴하는지, 다른 sub-attractor로 갈라지는지.
 
 **Q3. Module → drug → phenotype chain**
-> 발달 단계 specific, cell type specific하게 convergence되는 module을 약물로 타겟함으로써 —
-> (a) 전사체 수준에서 병리적 signature의 reverse를 보일 수 있는가?
-> (b) 그리고 (a)가 실제 phenotype의 개선으로 이어지는가?
+발달 단계 및 cell type specific하게 수렴하는 module을 약물로 타겟하면 — (a) 전사체 수준의 병리적 signature를 reverse할 수 있는가, (b) 그 reverse가 실제 phenotype 개선으로 이어지는가.
 
-**Phase 2 (확장)**: 위 framework 위에 spatial 축 + glia/vasculature와의 상호작용을 얹어, microenvironment context 안에서 convergence가 어떻게 reshape되는지.
-
-**Methodology direction**: single-cell perturbation sequencing × multiple computational approaches.
+확장 축: spatial 차원 및 glia/vasculature 상호작용을 더했을 때, microenvironment context 안에서 convergence가 어떻게 reshape되는지.
 
 ---
 
@@ -64,72 +58,7 @@ This question — why do many different genetic causes produce the same phenotyp
 | **Melanoma drug resistance** | >140 resistance genes (NF2, MED12, NF1, SMARCE1, ...) | Shared dedifferentiated cell state |
 | **Cancer in general** | Thousands of driver mutations | ~10 hallmarks of cancer |
 
-This overview asks two stacked questions:
-1. **How do we measure convergence?** (Part 0 — measurement framework)
-2. **What does the wiki's evidence say about its mechanism?** (Parts I–IV)
-
----
-
-# Part 0 — How Do We Measure Convergence? Two Layers.
-
-A central insight from [[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence]] is that **"convergence" is not a single quantity** — it is measurable at (at least) two levels, and the two levels reveal different aspects of the underlying biology.
-
-## Layer A — Gene-level convergence
-
-**Question**: does the *same individual gene* shift in the *same direction* across many independent KOs?
-
-**Tool** (borrowed from GWAS meta-analysis): **METAL** + **Cochran's Q heterogeneity test**.
-
-A gene is called "convergent" if it satisfies two simultaneous conditions:
-
-```
-(i)  FDR-adjusted P_meta < 0.05      ← significant aggregate effect across KOs
-(ii) Cochran Q P_Het > 0.05          ← effects are statistically homogeneous (same direction)
-```
-
-The two conditions together prevent two failure modes:
-- Without (i): noise; gene varies but not consistently
-- Without (ii): a gene whose direction flips between KOs would still pass (i) by chance
-
-This dual-criterion design — significance + directional consistency — is the core measurement primitive that distinguishes "real convergence" from "shared variability."
-
-## Layer B — Network-level convergence
-
-**Question**: does a *latent gene module* (a co-varying gene set) recur across KO subsets, even when individual genes do not?
-
-**Tool**: data-driven biclustering (**BicMix** in Fernandez-Garcia 2026; conceptually related to NMF / sparse matrix factorization).
-
-```
-gene × KO matrix  ≈  Σ_k  (gene loading_k)  ⊗  (KO loading_k)
-                              ↑                      ↑
-                       sparse: only some       sparse: only some
-                       genes belong to         KOs activate this
-                       this factor             factor
-```
-
-A module is "network-level convergent" if a single factor recurs in many `(gene_subset, KO_subset)` reconstructions across enumerated KO combinations. The biclustering structure means **convergence is local** — a sub-pattern of genes shared by a sub-group of KOs, not a global pattern across all genes and all KOs.
-
-## Why two layers, not one?
-
-| | Gene-level | Network-level |
-|---|---|---|
-| What it captures | "ARID1B and CHD8 both downregulate gene X" | "ARID1B and CHD8 both disrupt module M, but through different individual genes" |
-| Sensitivity to gene-level discordance | Misses convergence when KOs hit different genes in same module | Catches it via shared latent factor |
-| Sensitivity to spurious co-regulation | Strict, robust | Can produce factors that need post-hoc functional annotation |
-| Best read with | GO/MSigDB enrichment as downstream interpretation | Hierarchical sub-module structure (parent factor → narrower sub-factors) |
-
-These are not competitors. **Gene-level catches the "same gene" case, network-level catches the "same program" case.** The two together constitute the measurement framework.
-
-## How measurement layers map to mechanism
-
-Subtle but important: the two **measurement** layers map onto distinct **mechanism** layers:
-
-```
-Gene-level convergence (measurement) ←→ shared downstream effector genes (mechanism)
-Network-level convergence (measurement) ←→ shared regulatory module / TF hub (mechanism)
-```
-
-Layer A reveals the *what* (which final-stage effectors converge); Layer B reveals the *where in the regulatory hierarchy* (which intermediate program is the funnel point). Section 7 (TF hub mechanism) is precisely Layer B's mechanism interpretation.
+This overview pulls together the wiki's evidence on convergence — what we observe, why it happens (TF hub funneling on a Waddington-like attractor landscape), how we measure it, and what remains open.
 
 ---
 
@@ -185,9 +114,13 @@ Convergence at a higher level: different patients, different (unknown) genetic c
 
 ## 4. ASD chromatin regulators × 4 cell types: cell-type-specific convergence + mitochondrial surprise (Fernandez-Garcia 2026)
 
-[[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence]] performed pooled CRISPR-KO of **23 NDD risk genes (chromatin/regulatory class)** across **four cell-type contexts** (iNPC, immature/mature iGLUT, mature iGABA), 118k cells. This is the paper that introduced the explicit two-layer measurement framework (Part 0 above) and applied it systematically.
+[[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence]] performed pooled CRISPR-KO of **23 NDD risk genes (chromatin/regulatory class)** across **four cell-type contexts** (iNPC, immature/mature iGLUT, mature iGABA), 118k cells.
 
-Three findings tightly aligned with the convergence question:
+The paper measures convergence at two complementary levels:
+- **Gene-level** (METAL meta-analysis with FDR-adjusted P_meta < 0.05 + Cochran Q P_Het > 0.05) — captures cases where multiple KOs perturb the *same effector gene in the same direction*. Borrowed from GWAS meta-analysis tooling, the dual significance + directional-consistency criterion is what distinguishes real convergence from shared variability.
+- **Network-level** (BicMix sparse biclustering — a sparse latent factor model in the NMF family) — captures cases where multiple KOs perturb *different individual genes within the same latent module*. Useful when KOs hit different parts of a shared regulatory program.
+
+Four findings tightly aligned with the convergence question:
 
 **(a) Convergence is highly cell-type-specific**, strongest in **mature glutamatergic neurons**:
 ```
@@ -268,9 +201,9 @@ This explains why:
 - **Different mechanisms, same destination**: the attractor is defined by TF network topology, not by which upstream signal changed
 - **Cell-type specificity of convergence**: the landscape topology *is itself* cell-type-specific (Fernandez-Garcia 2026 — mature iGLUT has deeper, sharper attractors than iNPC)
 
-## 8. The TF hub as convergence mechanism (Layer-B mechanism)
+## 8. The TF hub as convergence mechanism
 
-Both melanoma and brain studies point to **TF hubs** as the molecular identity of the attractor — and this is the *mechanism interpretation* of network-level (Layer B) convergence:
+Both melanoma and brain studies point to **TF hubs** as the molecular identity of the attractor — these are the molecular layer where converging upstream signals funnel:
 
 | System | Convergent TF hub | Evidence |
 |--------|-------------------|----------|
@@ -280,7 +213,7 @@ Both melanoma and brain studies point to **TF hubs** as the molecular identity o
 | Brain organoid | Pando-inferred regulomes | [[brain-development/fleck-2023-inferring-perturbing-cell-fate]]: GLI3 required for cortical fate |
 | ASD chromatin regulators | E/I + OXPHOS + synaptic programs (BicMix sub-modules) | Fernandez-Garcia 2026: hierarchical factor structure with parent broad + narrower sub-factors |
 
-The pattern: **upstream perturbations are diverse, but they all funnel through a small number of TF regulatory nodes**. Network-level (Layer B) convergence *is* the measurement signature of this funneling.
+The pattern: **upstream perturbations are diverse, but they all funnel through a small number of TF regulatory nodes**. Network-level convergence measurements (e.g., shared latent factors across KOs) are the statistical signature of this funneling.
 
 [[brain-development/ding-2026-dissecting-gene-regulatory-networks]] made this explicit: CRISPRi knockdown of 44 different TFs in cortical development produced convergent effector genes enriched for ASD and intellectual disability risk variants. The convergence reflects the **hierarchical structure of GRNs** — many upstream signals integrated by a few master regulators.
 
@@ -290,8 +223,7 @@ The [[overviews/cell-identity-programs-and-trajectories]] overview established t
 
 ```
 Gene level:       hundreds of different perturbations
-                         │ (Layer A: same effector gene)
-                         │ (Layer B: same regulatory module)
+                         │
 Program level:    a few shared gene programs disrupted
                          │
 Phenotype level:  one clinical/cellular outcome
@@ -299,27 +231,26 @@ Phenotype level:  one clinical/cellular outcome
 
 This hierarchy explains why genes in completely different molecular pathways (e.g., PTEN signaling vs CHD8 chromatin remodeling) can converge: both feed into the same developmental programs (cell proliferation timing, E/I balance). **Programs are the bottleneck** — the narrow waist of the hourglass.
 
-## 10. Layered convergence: what Fernandez-Garcia 2026 added
+## 10. Hierarchical sub-modules within convergence
 
-A subtle but important conceptual shift from prior work:
-
-**Prior view** (implicit in earlier papers): convergence is binary — either two perturbations converge or they don't.
-
-**Layered view** (made explicit by Fernandez-Garcia 2026's BicMix hierarchy):
+When sparse factor models like BicMix are applied to convergence data, they tend to produce a **parent factor + nested sub-factors** structure:
 
 ```
-Parent factor:  "all 23 NDD chromatin regulator KOs share a broad transcriptional response"
+Parent factor:  broad gene set shared across many KOs
+                (e.g., "common chromatin regulator response")
    │
-   ├── Sub-factor 1: methyl gene family (KDM6B, KMT5B, KMT2C) shares an additional narrower module
-   │                  ↳ enriched for SCZ-NS rare variants
+   ├── Sub-factor 1:  narrower gene subset shared by KO subgroup
+   │                  (e.g., methyl gene family — KDM6B, KMT5B, KMT2C)
+   │                  ↳ enriched for SCZ-NS rare variants (Fernandez-Garcia 2026)
    │
-   └── Sub-factor 2: chromatin remodeler family (ARID1B, CHD8, ASH1L, ...) shares another narrower module
+   └── Sub-factor 2:  another narrower gene subset, different KO subgroup
+                      (e.g., SWI/SNF family — ARID1B, CHD8, ASH1L, ...)
                       ↳ enriched for ASD-LoF rare variants
 ```
 
-Convergence is not single-resolution. There is a **broad shared attractor** (all NDD chromatin gene KOs share something), and **narrower functional-family sub-attractors** within it. The hierarchy explains why Set 3 maps to SCZ and Set 4 maps to ASD even though both are chromatin regulators — they share the parent attractor but diverge into different sub-attractors.
+This structure is partly a property of the model (sparsity drives hierarchical decomposition) and partly biological (functional sub-families share more downstream effects than the broader gene class). The biological reading: a broad attractor can have functional-family-specific sub-attractors. This may explain why rare variant burden (SCZ-NS vs ASD-LoF) maps onto specific NDD subgroups despite all being chromatin regulators.
 
-This recasts Q2 (variant-type-specific convergence) as a question about **at what level of the convergence hierarchy** different variant classes operate.
+Relevant to Q2 — whether variant-type-specific convergence operates at parent level, sub-level, or both, remains open.
 
 ---
 
@@ -420,7 +351,7 @@ Spatial transcriptomics + perturbation, and organoid-microenvironment systems, a
 Convergence is not a mystery, but it has more structure than the original "many genes → one phenotype" framing suggested. Pulling together what the wiki now contains:
 
 1. **Convergence is real**: 35 ASD genes → 14 modules (Jin 2020); 3 ASD genes → same E/I defect (Paulsen 2022); 23 NDD genes → cell-type-specific layered convergence (Fernandez-Garcia 2026); 140+ melanoma genes → same dedifferentiated state (Xu 2026).
-2. **Convergence is layered, not binary**: gene-level (Layer A: same effector) and network-level (Layer B: same regulatory module) capture different aspects. Within network-level, hierarchical sub-modules reveal that broad and narrow convergence coexist.
+2. **Convergence is measurable at complementary levels**: gene-level (same effector across KOs, via meta-analysis) and network-level (shared latent modules across KO subsets, via sparse factor models) — and the network-level structure can itself be hierarchical (broad parent + functional-family sub-modules).
 3. **The mechanism is TF hubs + attractor topology**: diverse upstream perturbations funnel through a small number of master TFs that define cell-state attractors; the topology is itself cell-type-specific.
 4. **Cell type sets the resolution at which convergence is visible**: mature glutamatergic neurons consistently show the strongest convergence in NDD datasets — likely because their attractor landscape is more sharply defined.
 5. **Multimodal + multi-context measurement is needed**: no single technology suffices. Fernandez-Garcia 2026's strength is multi-context (4 cell types, in vitro + zebrafish + population genetics), PerturbFate's is multimodal (chromatin + nascent + steady-state). The two strengths haven't been combined yet.
