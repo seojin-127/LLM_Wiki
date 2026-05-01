@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 127 papers | 127 wiki pages | 26 categories
+**Stats**: 128 papers | 128 wiki pages | 26 categories
 
 ---
 
@@ -51,6 +51,8 @@
 - [[single-cell-dl/yu-2025-perturbnet-predicts-single-cell-responses]] — PerturbNet: modular cINN framework for distributional perturbation prediction; supports chemical/genetic/missense variants; outperforms GEARS; first to predict coding-variant effects via ESM (Mol. Syst. Biol. 2025)
 - [[single-cell-dl/he-2026-squidiff-predicting-cellular-development]] — Squidiff: conditional denoising diffusion model for scRNA-seq; predicts differentiation, gene perturbation, drug response via semantic latent manipulation; captures transient states VAE/GNN methods miss (Nat. Methods 2026)
 - [[single-cell-dl/dimitrov-2026-interpretation-extrapolation-and-perturbation-of]] — **Review (Stegle lab)**: unifying ontology of ~150 ML methods for single-cell perturbation modelling; 5 modelling concepts (repr. learning, disentanglement, causal inference, mechanistic discovery, population tracing) × 3 aims (understand/extrapolate/guide); critical evaluation showing simple baselines often beat foundation models on extrapolation (Nat. Rev. Genet. 2026)
+- [[single-cell-dl/li-2026-save-a-generalizable-framework]] — SAVE: VAE + Conditional Flow Matching with **Gene Block Attention** (LLM embeddings of NCBI summaries → Optimal Transport clustering); AdaLN condition injection + 60% condition masking + CFG; beats scVI/CFGen/scDiffusion on multi-condition generation, Harmony/trVAE on scIB batch correction, scGEN/trVAE on IFN-β perturbation (ICLR 2026)
+- [[single-cell-dl/maddu-2026-learning-biophysical-models-of]] — **PFM (Flatiron / Shelley lab)**: simulation-free Flow Matching that learns biophysically-constrained SDEs `dx = (h(x) − ℓx)dt + √(h+ℓx)dw` directly in **gene space** (vs SAVE's latent space); Chebyshev polynomial mean paths between snapshots; unbalanced extension for proliferation/death; key claim — interpolation accuracy ≠ correct dynamics, only biophysical formulation recovers lineage decisions on hematopoiesis (arXiv 2026)
 
 ---
 
@@ -103,6 +105,7 @@
 - [[neuroscience/mato-blanco-2025-early-developmental-origins]] — Human NSC risk gene dynamics across corticogenesis; brain organizer hubs; TF depletion simulation; ASD patient NSC TF alterations (Nat. Commun. 2025)
 - [[neuroscience/dubuc-2026-linking-rare-variants-cell-type]] — Framework linking rare variants in profound autism to cell-type function via brain transcriptomics + foundation models; specificity × sensitivity trade-off; AI inference + postmortem validation (Cell Genomics 2026)
 - [[neuroscience/amelan-2026-crispr-knockout-screens-reveal]] — Genome-wide CRISPR KO screen in mESC → neural lineage; 331 neural-differentiation-essential genes (NEGs); 8 mouse KO hits with neuroanatomy defects; PEDS1 recessive microcephaly validated in family (Nat. Neurosci. 2026)
+- [[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence]] — **Brennand & Hoffman labs (Yale)**: pooled CRISPR-KO of 23 NDD risk genes (chromatin/regulatory) across iPSC-derived NPCs/iGLUT/iGABA (118k cells); convergence is highly **cell-type-specific** and strongest in **mature glutamatergic neurons**; convergent pathways include synaptic, epigenetic, and (unexpectedly) **mitochondrial/OXPHOS** (Seahorse-validated); Connectivity-Map-predicted drugs rescue 10/11 zebrafish behavioral phenotypes — **post-mitotically** (Nat. Neurosci. 2026)
 
 ---
 
@@ -277,6 +280,7 @@
 - [[concepts/combinatorial-perturbation-prediction]] — 5 non-additive effects (additive/synergy/buffering/suppression/redirection); why sample complexity makes this fundamentally hard; methods (GEARS, CPA, SAMS-VAE, AttentionPert, State); generalization gap is worst here
 - [[concepts/cell-level-counterfactual]] — destructive sequencing means no within-cell before/after; 3 levels of inference (point→distributional→cell-level); OT pairs cells across distributions to create pseudo before/after; methods (moscot, Waddington-OT, CINEMA-OT, CellOT, flow matching, Schrödinger bridges); cell-pairing is BOTH distributional input AND individual output
 - [[concepts/post-hoc-vs-during-training]] — vocabulary: "post-hoc" = applied after training (vs built into training itself); 5 uses (attribution, calibration, knowledge integration, metric, model combination); trade-offs (during=stronger but expensive; post-hoc=flexible but less reliable); known limitations of post-hoc attribution (inconsistency, faithfulness, adversarial vulnerability)
+- [[concepts/models-as-distribution-learners]] — **Foundational mental model**: VAE/diffusion/flow matching/transformer all learn the same object `P(data|condition)`; generation, batch correction, perturbation prediction, imputation, annotation are all different *queries* to that distribution; transport family (diffusion, flow matching) vs relational family (transformer); batch correction = counterfactual generation; ML is probabilistic (sample from distribution), not deterministic mapping
 
 ---
 

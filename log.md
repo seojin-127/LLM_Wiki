@@ -4,6 +4,106 @@
 
 ---
 
+### 2026-05-01 — Major revision: convergent-regulation-across-systems overview
+
+After deep study session of Fernandez-Garcia 2026 with the user, expanded the convergence overview with two integrative additions:
+
+1. **Korean preamble** at the top capturing the user's three crystallized research questions (trajectory × cell-type × convergence; variant-type-specific convergence; module → drug → phenotype chain) + Phase 2 (spatial + glia/vasculature). This is a one-time exception to the English-only wiki rule, explicitly authorized by the user.
+
+2. **New Part 0 — "How Do We Measure Convergence? Two Layers"**: explicit framework distinguishing gene-level (METAL meta-analysis + Cochran Q for significance + directional consistency) from network-level (BicMix biclustering for shared latent modules). Maps measurement layers to mechanism layers (effector genes vs regulatory modules).
+
+3. **Part I §4 — Fernandez-Garcia 2026 evidence added**: four findings (cell-type-specific convergence strongest in mature iGLUT; mitochondrial pathway surprise + Seahorse validation; behavior-molecular-population genetics three-layer alignment; BicMix hierarchical sub-modules).
+
+4. **Part II §10 — new conceptual addition**: "Layered convergence" — convergence is not binary but hierarchical (broad parent attractor + narrower functional-family sub-attractors). Recasts variant-type question as a question about hierarchy level.
+
+5. **Part III updates**: added Fernandez-Garcia 2026 as "generation 2+" tool (multi-context, layered measurement framework rather than deeper modalities). Added PFM as the closest mechanistic candidate for trajectory-level convergence prediction.
+
+6. **Part IV restructured**: §13-15 now explicitly map to user's Q1, Q2, Q3. New §16 (cross-system universality) and §17 (Phase 2 — spatial + microenvironment).
+
+7. **Synthesis section** rewritten: 6-point summary + frontier question articulated as "PerturbFate × brain organoid × continuous trajectory × variant-resolved × spatial" gap.
+
+8. **Frontmatter**: added fernandez-garcia-2026 and maddu-2026 (PFM) to papers list, added updated date and new tags (gene-level, network-level, BicMix, METAL).
+
+This revision integrates the user's articulated research direction (also saved as memory `project_ndd_convergence_research_direction.md`) directly into the wiki overview, so future sessions can build on the framework without re-deriving it.
+
+---
+
+### 2026-05-01 — Ingest Fernandez Garcia 2026 (Brennand & Hoffman, Yale, Nat Neurosci)
+
+User-supplied PDF (`Downloads/s41593-026-02247-7.pdf`). User redirected from PFM session (which was getting too abstract/jargon-heavy) to a wet-lab brain-focused paper more aligned with their interests.
+
+- Title: "Transcriptomic and phenotypic convergence of neurodevelopmental disorder risk genes in vitro and in vivo"
+- First authors (5 co-first): Meilin Fernandez Garcia, Kayla Retallick-Townsley, April Pruitt, Elizabeth A. Davidson, Novin Balafkan
+- Senior: Laura M. Huckins, Ellen J. Hoffman, Kristen Brennand (Yale)
+- DOI: 10.1038/s41593-026-02247-7, accepted 2026-02-25
+- Category: `neuroscience`
+- Files created:
+  - `papers/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence.pdf`
+  - `sources/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence.md`
+  - `wiki/neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence.md`
+- Cross-links: paulsen-2022 (autism genes converge — direct comparison), jin-2020 (in vivo Perturb-Seq method kin), villa-2022 (CHD8 deep dive — gene in this screen), martinscosta-2024 (ARID1B deep dive — gene in this screen), jourdon-2023, morelli-2022, amelan-2026, dubuc-2026; overviews (perturbation-prediction, six-open-issues, convergent-regulation, cell-identity-programs)
+- Key novelty: **pooled scCRISPR-KO of 23 NDD risk genes × 4 iPSC-derived contexts (iNPC, immature/mature iGLUT, iGABA), 118k cells**. Operational definition of convergence = METAL meta-analysis FDR_meta<0.05 + Cochran Q P_Het>0.05.
+- Three results: (1) convergence is **cell-type-specific**, **strongest in mature iGLUT**; (2) pathway convergence includes synaptic + epigenetic + **unexpected mitochondrial/OXPHOS** (validated by Seahorse, OXPHOS protein, mitochondrial morphology in NRXN1/ASH1L/ARID1B mutants); (3) Connectivity-Map-predicted drugs rescue **10/11 zebrafish mutant behaviors post-mitotically** (chd2×Pravastatin, kdm6b×Paclitaxel, ash1l×Sunitinib/Rosiglitazone/etc., phf21a×Fluvoxamine, kmt5b×Sirolimus).
+- Convergence predicted by: shared GO annotation, shared clinical association, **postmortem brain co-expression**.
+- Stats: 129 → 130 papers
+
+---
+
+### 2026-05-01 — Ingest PFM (Maddu, Chardès, Shelley — Flatiron, arXiv 2026)
+
+User-supplied PDF (`Downloads/2604.25062v1.pdf`). Follow-up to SAVE study session — user noted "flow matching" overlap with SAVE and wanted to compare.
+
+- Title: "Learning biophysical models of gene regulation with probability flow matching"
+- Authors: Suryanarayana Maddu, Victor Chardès, Michael J. Shelley (Flatiron CCB / Harvard MCB / NYU Courant)
+- arXiv: 2604.25062 [q-bio.MN], 2026-04-27
+- Category: `single-cell-dl`
+- Files created:
+  - `papers/maddu-2026-learning-biophysical-models-of.pdf`
+  - `sources/maddu-2026-learning-biophysical-models-of.md`
+  - `wiki/single-cell-dl/maddu-2026-learning-biophysical-models-of.md`
+- Cross-links added to: SAVE (Li 2026), Klein 2025 (moscot/OT), Squidiff (He 2026), Cell2fate (Aivazidis 2025), monod (Gorin 2025), GEARS (Roohani 2023), perturbation-prediction overview, six-open-issues overview, concepts (models-as-distribution-learners, distributional-vs-point, cell-level-counterfactual, interpolation-vs-extrapolation, expressivity-interpretability)
+- Key novelty: **Probability Flow Matching** — extends FM to multi-marginal scRNA-seq via FP equation → Probability Flow ODE. Parameterizes both **drift** `f(x)` and **diffusion** `D(x)` directly in **gene space** with chemical-Langevin-form `dx = (h(x)−ℓx)dt + √(h+ℓx)dw`. Engineering pieces: (1) Chebyshev polynomial mean paths (vs piecewise-linear) for smooth velocity fields, (2) unbalanced extension via auxiliary mass density `m_t(x)` for proliferation/death.
+- Headline empirical claim: **interpolation accuracy ≠ correct dynamics** — multiple parameterizations match snapshot reconstruction equally well but only the biophysically-consistent one recovers lineage decisions and gene-perturbation responses on 3 hematopoiesis datasets.
+- Comparison vs SAVE: SAVE = latent-space FM, generic NN drift, scales to many conditions via CFG. PFM = gene-space FM, biophysical drift+diffusion, mechanistic interpretability + OOD initial conditions. Complementary, not competing.
+- Stats: 128 → 129 papers
+
+---
+
+### 2026-04-28 — Concept page: Generative ML Models as Distribution Learners
+
+Synthesized during SAVE paper learning session. User reached a key conceptual breakthrough during back-and-forth Q&A:
+
+1. Realized batch correction (which they routinely use scVI for) is itself counterfactual generation.
+2. Internalized that ML models learn distributions `P(data|condition)`, not deterministic A→B mappings — same input gives different outputs (sampling).
+3. Grouped diffusion + flow matching as a "transport / path-finding" family, transformer as a "relational" family, both learning the same kind of object.
+
+Captured this as a foundational concept page so future paper-reading sessions can build on it without re-deriving:
+
+- `wiki/concepts/models-as-distribution-learners.md` — covers: why reconstruction ≠ goal (sculptor analogy), four paradigms one goal table, transport vs relational families, all tasks as queries to the distribution, why batch correction is generative, probabilistic vs deterministic shift, practical implications for picking methods and reading papers.
+- Cross-linked to: VAE, distributional-vs-point-prediction, cell-level-counterfactual, single-cell-integration-methods overview, scVI, SAVE, Squidiff, scGPT, Harmony.
+- Index updated under `concepts/`.
+
+This is a meta/foundational page — not paper-derived. Paper count unchanged (128). Concept page count increased.
+
+---
+
+### 2026-04-28 — Ingest SAVE (ICLR 2026, Fudan/Wang lab)
+
+User-supplied PDF (`Downloads/2604.16776v1.pdf`).
+
+- Title: "SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention"
+- Authors: Jiahao Li, Jiayi Dong, Peng Ye, Xiaochi Zhou, Haohai Lu, Fei Wang (Fudan)
+- Category: `single-cell-dl`
+- Files created:
+  - `papers/li-2026-save-a-generalizable-framework.pdf`
+  - `sources/li-2026-save-a-generalizable-framework.md`
+  - `wiki/single-cell-dl/li-2026-save-a-generalizable-framework.md`
+- Cross-links added to scVI, scGPT, scFoundation, Squidiff, PerturbNet, GEARS, Harmony, scIB, scArches, dimitrov-2026 review, plus concepts (VAE, distributional-vs-point, combinatorial-perturb, interp-vs-extrap, expressivity-interpretability)
+- Key novelty: **Gene Block Attention** — LLM embeddings (text-embedding-ada-002 on NCBI summaries) + Optimal Transport clustering → semantic gene blocks as Transformer tokens. Plus VAE + Conditional Flow Matching with AdaLN condition injection + 60% condition masking for CFG.
+- Stats: 127 → 128 papers
+
+---
+
 ### 2026-04-25 — Reframe checklist overview to "open issues map"
 
 User flagged that the previous "Analyst's 6-Point Checklist" page miscaptured
