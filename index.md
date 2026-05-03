@@ -3,7 +3,7 @@
 > AI for Biology research paper knowledge base.
 > Claude maintains this file. Do not edit manually.
 
-**Stats**: 128 papers | 128 wiki pages | 26 categories
+**Stats**: 132 papers | 132 wiki pages | 26 categories
 
 ---
 
@@ -106,6 +106,8 @@
 - [[neuroscience/dubuc-2026-linking-rare-variants-cell-type]] — Framework linking rare variants in profound autism to cell-type function via brain transcriptomics + foundation models; specificity × sensitivity trade-off; AI inference + postmortem validation (Cell Genomics 2026)
 - [[neuroscience/amelan-2026-crispr-knockout-screens-reveal]] — Genome-wide CRISPR KO screen in mESC → neural lineage; 331 neural-differentiation-essential genes (NEGs); 8 mouse KO hits with neuroanatomy defects; PEDS1 recessive microcephaly validated in family (Nat. Neurosci. 2026)
 - [[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence]] — **Brennand & Hoffman labs (Yale)**: pooled CRISPR-KO of 23 NDD risk genes (chromatin/regulatory) across iPSC-derived NPCs/iGLUT/iGABA (118k cells); convergence is highly **cell-type-specific** and strongest in **mature glutamatergic neurons**; convergent pathways include synaptic, epigenetic, and (unexpectedly) **mitochondrial/OXPHOS** (Seahorse-validated); Connectivity-Map-predicted drugs rescue 10/11 zebrafish behavioral phenotypes — **post-mitotically** (Nat. Neurosci. 2026)
+- [[neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to]] — **Novarino lab (IST Austria)** review crystallising NDD-gene **convergence onto 3 pathway families**: PI3K-mTOR (mTORopathies — TSC1/2, DEPDC5), transcriptional/epigenetic (BAF complex — ARID1B, SETD5, CHD8, MECP2), synaptic (NRXN, NLGN, SHANK); proposes the **multipathway loop** + gene-vulnerability/mutational-load/two-hit framework (Trends Neurosci. 2020)
+- [[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in]] — **Meshorer & Shifman labs (Hebrew U Jerusalem)** review on the *inverse-of-convergence* question — *why same-gene variants give different phenotypes*; 4-layer frame (variant itself / other genetic elements / environment / developmental noise); ~95% of incomplete-penetrance cases explained when all 4 layers accounted for (Trends Genet. 2026)
 
 ---
 
@@ -293,6 +295,8 @@
 - [[overviews/endogenous-variation-as-natural-perturbation]] — **Sister overview to convergent-regulation**: endogenous variation = natural perturbation; gene effect = f(perturb, context); divergence (same perturb→different effects) and convergence (different perturbs→same effect) as two faces of context-dependence; reframes "what does gene X do?" as "what does X do given Y?"
 - [[overviews/prior-knowledge-circular-reasoning]] — Critical-thinking page: "if we use GO/pathway priors to study perturbations whose effects we don't know, isn't that circular?"; 3 failure modes (confirmation bias, streetlight effect, error propagation); 3 reasons priors still useful; when safe vs risky table; validation hierarchy
 - [[overviews/six-open-issues-perturbation-modelling]] — Map of six open challenges in perturbation modelling (multimodal / covariates / interpretability / extrapolation benchmark / UQ / combinatorial); emerged from "wouldn't it be easier to just measure?" → "given we can't, what must models do?"; each issue links to deeper concept page + how methods currently approach it
+- [[overviews/transcriptional-heterogeneity-as-developmental-mechanism]] — **Companion to `cell-identity-programs-and-trajectories` (flip side)**: NPC transcriptional heterogeneity is *mechanism*, not noise — the substrate of lineage potential, fate specification, and NDD vulnerability. 7 parts: thesis (Dvir 2026 Box 1) / oRG human-amplified case / RG subtypes drive spatial+functional spec / glia-neuron cross-cell variability / critical-window timing / NDD vulnerability *through* heterogeneity / how to measure. Closes with cascade-frame placement: heterogeneity = stochastic component of bottleneck-to-cell decoder.
+- [[overviews/convergence-heterogeneity-cascade-frame]] — **Bridge between the convergence and heterogeneity overviews**: argues the apparent paradox (Parenti 2020 = strong pathway convergence vs Dvir 2026 = pervasive heterogeneity) dissolves once NDDs are modelled as a *cascade* rather than a single mapping. Autoencoder analogy: low-dimensional continuous bottleneck (3-pathway manifold) + cell-type-specific stochastic decoder. Convergence is bottleneck property; heterogeneity is input + decoder property; both simultaneously true at different cascade locations. Maps Phase 1 NDD-convergence research questions to specific cascade operators (encoder map / latent geometry / decoder inverse). Closes with methodological agenda: variance decomposition at single-cell scale, distributional prediction, decoder identification, intervention design by cascade row.
 
 ---
 

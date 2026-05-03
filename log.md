@@ -4,6 +4,79 @@
 
 ---
 
+### 2026-05-03 — Overview: Convergence-heterogeneity cascade frame (bridge synthesis)
+
+Created `overviews/convergence-heterogeneity-cascade-frame.md` to bridge the two NDD-side overviews. Resolves the apparent paradox: Parenti 2020 (strong pathway convergence) vs Dvir 2026 (pervasive heterogeneity at every layer) are not in tension — they refer to *different cascade locations* of a multi-stage information cascade.
+
+**Architecture (autoencoder analogy)**:
+```
+INPUT (variants × modifiers)
+   ↓ encoder
+BOTTLENECK (3-pathway manifold; low-dim continuous)
+   ↓ decoder = cell-type × time × stochastic
+OUTPUT (phenotype distribution)
+```
+
+**8 parts**:
+- I — The apparent paradox (Parenti vs Dvir framing in tension)
+- II — Reframing as cascade (single-mapping is the wrong abstraction)
+- III — Autoencoder analogy (low-dim ≠ low-cardinality; continuous latent code)
+- IV — Where each layer of heterogeneity enters: Layer 1 input variant features / Layer 2 manifold position / Layer 3 cell-type+time deterministic decoder / Layer 4 stochastic decoder / Layer 5 environment as decoder modulator
+- V — Information theory framing: data processing inequality + decoder side-information explains why low-dim bottleneck does not bound output dimensionality
+- VI — Resolution table mapping every NDD heterogeneity observation to its cascade row
+- VII — Phase 1 research questions mapped onto cascade operators (encoder map / latent geometry / decoder inverse)
+- VIII — Methodological agenda: variance decomposition at single-cell scale, distributional prediction, decoder identification, intervention design by cascade row
+
+**Closing**: places this overview between [[overviews/convergent-regulation-across-systems]] and [[overviews/transcriptional-heterogeneity-as-developmental-mechanism]] — argues both sides become non-conflicting predictions of the same cascade model, with a worked example (`SHANK3` across all five layers).
+
+References 21 papers across overviews/concepts (cascade-relevant) and the two NDD reviews. Updated index.md.
+
+---
+
+### 2026-05-03 — Overview: Transcriptional heterogeneity as developmental mechanism
+
+Created `overviews/transcriptional-heterogeneity-as-developmental-mechanism.md` to compile the wiki's evidence for the thesis (lifted from Dvir 2026 Box 1):
+
+> NPC dynamic, heterogeneous gene expression during critical windows of fate commitment is strongly linked to lineage potential and fate specification.
+
+This overview is the **flip side** of `cell-identity-programs-and-trajectories.md` — that one extracts clean program structure (heterogeneity as a resolution problem); this one argues heterogeneity *itself* is the developmental mechanism (heterogeneity as the substrate).
+
+**7 parts**:
+- I — Thesis: heterogeneity as mechanism, not noise
+- II — Human-amplified case: oRG / bRG and lineage potential expansion (kanton-2019, taverna-2014, jain-2025, mansour-2018, liu-2025)
+- III — RG subtypes drive spatial patterning + functional specification (nano-2025, dibella-2021, zhang-2025 PFC + spatial dynamics, zeng-2023, mato-blanco-2025)
+- IV — Cross-cell-type variability: glia-neuron communication (wang-2025 OPC × GABA, gordon-2021, dony-2025, tanabe-2025, morelli-2022)
+- V — Critical windows: heterogeneity locked in at narrow temporal boundaries (schafer-2019 heterochronicity, glass-2026, herring-2022, mannens-2025, trevino-2020)
+- VI — NDD vulnerability *through* heterogeneity (li-2023 CHOOSE, jourdon-2023 idiopathic ASD, paulsen-2022 genomic context, schafer-2019 priming, fernandez-garcia-2026)
+- VII — How to measure (keefe-2025 lineage atlas, braun-2023 first-trimester reference, setty/lange/cell2fate fate inference, fleck/zenk/ding GRN methods, klein-2025, vinyard-2025)
+
+**Closing**: places heterogeneity into the cascade frame from the Dvir 2026 discussion — heterogeneity is the *stochastic component of the bottleneck-to-cell decoder*, complementary to the deterministic decoder (cell-type × position × time). Argues for distributional prediction + variance decomposition methods that respect single-cell structure as the next decisive methodological step.
+
+References 39 papers across overviews, neuroscience, brain-development, brain-atlas, single-cell-dl, single-cell-foundation, genomic-dl. Updated index.md.
+
+---
+
+### 2026-05-03 — Ingest: two paired NDD reviews (convergence ↔ divergence)
+
+User shared two recently read review papers, ingested as a paired set:
+
+- **Paper #131** — *Neurodevelopmental Disorders: From Genetics to Functional Pathways* (Parenti, Rabaneda, Schoen, Novarino — IST Austria, 2020, *Trends in Neurosciences* 43:8, DOI 10.1016/j.tins.2020.05.004)
+  - **Stance**: convergence — different NDD genes converge on **3 pathway families** (PI3K-mTOR, transcriptional/epigenetic, synaptic signaling) with the **multipathway loop** as cross-pathway feedback model
+  - **Genetic-architecture frame**: gene vulnerability + mutational load + two-hit
+  - Files: `sources/parenti-2020-neurodevelopmental-disorders-from-genetics-to.md`, `wiki/neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to.md`
+
+- **Paper #132** — *Complex genotype-phenotype relationships in neurodevelopmental disorders* (Dvir, Meshorer, Shifman — Hebrew University Jerusalem, 2026, *Trends in Genetics* in-press, DOI 10.1016/j.tig.2026.03.005)
+  - **Stance**: divergence (the inverse-of-convergence question) — same pathogenic variant gives different phenotypes; **4-layer framework** (variant itself / other genetic elements / environment / developmental noise) explains ~95% of incomplete-penetrance cases per gnomAD audit
+  - Files: `sources/dvir-2026-complex-genotype-phenotype-relationships-in.md`, `wiki/neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in.md`
+
+**Key cross-link**: the two reviews are deliberately linked as *complementary halves of the NDD genotype-phenotype problem* — Parenti 2020 = different genes → same phenotypes; Dvir 2026 = same gene → different phenotypes. Both `Related Papers` sections explicitly call this out.
+
+Both also extensively cross-link to Fernandez-Garcia 2026 (the empirical convergence test that motivates the Dvir counterweight) and to gene-specific NDD models already in the wiki (de Jong 2021, Villa 2022, Morelli 2022, Martins-Costa 2024, Mato-Blanco 2025, Schafer 2019, Paulsen 2022, Jourdon 2023, Amelan 2026).
+
+Stats: 130 → 132 papers, 130 → 132 wiki pages.
+
+---
+
 ### 2026-05-01 — Major revision: convergent-regulation-across-systems overview
 
 After deep study session of Fernandez-Garcia 2026 with the user, expanded the convergence overview with two integrative additions:
