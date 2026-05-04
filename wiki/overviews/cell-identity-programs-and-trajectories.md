@@ -62,6 +62,13 @@ A radial glial cell that has just turned on *SOX2* and a radial glial cell two d
 
 This overview argues that developmental cell identity is better represented as **the level and stability of gene program performance along a trajectory** than as the presence or absence of marker genes. It is the extended version of [[overviews/atlas-as-hypothesis-engine#4.-Canonical-markers-vs.-gene-programs-and-trajectories]] — that section made the claim; this overview builds it out using the wiki's developmental atlases, a history of how module-extraction methods evolved (PCA → NMF → cNMF → joint decomposition → foundation-model embeddings), and the tools currently pushing the frontier.
 
+### Sister overview — the diffusion term
+
+If cell-state evolution is modelled as a stochastic differential equation
+$dX_t = \mu(X, t)\,dt + \sigma(X, t)\,dW_t$ — the framework that underlies Waddington's epigenetic landscape and the wiki's RNA-velocity-based fate-inference methods ([[single-cell-dl/setty-2019-characterization-of-cell-fate|Palantir]], [[single-cell-dl/lange-2022-cellrank-for-directed-single|CellRank]], [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna|Cell2fate]], [[single-cell-dl/maddu-2026-learning-biophysical-models-of|PFM]], [[single-cell-dl/he-2026-squidiff-predicting-cellular-development|Squidiff]]) — then this overview covers the *drift component* $\mu(X, t)$: the deterministic pull toward fates / programs / attractors, and the methodology lineage for extracting it.
+
+The companion overview [[overviews/transcriptional-heterogeneity-as-developmental-mechanism]] covers the *diffusion component* $\sigma(X, t)\,dW_t$: the stochastic fluctuation around the drift, and how that fluctuation drives lineage potential, fate diversification, and NDD vulnerability. Together the two overviews articulate the two terms of the same dynamical system. The framing is a useful mathematical lens, not a claim about NPC biology being a literal Langevin process.
+
 - **Part I** — Why canonical markers stop at the door
 - **Part II** — What a gene program is, how we learned to extract them, and why the methods keep upgrading
 - **Part III** — Identity has more than one axis: specification, maturation, plasticity

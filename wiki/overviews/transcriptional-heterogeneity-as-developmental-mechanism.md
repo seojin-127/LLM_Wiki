@@ -2,8 +2,9 @@
 title: "Transcriptional Heterogeneity in Neural Progenitors as a Developmental Mechanism"
 type: overview
 created: 2026-05-03
+modified: 2026-05-04
 category: overviews
-tags: [developmental-noise, NPC, radial-glia, oRG, lineage-potential, fate-commitment, critical-window, NDD, heterogeneity, stochastic-fate, cell-cell-communication, decoder-noise]
+tags: [stochastic-decoder, NPC, radial-glia, oRG, lineage-potential, fate-commitment, critical-window, NDD, heterogeneity, cell-cell-communication, sampling-step]
 papers:
   - neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in
   - neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to
@@ -48,50 +49,58 @@ papers:
 
 ## Why This Overview Exists
 
-The companion overview [[overviews/cell-identity-programs-and-trajectories]] argues that cell identity is best represented as **continuous gene-program performance along a trajectory**, and traces the methodological lineage (PCA → NMF → joint decomposition → foundation models) for *extracting* clean program structure from data. That overview treats heterogeneity as a *resolution problem* — something we want to clean up so the program signal pops out.
+본 overview는 neural progenitor cell (NPC)의 transcriptional heterogeneity를 *fate-driving mechanism*으로 다룬다. 세포 상태의 시간적 진화는 stochastic differential equation (SDE) 형태로 모델링된다. Waddington epigenetic landscape의 수학적 실현이자, 본 wiki의 단일세포 trajectory 방법론들 — [[single-cell-dl/setty-2019-characterization-of-cell-fate|Palantir]], [[single-cell-dl/lange-2022-cellrank-for-directed-single|CellRank]], [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna|Cell2fate]], [[single-cell-dl/maddu-2026-learning-biophysical-models-of|PFM]], [[single-cell-dl/he-2026-squidiff-predicting-cellular-development|Squidiff]] — 이 명시적으로 사용하는 framework이다.
 
-This overview takes the **opposite stance**: heterogeneity in neural progenitor cells (NPCs) during critical windows is **not noise to be cleaned up, but a developmental mechanism that drives lineage potential, fate specification, and ultimately the substrate of NDD vulnerability**. The thesis was articulated cleanly in [[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir, Meshorer, Shifman 2026]] (Box 1) as one of four explanation layers for variable expressivity:
+$$dX_t = \underbrace{\mu(X, t)\,dt}_{\text{drift}} + \underbrace{\sigma(X, t)\,dW_t}_{\text{diffusion}}$$
 
-> NPC dynamic, heterogeneous gene expression during critical windows of fate commitment is strongly linked to lineage potential and fate specification.
+자매 overview [[overviews/cell-identity-programs-and-trajectories]]는 *drift component* $\mu(X, t)$ — 세포가 평균적으로 어느 program / fate로 끌려가는가, 그 trajectory와 program structure를 어떻게 추출하는가 — 를 다룬다. 본 overview는 *diffusion component* $\sigma(X, t)\,dW_t$ — drift 주변의 stochastic fluctuation이 어떻게 lineage potential, fate specification, neurodevelopmental disorder (NDD) vulnerability의 substrate가 되는가 — 를 다룬다.
 
-**Why this matters**: in a world where NDD pathogenic variants act on a deterministic developmental substrate, the same variant should give the same phenotype. The fact that monozygotic twins (identical genotype + identical environment) carrying the same NDD variant still show discordant phenotypes points to a **biological floor of stochastic variation** — not measurement noise, but intrinsic heterogeneity in how progenitor cells commit to fates. Quantifying that floor is one of the open problems Dvir 2026 names; it is also the methodological gap that will decide how predictable single-cell-perturbation models can ever be.
+이 framing은 mathematical idealization이며, NPC의 dynamics가 실제로 Langevin equation을 만족한다는 주장은 아니다. 본 overview는 drift-diffusion을 backbone이 아니라 정리 도구로 사용하며, 두 wiki를 연결하는 공통 vocabulary를 제공하는 데 목적이 있다.
 
-This overview compiles the wiki's evidence into a single argument, in seven parts:
+### "Developmental noise"라는 용어에 대하여
 
-- **Part I** — Heterogeneity as mechanism, not noise (the thesis)
-- **Part II** — The human-amplified case: oRG / basal radial glia and the expansion of lineage potential
+해당 분야 literature는 본 overview가 다루는 현상을 일반적으로 *developmental noise*라고 부른다. 이 용어는 historical accident이며, 일상적 의미의 "noise"(측정 오차, 무의미한 잡음)와는 다른 것을 가리킨다. 더 정확한 description은 다음과 같다.
+
+> 세포의 transcriptional state가 결정론적이지 않고 *확률적으로* 동작한다는 사실 자체. 잡음이 아니라 mechanism이다.
+
+[[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir et al. 2026]]은 이 stochastic variation을 NDD phenotype 변동을 설명하는 네 layer 중 하나(variant 자체, 다른 genetic element, environment에 이어 네 번째)로 명시적으로 framing했다. 일란성 쌍둥이가 동일한 NDD pathogenic variant를 가져도 phenotype이 갈리는 분자적 floor가 이 layer에서 발생하며, 이는 prediction의 원리적 한계를 의미한다.
+
+### 본 overview의 구조
+
+- **Part I** — Heterogeneity as mechanism, not measurement noise
+- **Part II** — Human-amplified case: oRG / basal radial glia and lineage potential
 - **Part III** — RG subtypes drive spatial patterning and functional specification
 - **Part IV** — Cross-cell-type variability: glia–neuron communication
-- **Part V** — Critical windows: when the heterogeneity gets locked in
+- **Part V** — Critical windows: when heterogeneity gets locked in
 - **Part VI** — NDD vulnerability *through* heterogeneity
 - **Part VII** — How heterogeneity is measured
 
-Closing section connects to the cascade frame in [[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir 2026]]: developmental heterogeneity is the *stochastic component of the bottleneck-to-cell decoder*, not a property of the bottleneck (3 pathways) itself.
+Closing에서는 본 overview의 내용이 [[overviews/convergence-heterogeneity-cascade-frame|cascade frame overview]]의 어디에 위치하는지 정리한다.
 
 ---
 
-# Part I — Heterogeneity as Mechanism, Not Noise
+# Part I — Heterogeneity as Mechanism, Not Measurement Noise
 
-## 1. The thesis in one sentence
+## 1. The thesis
 
-NPCs do not occupy stable, discrete identity states during fate commitment. They occupy **dynamic, transient, heterogeneous transcriptional states**, and *which state a cell is in at the moment of commitment* is a non-trivial determinant of what cell type it becomes, what regional identity it acquires, and what circuit it ends up wired into. Same starting material + same external signals + same time → still different cells, by design.
+NPC는 fate commitment 시점에 안정적인 discrete identity state를 점유하지 않는다. 대신 dynamic하고 transient한 heterogeneous transcriptional state를 점유하며, *commitment 시점에 세포가 어떤 state에 있는가*는 그 세포가 어떤 cell type이 되는지, 어떤 areal identity를 획득하는지, 어떤 회로에 wiring되는지를 결정하는 비-trivial한 요인이다. 동일한 starting material과 동일한 외부 신호 아래에서도, 결과 세포의 정체성은 분포로 표현되어야 하며 단일 점값으로 표현될 수 없다.
 
-This is the inverse of the standard "noise = measurement error" framing: here, **the variability is the signal** that the developmental program reads.
+이는 "noise = 측정 오차"라는 기본 framing의 정반대 입장이다. 본 overview의 thesis는 *variability 자체가 신호*라는 것이며, 발달 program이 그 variability를 *읽어내는* 방식이라는 것이다.
 
 ## 2. Why noise is biologically necessary, not accidental
 
-Two arguments, both operationally testable:
+진화가 이 stochasticity를 *유지*한다는 사실 자체가 mechanism의 증거이다. 만약 단순한 오차였다면 selection이 이를 최소화했을 것이다. 두 가지 실증적 논거를 들 수 있다.
 
-- **Lineage diversification requires probabilistic divergence.** A perfectly synchronised, perfectly homogeneous progenitor population would produce a single fate. Cortex needs ~30 cell classes from a small set of progenitor types in a few weeks; heterogeneity at the progenitor level is one mechanism that lets a small number of starting states generate a much larger output set.
-- **Lineage *potential* expansion (especially in primates) depends on tolerated heterogeneity.** In rodents the apical RG → IP → neuron axis is relatively constrained. In humans the same axis is augmented by **outer radial glia (oRG / basal radial glia)** that proliferate in the OSVZ; their progenitor pool tolerates much wider state-to-state fluctuations and produces a more diverse output (Part II below).
+- **Lineage diversification에는 stochastic divergence가 요구된다.** 완벽히 동기화되고 균질화된 progenitor 인구는 단일 fate만을 산출한다. Cortex는 작은 progenitor type 집합으로부터 수 주 안에 ~30개의 cell class를 생성해야 하며, progenitor 수준의 heterogeneity는 작은 starting state 집합이 훨씬 큰 output 집합을 만들 수 있게 하는 mechanism 중 하나이다.
+- **Lineage *potential*의 확장(특히 primate에서)은 tolerated heterogeneity에 의존한다.** Rodent의 apical RG → IP → neuron 축은 비교적 제약적이지만, human에서는 outer subventricular zone (OSVZ)에 위치한 **outer radial glia (oRG / basal radial glia)**가 같은 축을 augment한다. 이들 progenitor pool은 더 넓은 state-to-state fluctuation을 tolerate하며 더 다양한 output을 산출한다 (Part II).
 
-[[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir 2026]] frames this as the **fourth layer** of NDD phenotype variability, alongside the variant itself, modifying-genome, and environment — and explicitly names it as the layer **least empirically tractable** because controlled isogenic systems are required to distinguish stochastic from deterministic variance.
+[[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir 2026]]은 이를 NDD phenotype 변동의 *fourth layer*로 framing하면서, 동시에 *경험적으로 가장 다루기 어려운* layer라고 명시한다. Stochastic variance를 deterministic variance로부터 분리하기 위해서는 isogenic system이 필요하기 때문이다.
 
-## 3. Why this overview is distinct from "cell identity as program performance"
+## 3. 자매 overview와의 관계
 
-[[overviews/cell-identity-programs-and-trajectories]] is about *how to read* cell identity through the lens of program activity. Most of its papers use heterogeneity as a *signal to denoise* — joint NMF, foundation-model embeddings, GRN-derived programs all aim to extract the **stable, reproducible** axes of variation.
+[[overviews/cell-identity-programs-and-trajectories]]는 cell identity를 *program activity의 관점*으로 읽는 방법을 다룬다. 그 overview의 대부분의 paper들은 heterogeneity를 *추출 후 정돈해야 할 신호*로 다루며, joint NMF, foundation-model embedding, GRN-derived program 모두 변동의 *안정적이고 재현 가능한* 축을 추출하는 것이 목적이다.
 
-This overview is about the *un-denoiseable residual* — the part of variability that is **intrinsically dynamic, cell-autonomous, and time-windowed**, that no amount of better extraction will collapse, because there is no fixed point to collapse to. Methodologically the two overviews use overlapping tools (CellRank, GRN inference, lineage tracing) but ask different questions of the same data.
+본 overview는 *추출 후에도 남는 잔차*를 다룬다. 본질적으로 dynamic하고 cell-autonomous하며 time-windowed인 부분, 더 정교한 추출로도 collapse되지 않는 부분이다 (collapse될 fixed point가 없기 때문이다). 두 overview는 도구는 부분적으로 겹치지만 (CellRank, GRN inference, lineage tracing 등) 같은 데이터에 대해 다른 질문을 한다.
 
 ---
 
@@ -99,89 +108,89 @@ This overview is about the *un-denoiseable residual* — the part of variability
 
 ## 4. Why oRG matters for this thesis
 
-Outer radial glia (oRG, equivalently **basal radial glia / bRG**) are progenitors located in the outer subventricular zone (OSVZ) that are **massively expanded in primates and humans relative to rodents**. They are the main reason human cortex has so many more upper-layer neurons and so much more lateral neurogenic territory than mouse cortex.
+Outer radial glia (oRG, 동의어 basal radial glia / bRG)는 OSVZ에 위치한 progenitor로, primate와 human에서 rodent 대비 대규모로 확장되어 있다. Human cortex가 mouse cortex보다 upper-layer neuron이 훨씬 많고 측면 neurogenic territory가 훨씬 넓은 주된 cell-biological 이유이다.
 
-For the heterogeneity thesis, oRG matter for three reasons:
-- They divide many more times before commitment than apical RG → the *transient transcriptional state space* explored per progenitor is larger.
-- They lack the cell-cell contacts that anchor apical RG to a strict ventricular niche → their gene expression is freer to fluctuate.
-- They are the substrate that human-specific cis-regulatory programs (e.g., the human-specific enhancers in [[brain-development/liu-2025-human-specific-enhancer-fine|Liu 2025]]) act on; those enhancers tune NPC dynamics rather than imposing fixed identity.
+Heterogeneity thesis 관점에서 oRG가 중요한 이유는 세 가지이다.
 
-## 5. What the wiki shows about oRG / NPC heterogeneity
+- Apical RG보다 commitment 이전에 훨씬 많이 분열한다. 따라서 한 progenitor가 sampling하는 *transient transcriptional state space*가 더 크다.
+- Apical RG를 ventricular niche에 anchor하는 cell-cell contact이 oRG에는 없다. 따라서 gene expression이 더 자유롭게 fluctuate한다.
+- Human-specific *cis*-regulatory program ([[brain-development/liu-2025-human-specific-enhancer-fine|Liu 2025]])이 작용하는 substrate이며, 이 enhancer들은 NPC dynamics를 *tune*하지 fixed identity를 *impose*하지 않는다.
 
-[[brain-development/taverna-2014-cell-biology-of-neurogenesis|Taverna et al. 2014]] is the foundational cell-biology review: it lays out the ventricular vs subventricular zone organisation, oRG identification, and the cell-cycle differences (oRG retain a basal process; apical RG don't) that *enable* the expanded heterogeneity. The review explicitly notes that human progenitor populations are *markedly more heterogeneous* than mouse, and frames this as the cell-biological origin of human cortical expansion.
+## 5. Wiki의 oRG / NPC heterogeneity 증거
 
-[[brain-development/kanton-2019-organoid-single-cell-genomic|Kanton et al. 2019]] (Camp / Treutlein labs) is the cross-species comparison that grounds the framing: human, chimp, and macaque organoids analysed at single-cell resolution show **human-specific neuronal neoteny** — human progenitors stay in a proliferative, transcriptionally fluctuating state significantly longer than chimp or macaque equivalents. The "neoteny" framing implies that *time spent in the heterogeneous state* is a species-typical parameter of brain development.
+[[brain-development/taverna-2014-cell-biology-of-neurogenesis|Taverna et al. 2014]]는 foundational한 cell-biology review로, ventricular zone과 subventricular zone의 구조, oRG의 식별, 그리고 oRG가 basal process를 유지한다는 cell-cycle 차이(apical RG는 분열 시 retract)를 정리한다. 본 review는 human progenitor 인구가 mouse 대비 *눈에 띄게 더 heterogeneous*하다고 명시하며, 이를 human cortical expansion의 cell-biological origin으로 framing한다.
 
-[[brain-development/jain-2025-morphodynamics-human-early|Jain et al. 2025]] adds the morphological / dynamic dimension: NPCs in early human development show characteristic morphodynamics that are not captured by static transcriptomic snapshots — cells move, change shape, and shift transcriptional state on rapid timescales. The implication: the "heterogeneity" we see in single-cell data is partly a *time-averaged* view of cells that are individually moving fast.
+[[brain-development/kanton-2019-organoid-single-cell-genomic|Kanton et al. 2019]] (Camp / Treutlein 연구실)는 cross-species 비교의 정초이다. Human, chimp, macaque organoid의 single-cell 분석은 **human-specific neuronal neoteny**를 보여준다 — human progenitor가 chimp 또는 macaque 등가물 대비 proliferative하고 transcriptionally fluctuating한 state에 유의하게 더 오래 머문다. "Neoteny" framing은 *heterogeneous state에 머무는 시간 자체*가 종-특이적 parameter라는 점을 함의한다.
 
-[[brain-development/mansour-2018-in-vivo-model-of|Mansour et al. 2018]] (Gage lab) demonstrated that human cortical organoids transplanted into rodent host brains continue to develop with vascularisation and synaptic integration — providing an in-vivo testbed where the human-specific NPC heterogeneity proceeds on its native timescale despite the murine host. This is the methodological complement to organoid-only studies.
+[[brain-development/jain-2025-morphodynamics-human-early|Jain et al. 2025]]는 형태와 dynamic 차원을 추가한다. 초기 human development의 NPC는 static한 transcriptomic snapshot으로는 포착되지 않는 characteristic한 morphodynamics를 보이며, 세포가 빠른 timescale에서 이동하고 형태를 바꾸며 transcriptional state를 shift한다. 즉 single-cell data에서 관찰되는 "heterogeneity"의 일부는 *빠르게 움직이는 세포의 time-averaged view*이다.
 
-[[brain-development/liu-2025-human-specific-enhancer-fine|Liu et al. 2025]] identifies **human-specific enhancers** that fine-tune NPC dynamics — many of them act on RG / NPC populations specifically, suggesting that the regulatory genome has a dedicated layer for *modulating heterogeneity* rather than imposing fixed identity. (See also [[genomic-dl/zemke-2023-conserved-and-divergent-gene]] for the broader observation that ~80% of human-specific cis-regulatory elements are TE-derived but their syntax is preserved — i.e., human-specific *modulation*, not *invention*.)
+[[brain-development/mansour-2018-in-vivo-model-of|Mansour et al. 2018]] (Gage 연구실)은 human cortical organoid를 rodent host brain에 transplant하여 vascularization과 synaptic integration을 동반한 발달을 보였다. Murine host에도 불구하고 human-specific NPC heterogeneity가 native timescale로 진행되는 in-vivo testbed를 제공한다.
 
-## 6. The cell-biology corollary
+[[brain-development/liu-2025-human-specific-enhancer-fine|Liu et al. 2025]]은 human-specific enhancer를 fine-mapping했다. 이들 중 다수가 RG / NPC 인구에 특이적으로 작용하며, 이는 regulatory genome에 *fixed identity를 impose하기보다 heterogeneity를 modulate하는* dedicated layer가 존재함을 시사한다. 관련하여 [[genomic-dl/zemke-2023-conserved-and-divergent-gene|Zemke et al. 2023]]은 human-specific *cis*-regulatory element의 ~80%가 transposable element 유래이지만 regulatory *syntax*는 rodent와 primate 사이에 보존되어 있음을 보였다. 즉, human-specific *modulation*이지 *invention*이 아니다.
 
-oRG abundance is the cell-biological version of a **larger latent space** for fate commitment. If apical RG live on a 2-D fate manifold and oRG live on a 4-D one, then the stochastic exploration of states that any individual progenitor performs samples a richer territory in primates than in rodents. This is why the *same* progenitor pool can produce a much wider neuronal repertoire — and also why human neurodevelopment is intrinsically harder to *predict* from genotype, because the latent space being sampled is larger.
+## 6. Cell-biology corollary
+
+oRG의 풍부함은 fate commitment에서 *latent space가 더 큰* 것의 cell-biological 등가물이다. 한 progenitor가 stochastic하게 explore하는 state territory가 primate에서 rodent보다 풍부하며, 이는 같은 progenitor pool이 더 넓은 neuronal repertoire를 산출할 수 있는 이유이자 동시에 human neurodevelopment가 genotype으로부터의 prediction이 본질적으로 더 어려운 이유이기도 하다 — sampling되는 latent space 자체가 더 크기 때문이다.
 
 ---
 
 # Part III — RG Subtypes Drive Spatial Patterning and Functional Specification
 
-## 7. Spatial heterogeneity beyond cell-type identity
+## 7. Cell-type identity 너머의 spatial heterogeneity
 
-[[brain-development/nano-2025-integrated-analysis-molecular|Nano et al. 2025]] and [[brain-development/dibella-2021-molecular-logic-of-cellular|Di Bella et al. 2021]] both make the same fundamental move: the molecular logic of cortical neurogenesis cannot be captured at the level of *cell types alone*. The same nominal "RG" cell type, sampled at different cortical positions or different developmental times, runs different gene programs that bias which neuronal subtype the descendants will become.
+[[brain-development/nano-2025-integrated-analysis-molecular|Nano et al. 2025]]와 [[brain-development/dibella-2021-molecular-logic-of-cellular|Di Bella et al. 2021]]은 동일한 핵심 주장을 한다. Cortical neurogenesis의 molecular logic은 *cell type만으로*는 설명되지 않는다는 것이다. 같은 nominal "RG"라도 다른 cortical position이나 다른 developmental time에 있을 때 다른 gene program이 작동하며, 그 program이 후손 neuron의 subtype을 bias한다.
 
-Nano 2025 specifically extracts ~500 reproducible co-expression meta-modules from 23 human cortical datasets and identifies **FEZF2+TSHZ3 as drivers of deep-layer specification**, validated in chimeroids. The implication: the same RG, depending on its module-activity profile at the moment of neurogenic division, gives rise to a different layer-specific neuron. Module activity is the heterogeneity that matters.
+Nano et al. 2025는 23개 human cortical dataset에서 ~500개의 reproducible co-expression meta-module을 추출하고, **FEZF2 + TSHZ3가 deep-layer specification의 driver**임을 chimeroid에서 검증했다. 같은 RG라도 neurogenic division 시점의 module activity profile에 따라 다른 layer-specific neuron을 산출한다는 것이며, *문제의 heterogeneity는 module activity 차원의 heterogeneity*임을 보여준다.
 
-Di Bella 2021 showed that the *temporal sequence* of progenitor states determines the laminar identity of their progeny — each "wave" of neurogenesis comes from progenitors in distinguishable transcriptomic states, even when the canonical RG markers are constant.
+Di Bella et al. 2021은 progenitor state의 *temporal sequence*가 후손의 laminar identity를 결정함을 보였다. 각 neurogenesis "wave"는 구분 가능한 transcriptomic state의 progenitor에서 유래하며, 이는 canonical RG marker가 동일한 경우에도 그러하다.
 
-## 8. Spatial transcriptomics brings the geometric dimension
+## 8. Spatial transcriptomics의 geometric 차원
 
-Three recent spatially-resolved studies in the wiki compound this picture:
+세 개의 spatially-resolved 연구가 이 그림을 강화한다.
 
-[[brain-development/zeng-2023-single-cell-spatial-transcriptional|Zeng et al. 2023]] resolves single-cell transcriptional state in spatial context across mouse cortex development; the same broad cell type at different cortical coordinates carries different programmatic activity, and that geometric variability is *informative* for fate.
+[[brain-development/zeng-2023-single-cell-spatial-transcriptional|Zeng et al. 2023]]은 mouse cortex development에서 spatial context 안의 single-cell transcriptional state를 resolve했다. 같은 broad cell type이 다른 cortical coordinate에서 다른 program activity를 carry하며, 그 geometric variability는 fate에 informative하다.
 
-[[brain-development/zhang-2025-pfc-single-cell-spatiotemporal|Zhang et al. 2025 (PFC)]] and [[brain-development/zhang-2025-spatial-dynamics-brain-development|Zhang et al. 2025 (spatial dynamics)]] extend this to human prefrontal cortex and broader brain development respectively. The emerging pattern is that **spatial position is a covariate that explains a substantial fraction of single-cell transcriptional variance** that would otherwise look like noise.
+[[brain-development/zhang-2025-pfc-single-cell-spatiotemporal|Zhang et al. 2025 (PFC)]]와 [[brain-development/zhang-2025-spatial-dynamics-brain-development|Zhang et al. 2025 (spatial dynamics)]]는 이를 human prefrontal cortex와 더 넓은 brain development로 확장한다. 일관된 패턴은 spatial position이 single-cell transcriptional variance의 substantial한 부분을 explain한다는 것이며, 그렇지 않을 경우 noise처럼 보일 변동의 일부가 실제로는 spatially-structured information임을 시사한다.
 
-## 9. Areal identity as another source of fate heterogeneity
+## 9. Areal identity가 더하는 fate heterogeneity
 
-[[neuroscience/mato-blanco-2025-early-developmental-origins|Mato-Blanco et al. 2025]] traces how risk gene dynamics during early human corticogenesis differ between **brain-organizer hubs** at different anteroposterior / dorsoventral coordinates. Their TF-depletion simulation reveals that the *same TF perturbation* has substantially different downstream consequences depending on which areal hub it occurs in — areal identity is itself a layer of decoder context that modulates how heterogeneity at the progenitor level is read.
+[[neuroscience/mato-blanco-2025-early-developmental-origins|Mato-Blanco et al. 2025]]은 anteroposterior / dorsoventral 좌표가 다른 *brain-organizer hub* 사이에서 risk gene dynamics가 어떻게 다른지 추적했다. 본 연구의 TF-depletion simulation은 동일한 TF perturbation이 어느 areal hub에서 발생했는가에 따라 상당히 다른 downstream consequence를 가짐을 보였다. 즉 areal identity 자체가 progenitor-level heterogeneity가 read되는 방식을 modulate하는 contextual layer이다.
 
 ## 10. Why this matters for fate specification
 
-Together, parts 7-9 land a single point: **a "neural progenitor" in 2026 cannot be treated as a single state**. It is a *position-, time-, and module-activity-defined coordinate*, and progenitors at different coordinates have measurably different fate distributions even when their overall cell-type label is identical. Fate specification is the *integration* of (cell-type identity × position × time × current module activity) — and the heterogeneity at each axis compounds.
+§7-9의 종합. 2026년의 "neural progenitor"는 단일 state로 다룰 수 없다. *position-, time-, module-activity-defined coordinate*이며, 다른 좌표의 progenitor는 cell-type label이 동일하더라도 측정 가능하게 다른 fate distribution을 가진다. Fate specification은 (cell-type identity × position × time × current module activity)의 integration이며, 각 axis의 heterogeneity가 곱해진다.
 
 ---
 
-# Part IV — Cross-Cell-Type Variability: Glia–Neuron and Other Cell-Cell Communication
+# Part IV — Cross-Cell-Type Variability: Glia–Neuron Communication
 
 ## 11. The glial layer of heterogeneity
 
-Neurons are the dominant focus of NPC and fate-commitment work, but glia — astrocytes, oligodendrocyte precursor cells (OPCs), microglia — are produced from overlapping progenitor pools and exhibit their own developmental heterogeneity. More importantly: **neurons and glia communicate with each other during development**, and this cross-cell-type communication is itself heterogeneous from cell to cell.
+NPC와 fate-commitment 연구는 일반적으로 neuron 중심이지만, glia (astrocyte, oligodendrocyte precursor cell (OPC), microglia)도 overlapping progenitor pool에서 산출되며 그들 자신의 발달 heterogeneity를 보인다. 더 중요한 점은 neuron과 glia가 발달 중 *상호 communicate*하며, 이 cross-cell-type communication 자체가 세포마다 heterogeneous하다는 것이다.
 
-[[brain-development/wang-2025-molecular-cellular-dynamics|Wang et al. 2025]] is the most direct treatment in the wiki of **OPC × GABAergic neuron communication** during development. The work documents cell-cell interactions between OPCs and immature GABAergic interneurons that vary substantially from cell to cell — i.e., not all OPCs receive the same signals, not all GABAergic neurons send the same signals, and the variability is patterned but stochastic. Functional consequences: variation in myelination timing, GABAergic maturation, and ultimately E/I balance setpoint.
+[[brain-development/wang-2025-molecular-cellular-dynamics|Wang et al. 2025]]는 wiki에서 OPC × GABAergic neuron communication을 가장 직접적으로 다룬 연구이다. 발달 중 OPC와 immature GABAergic interneuron 사이의 cell-cell interaction이 세포마다 상당히 다르다는 점을 기록한다. 모든 OPC가 동일한 신호를 받는 것이 아니며, 모든 GABAergic neuron이 동일한 신호를 보내는 것도 아니다. 그 variability는 patterned이지만 stochastic하다. 결과적으로 myelination timing, GABAergic maturation, 그리고 궁극적으로 E/I balance setpoint의 변동이 발생한다.
 
-## 12. Glial maturation is a second-order timescale
+## 12. Glial maturation은 second-order timescale
 
-[[brain-development/gordon-2021-long-term-maturation-of|Gordon et al. 2021]] demonstrated that long-term cortical-spheroid culture proceeds through identifiable maturation milestones for both neurons *and* glia — and that glial maturation lags neurons substantially. This means the glial "decoder context" is dynamically changing under the neurons that are simultaneously specifying their fate. NPCs that commit to neuronal fate at month 2 see a different glial environment than NPCs that commit at month 5.
+[[brain-development/gordon-2021-long-term-maturation-of|Gordon et al. 2021]]은 long-term cortical-spheroid culture에서 neuron과 glia 양자가 식별 가능한 maturation milestone을 거치며, glial maturation이 neuronal maturation을 상당히 lag한다는 것을 보였다. 이는 neuron이 fate를 specifying하고 있는 *그 아래*에서 glial decoder context가 동적으로 변화하고 있음을 의미한다. Month 2에 commit한 NPC와 month 5에 commit한 NPC는 다른 glial environment를 보게 된다.
 
 ## 13. Glia as integrators of environmental signals
 
-Three NDD-relevant studies (in the neuroscience category but worth pulling here for completeness):
+[[neuroscience/dony-2025-glucocorticoid-amplifies-inhibitory|Dony et al. 2025]]은 chronic glucocorticoid exposure(스트레스 신호)가 cortical organoid에서 PBX3를 통해 inhibitory neuron fate를 amplify함을 보였다. Environmental 신호가 transcriptional program을 통해 routing되며, amplification은 어느 세포가 receptive state에 있었는지에 의존한다.
 
-[[neuroscience/dony-2025-glucocorticoid-amplifies-inhibitory|Dony et al. 2025]] shows that chronic glucocorticoid exposure (a "stress" signal) is integrated by developing cortical organoids in a way that **amplifies inhibitory neuron fate via PBX3** — the environmental signal gets routed through transcriptional programs that are themselves heterogeneous across cells, and the amplification depends on which cells happen to be in receptive states.
+[[neuroscience/tanabe-2025-role-of-immature-choroid|Tanabe et al. 2025]]는 immature choroid plexus (ChP)를 developmental signaling hub로 framing한다. ChP 자체의 state-heterogeneity가 downstream cortical maturation과 social-behavior critical period를 shape한다.
 
-[[neuroscience/tanabe-2025-role-of-immature-choroid|Tanabe et al. 2025]] frames the immature choroid plexus as a developmental signalling hub whose own state-heterogeneity shapes downstream cortical maturation and social-behaviour critical period.
-
-[[neuroscience/morelli-2022-mecp2-related-pathways-cortical|Morelli et al. 2022]] (DM1 organoid model) shows how glutamatergic-neuron-specific dysregulation propagates to MECP2 pathway disturbance — implying that even within the *same nominal cell type*, the level of pathway perturbation depends on each cell's particular state at the moment of insult.
+[[neuroscience/morelli-2022-mecp2-related-pathways-cortical|Morelli et al. 2022]] (DM1 organoid model)는 glutamatergic-neuron-specific dysregulation이 MECP2 pathway disturbance로 propagate함을 보였다. 동일한 nominal cell type 내에서도 insult 시점의 세포별 state에 따라 pathway perturbation의 정도가 달라진다.
 
 ## 14. The pattern
 
-Glia-related heterogeneity is **at least a third dimension of developmental noise**, alongside spatial position and temporal stage:
-- Different OPCs receive different neuronal signals (Wang 2025)
-- Different glial cohorts present different maturation contexts (Gordon 2021)
-- Different cells integrate environmental signals (glucocorticoid, signalling-hub niche) at different rates and amplitudes (Dony 2025; Tanabe 2025)
+Glia-related heterogeneity는 spatial position과 temporal stage에 더해지는 *최소 세 번째* developmental noise 차원이다.
 
-For NDD work this matters because most computational models work at the *neuronal* level — but neuronal phenotype is partly determined by the glial context the neuron developed in, and that context was itself stochastic.
+- 다른 OPC는 다른 neuronal 신호를 받는다 ([[brain-development/wang-2025-molecular-cellular-dynamics|Wang 2025]]).
+- 다른 glial cohort는 다른 maturation context를 제공한다 ([[brain-development/gordon-2021-long-term-maturation-of|Gordon 2021]]).
+- 다른 세포는 environmental 신호를 다른 rate / amplitude로 integrate한다 ([[neuroscience/dony-2025-glucocorticoid-amplifies-inhibitory|Dony 2025]], [[neuroscience/tanabe-2025-role-of-immature-choroid|Tanabe 2025]]).
+
+NDD 연구에서 이는 중요하다. 대부분의 computational model은 *neuronal level*에서 작동하지만, neuronal phenotype은 *그 neuron이 발달한 glial context*에 의해 부분적으로 결정되며, 그 context는 stochastic이었기 때문이다.
 
 ---
 
@@ -189,125 +198,116 @@ For NDD work this matters because most computational models work at the *neurona
 
 ## 15. The "critical window" framing
 
-Heterogeneity that exists *forever* is just noise. Heterogeneity that exists *and gets read out at a specific developmental moment* is mechanism. The Dvir 2026 framing centres this distinction: progenitor states are dynamic and stochastic, but **fate commitment events are temporally narrow** — once a cell crosses the commitment boundary, the state it was in at the boundary is locked.
+영구적으로 존재하는 heterogeneity는 noise이다. *특정 발달 시점에 read out되는* heterogeneity가 mechanism이다. Dvir 2026의 framing은 이 distinction을 중심에 둔다. Progenitor state는 dynamic하고 stochastic이지만, **fate commitment 사건은 시간적으로 좁다** — 세포가 commitment boundary를 한 번 넘으면 그 boundary 직전의 state가 고정된다.
 
-[[neuroscience/schafer-2019-pathological-priming-causes|Schafer et al. 2019]] is the wiki's clearest treatment of how this can go wrong: in idiopathic-ASD iPSC-derived NSCs, **late developmental gene networks are activated prematurely** ("pathological priming"), so the commitment-boundary read-out happens against a precociously-mature transcriptomic background. Different individual NSCs prime by different amounts → heterochronicity across patients.
+[[neuroscience/schafer-2019-pathological-priming-causes|Schafer et al. 2019]]는 wiki에서 이 메커니즘이 disrupt되는 가장 명확한 사례를 제공한다. Idiopathic-ASD iPSC-derived NSC에서 **late developmental gene network가 prematurely activate**된다 ("pathological priming"). Commitment boundary read-out이 precociously mature한 transcriptomic background에서 발생하게 되며, individual NSC가 prime되는 정도가 다르기 때문에 patient 간 heterochronicity가 발생한다.
 
-[[brain-development/glass-2026-human-cortical-organoids-recapitulate|Glass et al. 2026]] addresses the question of whether organoids preserve the same critical-window timing as in-vivo cortex — important because all the iPSC-based heterogeneity work in the wiki is implicitly trusting that organoid clocks are calibrated. The answer is partial: some windows are recapitulated, some are not, with major implications for what you can infer from organoid models.
+[[brain-development/glass-2026-human-cortical-organoids-recapitulate|Glass et al. 2026]]은 organoid가 in-vivo cortex의 critical-window timing을 보존하는가에 대한 질문을 다룬다. Wiki의 모든 iPSC 기반 heterogeneity 연구가 암묵적으로 organoid clock의 calibration을 trust한다는 점에서 중요하다. 답은 부분적이다 — 일부 window는 recapitulate되지만 일부는 그렇지 않으며, 이는 organoid model로부터 추론할 수 있는 것에 주요한 함의를 가진다.
 
-[[brain-development/herring-2022-human-prefrontal-cortex-gene|Herring et al. 2022]] resolves human prefrontal cortex gene-expression dynamics across development with sufficient temporal resolution to identify which genes' expression *peaks during which window*. The peak-window distribution is itself informative about which fate decisions are time-windowed.
+[[brain-development/herring-2022-human-prefrontal-cortex-gene|Herring et al. 2022]]는 human prefrontal cortex의 gene-expression dynamics를 충분한 temporal resolution으로 resolve하여 어느 gene의 발현이 어느 window에서 peak하는지 식별했다. Peak-window distribution 자체가 어느 fate decision이 어느 window에 time-windowed 되어 있는지에 informative하다.
 
-## 16. Chromatin sets the windows, transcription crosses them
+## 16. Chromatin이 window를 set하고 transcription이 cross한다
 
-[[brain-development/mannens-2025-chromatin-accessibility-during|Mannens et al. 2025]] and [[brain-development/trevino-2020-chromatin-accessibility-forebrain|Trevino et al. 2020]] both make the same observation: **chromatin accessibility precedes the transcriptional changes that mark fate commitment**. The regulatory commitment is locked in at the chromatin level, before the marker mRNA appears. This means fate-commitment heterogeneity is partly an *epigenetic* heterogeneity — which enhancers a particular cell happens to have open at the critical window determines what its transcriptional response can be when the developmental signal arrives.
+[[brain-development/mannens-2025-chromatin-accessibility-during|Mannens et al. 2025]]와 [[brain-development/trevino-2020-chromatin-accessibility-forebrain|Trevino et al. 2020]]은 동일한 관찰을 한다. Chromatin accessibility의 변화가 fate commitment를 mark하는 transcriptional change에 *선행*한다는 것이다. Regulatory commitment는 chromatin level에서 고정되며, marker mRNA는 그 이후에 등장한다. 따라서 fate-commitment heterogeneity는 부분적으로 *epigenetic heterogeneity*이며, critical window에 어느 enhancer가 open되어 있는가가 세포의 transcriptional response 가능성을 정한다.
 
-## 17. Why this is a strong argument for *intervention timing*
+## 17. Intervention timing에 대한 함의
 
-If the critical windows are real and the heterogeneity gets locked in at the boundaries, then:
-- Pre-window interventions can shift the entire heterogeneity distribution
-- In-window interventions can selectively redirect the cells that have not yet committed
-- Post-window interventions act on already-committed cells and operate on a much narrower mechanism set (synaptic plasticity, modulator tuning)
+Critical window가 실재하고 heterogeneity가 boundary에서 고정된다면 다음과 같은 timing-dependent 결과가 따른다.
 
-This is consistent with the [[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence|Fernandez-Garcia 2026]] finding that convergent NDD drug effects can rescue zebrafish phenotypes **post-mitotically**, but it also explains why such rescues likely need to be *life-long* interventions on sustained pathway state, rather than one-time corrections of identity.
+- **Pre-window intervention**은 entire heterogeneity distribution을 shift할 수 있다.
+- **In-window intervention**은 아직 commit하지 않은 세포만 redirect할 수 있다.
+- **Post-window intervention**은 이미 commit된 세포에 작용하며, 그 mechanism set은 훨씬 좁다 (synaptic plasticity, modulator tuning 등).
+
+이는 [[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence|Fernandez-Garcia 2026]]에서 convergent NDD drug effect가 zebrafish phenotype을 *post-mitotically* rescue할 수 있다는 발견과 일치하며, 동시에 그러한 rescue가 *life-long sustained intervention*이어야 함을 시사한다 (one-time identity correction이 아니다).
 
 ---
 
 # Part VI — NDD Vulnerability *Through* Heterogeneity
 
-This is the integration with the convergence frame from [[neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to|Parenti et al. 2020]] and the divergence frame from [[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir et al. 2026]].
+본 part는 [[overviews/convergent-regulation-across-systems]]와 [[neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to|Parenti 2020]]의 convergence framing, 그리고 [[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir 2026]]의 divergence framing 사이의 통합 지점이다.
 
-## 18. Pathogenic variants act on heterogeneous substrate, not uniform substrate
+## 18. Pathogenic variant는 heterogeneous substrate에 작용한다
 
-A key insight: NDD risk-gene KOs do not perturb a deterministic clockwork. They perturb a *stochastic system that was already heterogeneous before the perturbation*. This explains several otherwise-puzzling observations:
+핵심은 다음이다. NDD risk-gene KO는 deterministic clockwork를 perturb하지 않는다. *이미 stochastic이었던 system*을 perturb한다. 이 관점은 다음과 같은 puzzling observation들을 설명한다.
 
-- **Same variant, different cells, different responses** — [[neuroscience/li-2023-single-cell-brain-organoid|Li et al. 2023]] (CHOOSE) used pooled CRISPR of 36 ASD risk genes in mosaic cerebral organoids and found that **dorsal intermediate progenitors and ventral progenitors are differentially vulnerable**. Same gene KO → different outcome by cell-type starting state.
-- **Same variant, different individuals, different penetrance** — [[neuroscience/jourdon-2023-modeling-idiopathic-autism|Jourdon et al. 2023]] (idiopathic ASD father-son pairs, n=13) showed that *macrocephalic and normocephalic sons of ASD fathers had opposite E/I imbalances*, with TF divergence between subgroups. Same broad genetic predisposition, opposite phenotypic axis — driven by which TFs ended up high vs low in the affected NSCs at commitment time.
-- **Genomic context modulates expressivity** — [[neuroscience/paulsen-2022-autism-genes-converge|Paulsen et al. 2022]] found that the same KO of KMT5B / ARID1B / CHD8 in different organoid lines produced different magnitudes of asynchronous GABAergic / excitatory development — i.e., the genetic background acts as a modifier of the heterogeneity floor.
+- **동일 변이, 다른 세포, 다른 response.** [[neuroscience/li-2023-single-cell-brain-organoid|Li et al. 2023]] (CHOOSE)는 mosaic cerebral organoid에서 36개 ASD risk gene의 pooled CRISPR을 수행했다. **Dorsal intermediate progenitor와 ventral progenitor가 차등적으로 vulnerable**하다. 동일한 gene KO라도 starting state에 따라 다른 outcome이 발생한다.
+- **동일 변이, 다른 individual, 다른 penetrance.** [[neuroscience/jourdon-2023-modeling-idiopathic-autism|Jourdon et al. 2023]] (idiopathic ASD father-son pair, n = 13)는 macrocephalic son과 normocephalic son이 *opposite한 E/I imbalance*를 보임을 보고했다. TF divergence가 두 subgroup을 가른다. 동일한 broad genetic predisposition으로부터 정반대의 phenotypic axis가, 어느 TF가 high vs low로 commit된 시점에 따라 결정된다.
+- **Genomic context가 expressivity를 modulate.** [[neuroscience/paulsen-2022-autism-genes-converge|Paulsen et al. 2022]]은 KMT5B, ARID1B, CHD8의 동일 KO가 다른 organoid line에서 다른 magnitude의 asynchronous한 GABAergic / excitatory development를 산출함을 보였다. Genetic background가 heterogeneity floor의 modifier로 작용한다.
 
-## 19. "Pathological priming" as heterogeneity-amplification
+## 19. "Pathological priming"은 heterogeneity-amplification
 
-[[neuroscience/schafer-2019-pathological-priming-causes|Schafer 2019]]'s heterochronicity finding fits directly into the heterogeneity framing: variants that disrupt the *timing* of program activation push some cells across critical-window boundaries early. The heterogeneity that was previously bounded becomes amplified — cells that should have been late-priming arrive at fate commitment in a state usually reserved for later cells. The phenotype is heterogeneous *because* the underlying timing distribution is now wider.
+[[neuroscience/schafer-2019-pathological-priming-causes|Schafer 2019]]의 heterochronicity 발견은 heterogeneity framing에 직접 들어맞는다. Program activation의 *timing*을 disrupt하는 변이는 일부 세포를 critical-window boundary 너머로 일찍 push한다. 이전에 bounded되어 있던 heterogeneity가 amplify되며, 늦게 prime되어야 했던 세포가 일찍 prime된 세포의 state로 fate commitment에 도달한다. Phenotype이 heterogeneous한 이유는 underlying timing distribution이 더 넓어졌기 때문이다.
 
-## 20. Convergence at the pathway level *requires* heterogeneity at the cell level
+## 20. Pathway 차원의 convergence는 cell 차원의 heterogeneity를 *요구*한다
 
-This is the central reconciliation point with [[overviews/convergent-regulation-across-systems]] and [[neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to|Parenti 2020]]: **pathway convergence (the 3-pathway thesis: mTOR + chromatin + synaptic) and cell-level heterogeneity are not in tension — they are the two halves of the same observation.**
+이 절은 [[overviews/convergent-regulation-across-systems]] 및 [[neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to|Parenti 2020]]와의 reconciliation 지점이다. **Pathway convergence (3-pathway thesis: mTOR + chromatin + synaptic)와 cell-level heterogeneity는 tension 관계가 아니다 — 같은 관찰의 두 측면이다.**
 
-- Pathway state is a low-dimensional manifold (the bottleneck).
-- *Which* cells respond to a given pathway perturbation depends on which states they are in at the moment of perturbation.
-- A KO of a chromatin regulator hits *all cells transcribing that regulator's target genes during that window*; the cell-by-cell response amplitude is heterogeneous because the cells were at heterogeneous states.
-- Convergence is a property of the average. Heterogeneity is a property of the distribution around the average.
+- Pathway state는 low-dimensional manifold이다.
+- *어느* 세포가 주어진 pathway perturbation에 반응하는가는 perturbation 시점의 state에 의존한다.
+- Chromatin regulator KO는 *해당 window에 그 regulator의 target gene을 transcribe하던 모든 세포*에 hit하며, 세포별 response amplitude는 세포가 heterogeneous state에 있었기 때문에 heterogeneous하다.
+- Convergence는 *평균*의 property이다. Heterogeneity는 *분포 모양*의 property이다.
 
-[[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence|Fernandez-Garcia 2026]] is the empirical demonstration of this claim: pooled CRISPR-KO of 23 NDD risk genes finds that **convergence is strongest in mature glutamatergic neurons** — not because the genes only act there, but because the heterogeneity-amplification effects are the most legible there. Convergence emerges from heterogeneity, not despite it.
+[[neuroscience/fernandez-garcia-2026-transcriptomic-and-phenotypic-convergence|Fernandez-Garcia 2026]]은 이 주장의 경험적 demonstration이다. 23개 NDD risk gene의 pooled CRISPR-KO에서 **convergence가 mature glutamatergic neuron에서 가장 강하다**. 그 gene들이 해당 cell type에서만 작용하기 때문이 아니라, *heterogeneity-amplification effect가 거기서 가장 legible하기 때문*이다. Convergence는 heterogeneity로부터 emerge하지 heterogeneity에도 불구하고가 아니다.
 
-## 21. Why developmental-noise-aware models will outperform deterministic ones
+## 21. Heterogeneity-aware model이 deterministic model을 outperform할 이유
 
-A practical implication, particularly relevant for [[overviews/six-open-issues-perturbation-modelling]] and [[overviews/perturbation-prediction-and-causal-inference]]:
+실용적 함의이다 — [[overviews/six-open-issues-perturbation-modelling]]와 [[overviews/perturbation-prediction-and-causal-inference]]에 관련된다.
 
-- Deterministic models (input genotype → output phenotype) implicitly assume the substrate is uniform.
-- Heterogeneity-aware models (input genotype × stochastic state → distribution over phenotypes) explicitly model the floor.
-- The right loss function is *distributional* (e.g., Wasserstein distance to ground-truth phenotype distribution) rather than point-wise (e.g., mean phenotype RMSE) — see [[concepts/distributional-vs-point-prediction]].
+- Deterministic model (input genotype → output phenotype)은 substrate가 균일함을 암묵적으로 가정한다.
+- Heterogeneity-aware model (input genotype × stochastic state → distribution over phenotype)은 floor를 명시적으로 modeling한다.
+- Loss function 또한 *distributional*(예: ground-truth phenotype distribution과의 Wasserstein distance)이 *point-wise*(예: mean phenotype RMSE) 보다 적합하다 ([[concepts/distributional-vs-point-prediction]]).
 
-For Phase 1 NDD-convergence work, this argues for retaining cell-by-cell heterogeneity rather than averaging it away in early analysis steps.
+Phase 1 NDD-convergence 연구에서, 이는 cell-by-cell heterogeneity를 early analysis 단계에서 *averaging away하지 말고 retain*해야 한다는 주장으로 이어진다.
 
 ---
 
 # Part VII — How Heterogeneity Is Measured
 
-## 22. Lineage tracing and resolved fate atlases
+## 22. Lineage tracing과 resolved fate atlas
 
-[[brain-development/keefe-2025-lineage-resolved-atlas-developing|Keefe et al. 2025]] built a lineage-resolved atlas of developing brain at single-cell resolution, allowing direct readout of *which states a clone passed through to reach a given final identity*. This is the methodological gold standard for the heterogeneity thesis: the same starting clone gives heterogeneous progeny, and the trajectory variance is now measurable.
+[[brain-development/keefe-2025-lineage-resolved-atlas-developing|Keefe et al. 2025]]는 single-cell resolution의 lineage-resolved atlas of developing brain을 구축하여, *어느 clone이 어느 state를 거쳐 final identity에 도달했는가*를 직접 readout 가능하게 했다. Heterogeneity thesis의 methodological gold standard에 해당한다 — 동일 starting clone이 heterogeneous한 progeny를 산출하며, trajectory variance가 이제 측정 가능하다.
 
-[[brain-atlas/braun-2023-comprehensive-cell-atlas-first|Braun et al. 2023]] (first-trimester human atlas) provides the temporal scaffold against which heterogeneity is benchmarked — without a high-resolution reference of *expected* state distributions, deviation cannot be quantified.
+[[brain-atlas/braun-2023-comprehensive-cell-atlas-first|Braun et al. 2023]] (first-trimester human atlas)은 heterogeneity가 benchmark되는 temporal scaffold를 제공한다. *기대되는* state distribution의 high-resolution reference 없이는 deviation이 정량화될 수 없다.
 
-## 23. Fate inference and dynamic state estimation
+## 23. Fate inference와 dynamic state estimation
 
-The wiki's single-cell-dl methods most relevant for this thesis:
+이 thesis와 가장 유관한 single-cell-dl 방법들은 다음과 같다.
 
-- [[single-cell-dl/setty-2019-characterization-of-cell-fate|Palantir (Setty 2019)]] uses pseudotime and probabilistic fate assignment — every cell gets a *distribution* over terminal fates, not a deterministic assignment. The width of that distribution is itself a measure of heterogeneity.
-- [[single-cell-dl/lange-2022-cellrank-for-directed-single|CellRank (Lange 2022)]] extends this to RNA-velocity-informed fate maps, allowing detection of state-to-state transitions in the data.
-- [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna|Cell2fate (Aivazidis 2025)]] uses Bayesian ODE linearisation to infer RNA-velocity modules with reduced noise; particularly suited to brain-development data.
-- [[single-cell-dl/klein-2025-mapping-cells-through-time|Klein 2025]] introduces methods for mapping cells through time with explicit uncertainty quantification.
-- [[single-cell-dl/vinyard-2025-learning-cell-dynamics-with|Vinyard 2025]] adds optimal-transport-based dynamic models of single-cell trajectories.
+- [[single-cell-dl/setty-2019-characterization-of-cell-fate|Palantir (Setty 2019)]] — pseudotime + probabilistic fate assignment. 모든 세포가 terminal fate에 대한 *분포*를 부여받으며, 분포의 너비 자체가 heterogeneity의 척도가 된다.
+- [[single-cell-dl/lange-2022-cellrank-for-directed-single|CellRank (Lange 2022)]] — 위를 RNA-velocity-informed fate map으로 확장하며, 데이터에서 state-to-state transition의 검출을 가능하게 한다.
+- [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna|Cell2fate (Aivazidis 2025)]] — Bayesian ODE linearization을 통해 noise-reduced된 RNA-velocity module을 추론하며, brain-development data에 특히 적합하다.
+- [[single-cell-dl/klein-2025-mapping-cells-through-time|Klein 2025]] — 명시적인 uncertainty quantification을 동반한 cell-through-time mapping 방법.
+- [[single-cell-dl/vinyard-2025-learning-cell-dynamics-with|Vinyard 2025]] — optimal-transport 기반 single-cell trajectory의 dynamic model.
 
-## 24. GRN-derived programs as the regulatory readout
+## 24. GRN-derived program이 regulatory readout이 된다
 
-[[brain-development/fleck-2023-inferring-perturbing-cell-fate|Fleck 2023]], [[brain-development/zenk-2024-single-cell-epigenomic-reconstruction|Zenk 2024]], and [[brain-development/ding-2026-dissecting-gene-regulatory-networks|Ding 2026]] all infer **gene regulatory networks** from joint chromatin-and-expression data. The variance of GRN activity across cells of the same nominal type is one of the most informative measures of heterogeneity, because it captures regulatory commitment that is upstream of the marker-gene-level signal that more standard single-cell analyses use. These methods are also the natural bridge to perturbation-prediction work — see [[overviews/perturbation-prediction-and-causal-inference]].
+[[brain-development/fleck-2023-inferring-perturbing-cell-fate|Fleck 2023]], [[brain-development/zenk-2024-single-cell-epigenomic-reconstruction|Zenk 2024]], [[brain-development/ding-2026-dissecting-gene-regulatory-networks|Ding 2026]]은 모두 joint chromatin-and-expression data로부터 **gene regulatory network**를 추론한다. 동일한 nominal cell type의 세포들 사이 GRN activity의 분산이 가장 informative한 heterogeneity 척도 중 하나이다 — 표준 single-cell 분석이 사용하는 marker-gene-level signal의 *upstream*에 있는 regulatory commitment를 capture하기 때문이다. 이들 방법은 perturbation-prediction 작업으로의 자연스러운 bridge이기도 하다 ([[overviews/perturbation-prediction-and-causal-inference]] 참조).
 
 ## 25. The not-yet-solved measurement problem
 
-Despite the methods above, the wiki has *no* paper that explicitly partitions single-cell variance into:
-- Deterministic (cell-type / position / time)
-- Reducible noise (technical / measurement)
-- Irreducible biological stochastic (the floor Dvir 2026 names)
+위 방법들에도 불구하고, wiki에는 single-cell variance를 다음으로 명시적으로 partition한 paper가 *없다*.
 
-This is a clear methodological gap. Decomposition methods exist for bulk variance (heritability, hLDSC) but not for single-cell variance with developmental-noise interpretability. Bridging this gap is one of the most consequential next steps; see also [[overviews/six-open-issues-perturbation-modelling]] for the perturbation-side framing of the same gap.
+- 결정론적 성분 (cell-type / position / time)
+- 환원 가능한 noise (technical / measurement)
+- 환원 불가능한 biological stochastic (Dvir 2026이 명명한 floor)
+
+이는 명백한 methodological gap이다. Bulk variance에 대한 decomposition (heritability, hLDSC)은 well-established이지만, *developmental-noise interpretability를 갖는 single-cell variance decomposition*은 아직 존재하지 않는다. 이 gap을 메우는 작업은 가장 결정적인 다음 단계 중 하나이며, perturbation 측 framing은 [[overviews/six-open-issues-perturbation-modelling]]에서 확인할 수 있다.
 
 ---
 
-# Closing — Heterogeneity in the Cascade Frame
+# Closing — Heterogeneity as the Diffusion Term
 
-In the cascade frame articulated for [[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir 2026]]:
+본 overview의 내용은 SDE 표현에서 *diffusion term* $\sigma(X, t)\,dW_t$에 해당한다. 이 placement가 의미를 갖는 이유는 다음과 같다.
 
-```
-INPUT (variants × modifiers)
-   ↓ funnel
-BOTTLENECK (3-pathway state, low-dimensional manifold)
-   ↓ DECODER
-   ↓   ↪ deterministic part (cell-type × position × time)
-   ↓   ↪ stochastic part (← THIS OVERVIEW IS ABOUT)
-OUTPUT (cell phenotype → circuit → behavior)
-```
+- **Drift** $\mu(X, t)$ ([[overviews/cell-identity-programs-and-trajectories]]) — 세포가 어느 attractor / fate로 평균적으로 끌려가는가. Cell identity, program performance, trajectory structure의 결정론적 부분이다.
+- **Diffusion** $\sigma(X, t)\,dW_t$ (본 overview) — drift 주변의 fluctuation. NPC critical window의 sampling이 이 항에서 발생한다.
+- [[overviews/convergence-heterogeneity-cascade-frame|Cascade frame overview]]에서 articulate한 cascade와의 매핑은 다음과 같다 — *Bottleneck (3-pathway manifold)* = drift attractor의 위치. *Decoder의 deterministic component* = drift. *Decoder의 stochastic component* = diffusion. Convergence는 attractor 구조의 property이고, heterogeneity는 diffusion magnitude의 property이다.
+- NDD pathogenic variant는 두 항 모두를 modify할 수 있다. 대부분은 $\mu$를 shift시키지만 (attractor 기울기의 변경), 일부 chromatin-related 변이는 $\sigma$를 직접 변경한다 (heterogeneity floor 자체의 amplification 또는 dampening).
 
-This overview's content sits in the **stochastic part of the decoder**, not in the bottleneck. That placement matters:
+본 overview가 가리키는 경험적 연구 방향은 다음 세 가지이다.
 
-- Convergence ([[overviews/convergent-regulation-across-systems]] / [[neuroscience/parenti-2020-neurodevelopmental-disorders-from-genetics-to|Parenti 2020]]) is a property of the bottleneck — different variants funnel onto the same low-dimensional manifold.
-- Divergence / heterogeneity ([[neuroscience/dvir-2026-complex-genotype-phenotype-relationships-in|Dvir 2026]] + this overview) is a property of the decoder — even at the same bottleneck position, different cells take different fate decisions.
-- Both are *simultaneously true* because they refer to different cascade locations.
+1. **Deterministic decoder와 stochastic decoder의 분리.** Single-cell 구조를 존중하는 variance decomposition method가 missing tool이다. Bulk-genetics analogue (heritability)는 well-established이지만 single-cell analogue는 그렇지 않다.
+2. **Stochastic component가 가장 큰 cell type과 developmental window의 식별.** NDD vulnerability가 가장 집중되는 자리이며, intervention timing이 가장 중요한 자리이다.
+3. **Heterogeneity를 prediction 끝까지 carry하는 pathway-perturbation model의 구축.** Distributional prediction ([[concepts/distributional-vs-point-prediction]])이 자연스러운 fit이며, $P(\text{phenotype} \mid \text{variant}, \text{cell-state})$를 학습하는 generative method가 그 방법론적 방향이다.
 
-The empirical research direction this overview points at:
-
-1. **Separate the deterministic decoder from the stochastic decoder.** Variance decomposition methods that respect single-cell structure are the missing tool. The bulk-genetics analogue (heritability) is well-established; the single-cell analogue is not.
-2. **Identify the cell types and developmental windows where the stochastic component is largest.** These are the cells where NDD vulnerability is most concentrated — and also where intervention timing matters most.
-3. **Build pathway-perturbation models that explicitly carry heterogeneity through prediction.** Distributional prediction (rather than point prediction) is the natural fit ([[concepts/distributional-vs-point-prediction]]); generative methods that learn $P(\text{phenotype} \mid \text{variant}, \text{cell-state})$ are the methodological direction.
-
-The thesis: **transcriptional heterogeneity in NPCs is not a measurement problem to be cleaned up, but the substrate that makes brain development possible, the source of human-amplified lineage potential, and the floor of NDD phenotype unpredictability**. Quantifying it is one of the next decisive moves in single-cell + perturbation neuroscience.
+The thesis: NPC의 transcriptional heterogeneity는 cleanup해야 할 measurement 문제가 *아니라*, brain development를 가능하게 하는 substrate, human-amplified lineage potential의 source, 그리고 NDD phenotype unpredictability의 floor이다. 이를 정량화하는 작업이 single-cell + perturbation neuroscience의 다음 결정적 move 중 하나이다.

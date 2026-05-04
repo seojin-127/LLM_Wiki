@@ -42,7 +42,19 @@ The wiki carries an overview for each side:
 
 A reader who holds both overviews in mind ends up with a real puzzle: **how can NDDs show *strong functional convergence* and *pervasive heterogeneity at every observable layer* at the same time?** This overview is the bridge that argues the apparent paradox dissolves once we stop modelling NDDs as a single genotype → phenotype mapping and start modelling them as a **multi-stage information cascade**, where convergence is a property of one stage (a low-dimensional bottleneck) and heterogeneity enters at every other stage. Both claims are simultaneously true; they just refer to different cascade locations.
 
-The framework articulated here generalises beyond NDDs to any disease where a small number of pathway nodes funnel a vast input variant space into a vast output phenotype space — many cancer driver studies, the broader [[overviews/convergent-regulation-across-systems]] framing, and the [[overviews/endogenous-variation-as-natural-perturbation]] sister overview all sit in the same conceptual region.
+### A second lens — drift and diffusion
+
+The cascade picture pairs naturally with a second, mathematically grounded lens: cell-state evolution as a **stochastic differential equation** $dX_t = \mu(X, t)\,dt + \sigma(X, t)\,dW_t$ — the framework that underlies Waddington's epigenetic landscape and is explicitly used by RNA-velocity fate-inference methods ([[single-cell-dl/setty-2019-characterization-of-cell-fate|Palantir]], [[single-cell-dl/lange-2022-cellrank-for-directed-single|CellRank]], [[single-cell-dl/aivazidis-2025-cell2fate-infers-rna|Cell2fate]]), optimal-transport trajectory models ([[single-cell-dl/klein-2025-mapping-cells-through-time|Klein 2025]], [[single-cell-dl/vinyard-2025-learning-cell-dynamics-with|Vinyard 2025]]), and biophysical foundation models ([[single-cell-dl/maddu-2026-learning-biophysical-models-of|PFM]], [[single-cell-dl/he-2026-squidiff-predicting-cellular-development|Squidiff]]).
+
+In this language:
+- **Drift** $\mu(X, t)$ — the deterministic pull toward an attractor (fate, identity, program). The bottleneck of the cascade picture corresponds to the *attractor structure of the drift field* — variants funnel different inputs onto the same low-dimensional attractor manifold. The *deterministic* portion of the decoder corresponds to *which* attractor a cell is being pulled toward (cell type × time × position).
+- **Diffusion** $\sigma(X, t)\,dW_t$ — stochastic fluctuation around the drift. The *stochastic* portion of the decoder lives entirely in this term.
+
+The two overviews this page bridges therefore correspond to the two terms of one dynamical system:
+- [[overviews/cell-identity-programs-and-trajectories]] = methodology for extracting drift $\mu$
+- [[overviews/transcriptional-heterogeneity-as-developmental-mechanism]] = the role of diffusion $\sigma$
+
+NDD pathogenic variants modify both terms — most variants shift the drift field (changing attractor positions and basins of attraction), while a subset (notably chromatin-pathway variants) modify the diffusion magnitude directly. The framework articulated here generalises beyond NDDs to any disease where a small number of pathway nodes funnel a vast input variant space into a vast output phenotype space — many cancer driver studies, the broader [[overviews/convergent-regulation-across-systems]] framing, and the [[overviews/endogenous-variation-as-natural-perturbation]] sister overview all sit in the same conceptual region.
 
 This overview is structured as eight parts:
 - **Part I** — The apparent paradox stated explicitly
