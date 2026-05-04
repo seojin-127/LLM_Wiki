@@ -50,9 +50,9 @@ In this language:
 - **Drift** $\mu(X, t)$ — the deterministic pull toward an attractor (fate, identity, program). The bottleneck of the cascade picture corresponds to the *attractor structure of the drift field* — variants funnel different inputs onto the same low-dimensional attractor manifold. The *deterministic* portion of the decoder corresponds to *which* attractor a cell is being pulled toward (cell type × time × position).
 - **Diffusion** $\sigma(X, t)\,dW_t$ — stochastic fluctuation around the drift. The *stochastic* portion of the decoder lives entirely in this term.
 
-The two overviews this page bridges therefore correspond to the two terms of one dynamical system:
-- [[overviews/cell-identity-programs-and-trajectories]] = methodology for extracting drift $\mu$
-- [[overviews/transcriptional-heterogeneity-as-developmental-mechanism]] = the role of diffusion $\sigma$
+The two overviews this page bridges both engage with this decomposition, but neither is strictly limited to one term:
+- [[overviews/cell-identity-programs-and-trajectories]] traces the *methodological lineage* for extracting heterogeneity structure — its papers operate primarily on the drift field $\mu$ but its tools (e.g., CellRank, GRN inference) also estimate diffusion-related quantities.
+- [[overviews/transcriptional-heterogeneity-as-developmental-mechanism]] traces the *biological mechanism* of heterogeneity — its content covers both how the drift field is reshaped by deterministic context (cell type, areal hub, genetic background) and how the diffusion floor contributes to NDD vulnerability. Most of the wiki's NDD literature isolates drift-side effects; stochastic-decoder isolation is a literature gap noted explicitly in that overview.
 
 NDD pathogenic variants modify both terms — most variants shift the drift field (changing attractor positions and basins of attraction), while a subset (notably chromatin-pathway variants) modify the diffusion magnitude directly. The framework articulated here generalises beyond NDDs to any disease where a small number of pathway nodes funnel a vast input variant space into a vast output phenotype space — many cancer driver studies, the broader [[overviews/convergent-regulation-across-systems]] framing, and the [[overviews/endogenous-variation-as-natural-perturbation]] sister overview all sit in the same conceptual region.
 
